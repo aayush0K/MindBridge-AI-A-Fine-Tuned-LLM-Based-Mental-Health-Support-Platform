@@ -1,0 +1,6 @@
+Configuration,Relevance,Empathy,Context,Avg Response Time (ms),Notes
+Base Llama-3 (no fine-tuning),,,,,Zero-shot baseline
+Fine-tuned (no memory),,,,,QLoRA only
+Fine-tuned + Redis (short-term),,,,,Session context
+Fine-tuned + Redis + pgvector,,,,,Full pipeline
+Fine-tuned + All + Mood injection,,,,,Complete system

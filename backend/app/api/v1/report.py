@@ -1,0 +1,168 @@
+"""
+Report API — Wellness consultation summary endpoints.
+"""
+
+from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi.responses import StreamingResponse
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+import uuid
+import io
+from datetime import datetime
+
+from app.database import get_db
+from app.models.user import User
+from app.models.report import WellnessReport
+from app.services.report_service import generate_wellness_report
+from app.dependencies import get_current_user
+
+router = APIRouter(prefix="/reports", tags=["Reports"])
+
+
+# ── Pydantic Response Models ─────────────────────────────────────────────────
+from pydantic import BaseModel, ConfigDict
+
+
+class ReportResponse(BaseModel):
+    id: uuid.UUID
+    report_type: str
+    period_start: datetime
+    period_end: datetime
+    summary: str
+    key_topics: list | None
+    mood_analysis: dict | None
+    recommendations: str | None
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+# ── Endpoints ─────────────────────────────────────────────────────────────────
+
+@router.post("/generate", response_model=ReportResponse, status_code=201)
+async def create_report(
+    days: int = Query(default=30, ge=7, le=365),
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """
+    Generate a new AI-powered mental wellness consultation summary.
+    Aggregates the last N days of chat history and mood data.
+    """
+    report = await generate_wellness_report(db, current_user.id, days)
+    return report
+
+
+@router.get("/", response_model=list[ReportResponse])
+async def list_reports(
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """List all reports for the current user, newest first."""
+    result = await db.execute(
+        select(WellnessReport)
+        .where(WellnessReport.user_id == current_user.id)
+        .order_by(WellnessReport.created_at.desc())
+        .limit(20)
+    )
+    return result.scalars().all()
+
+
+@router.get("/{report_id}", response_model=ReportResponse)
+async def get_report(
+    report_id: uuid.UUID,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """Fetch a specific report by ID."""
+    result = await db.execute(
+        select(WellnessReport).where(
+            WellnessReport.id == report_id,
+            WellnessReport.user_id == current_user.id,
+        )
+    )
+    report = result.scalar_one_or_none()
+    if not report:
+        raise HTTPException(status_code=404, detail="Report not found")
+    return report
+
+
+@router.get("/{report_id}/download")
+async def download_report(
+    report_id: uuid.UUID,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """
+    Download a wellness report as a formatted text file.
+    Suitable for sharing with a counselor or therapist.
+    """
+    result = await db.execute(
+        select(WellnessReport).where(
+            WellnessReport.id == report_id,
+            WellnessReport.user_id == current_user.id,
+        )
+    )
+    report = result.scalar_one_or_none()
+    if not report:
+        raise HTTPException(status_code=404, detail="Report not found")
+
+    # Format as a professional text document
+    doc = []
+    doc.append("=" * 60)
+    doc.append("MINDBRIDGE AI — MENTAL WELLNESS CONSULTATION SUMMARY")
+    doc.append("=" * 60)
+    doc.append("")
+    doc.append(f"Report Period: {report.period_start.strftime('%B %d, %Y')} — {report.period_end.strftime('%B %d, %Y')}")
+    doc.append(f"Generated:     {report.created_at.strftime('%B %d, %Y at %I:%M %p')}")
+    doc.append("")
+    doc.append("-" * 60)
+    doc.append("SUMMARY")
+    doc.append("-" * 60)
+    doc.append(report.summary)
+    doc.append("")
+
+    if report.key_topics:
+        doc.append("-" * 60)
+        doc.append("KEY TOPICS DISCUSSED")
+        doc.append("-" * 60)
+        for i, topic in enumerate(report.key_topics, 1):
+            doc.append(f"  {i}. {topic}")
+        doc.append("")
+
+    if report.mood_analysis:
+        doc.append("-" * 60)
+        doc.append("MOOD ANALYSIS")
+        doc.append("-" * 60)
+        ma = report.mood_analysis
+        doc.append(f"  Average Mood Score: {ma.get('average_score', 'N/A')}/10")
+        doc.append(f"  Trend Direction:    {ma.get('trend', 'N/A')}")
+        doc.append(f"  Total Mood Entries: {ma.get('total_mood_entries', 'N/A')}")
+        freq = ma.get("emotion_frequency", {})
+        if freq:
+            doc.append(f"  Frequent Emotions:  {', '.join(f'{k} ({v})' for k, v in freq.items())}")
+        doc.append("")
+
+    if report.recommendations:
+        doc.append("-" * 60)
+        doc.append("RECOMMENDATIONS")
+        doc.append("-" * 60)
+        doc.append(report.recommendations)
+        doc.append("")
+
+    doc.append("=" * 60)
+    doc.append("DISCLAIMER: This report is generated by an AI system and")
+    doc.append("is NOT a clinical diagnosis. Please consult a licensed")
+    doc.append("mental health professional for clinical evaluation.")
+    doc.append("=" * 60)
+
+    content = "\n".join(doc)
+    buffer = io.BytesIO(content.encode("utf-8"))
+
+    filename = f"MindBridge_Report_{report.period_start.strftime('%Y%m%d')}_{report.period_end.strftime('%Y%m%d')}.txt"
+
+    return StreamingResponse(
+        buffer,
+        media_type="text/plain",
+        headers={"Content-Disposition": f"attachment; filename={filename}"}
+    )

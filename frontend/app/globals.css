@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mb-ink: #11221E;
+  --mb-ink-light: #1A322C;
+  --mb-parchment: #F6F2EA;
+  --mb-parchment-dim: #EFE9DC;
+  --mb-gold: #C9A05C;
+  --mb-gold-dark: #2A2008;
+  --mb-sage: #5B7A6E;
+  --mb-sage-light: #7B998D;
+  --mb-crisis: #C23B3B;
+  --mb-crisis-dim: rgba(194, 59, 59, 0.18);
+  --mb-warm-gray: #9A958A;
+  --mb-warm-gray-light: #c9c4b8;
+
+  --background: var(--mb-parchment);
+  --foreground: var(--mb-ink);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-mono-mb {
+  font-family: var(--font-mono), monospace;
+}
+
+@keyframes mb-breathe {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.mb-ambient-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91, 122, 110, 0.15), transparent 70%);
+  animation: mb-breathe 8s ease-in-out infinite;
+  pointer-events: none;
+}

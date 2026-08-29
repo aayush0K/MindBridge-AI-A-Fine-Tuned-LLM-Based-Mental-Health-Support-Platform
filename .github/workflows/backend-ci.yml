@@ -1,0 +1,42 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "backend/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "backend/**"
+
+jobs:
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        working-directory: backend
+        run: pip install -r requirements.txt
+
+      - name: Create minimal .env for tests
+        working-directory: backend
+        run: |
+          echo "DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/mindbridge" >> .env
+          echo "JWT_SECRET_KEY=ci-test-secret-key-not-for-production" >> .env
+          echo "GEMINI_API_KEY=ci-dummy-key" >> .env
+          echo "REDIS_URL=redis://localhost:6379" >> .env
+
+      - name: Run unit tests
+        working-directory: backend
+        run: python -m pytest tests/test_ai_pipeline.py -v --tb=short

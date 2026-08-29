@@ -1,0 +1,11 @@
+# MindBridge AI - Training Pipeline Requirements
+torch>=2.0.0
+transformers>=4.40.0
+peft>=0.10.0
+trl>=0.8.0
+bitsandbytes>=0.43.0
+accelerate>=0.29.0
+datasets>=2.18.0
+scikit-learn
+pandas
+tqdm

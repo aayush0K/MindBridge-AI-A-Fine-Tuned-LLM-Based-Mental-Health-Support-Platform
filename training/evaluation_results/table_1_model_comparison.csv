@@ -1,0 +1,10 @@
+Metric,Base Model (Llama-3-8B),Fine-Tuned (MindBridge),Improvement
+Relevance (1-5 Likert),,,
+Empathy (1-5 Likert),,,
+Helpfulness (1-5 Likert),,,
+Specificity (1-5 Likert),,,
+Context Understanding (1-5 Likert),,,
+ROUGE-L,,,
+BLEU-4,,,
+Average Response Length (tokens),,,
+Response Time (ms),,,

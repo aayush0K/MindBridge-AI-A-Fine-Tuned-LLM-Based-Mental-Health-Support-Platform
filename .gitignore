@@ -1,0 +1,107 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+backend/venv/
+backend/env/
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ── Environment Variables (NEVER commit secrets) ───────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── Next.js / Frontend Build ──────────────────────────────────────────────────
+frontend/.next/
+out/
+build/
+dist/
+
+# ── Python / Backend Build ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── Testing / Coverage ────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# ── Type checking ─────────────────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+*.ipynb_checkpoints
+
+# ── Database ──────────────────────────────────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── OS Generated ──────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ── Large Model Weights & Local Adapters (Store on HuggingFace Hub) ───────────
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.gguf
+model/
+training/models/
+epoch1/
+mindbridge-llm-adapter.zip

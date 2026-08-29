@@ -1,0 +1,46 @@
+{
+  "system_name": "MindBridge AI",
+  "version": "3.0",
+  "architecture": {
+    "frontend": "Next.js 14 (React)",
+    "backend": "FastAPI (Python 3.11+)",
+    "database": "PostgreSQL + pgvector",
+    "cache": "Redis",
+    "llm_base": "Meta Llama-3-8B-Instruct",
+    "fine_tuning": "QLoRA (4-bit, rank=16, alpha=32)",
+    "mood_classifier": "DistilBERT (GoEmotions)",
+    "embedder": "all-MiniLM-L6-v2 (384-dim)",
+    "memory": {
+      "short_term": "Redis (last 12 messages, 24h TTL)",
+      "long_term": "PostgreSQL + pgvector (Top-3 cosine similarity)"
+    }
+  },
+  "pipeline_steps": [
+    "1. Receive user message",
+    "2. Embed with all-MiniLM-L6-v2",
+    "3. Relevance check (cosine similarity)",
+    "4. Crisis detection (keyword + embedding + classifier)",
+    "5. Mood detection (DistilBERT)",
+    "6. Semantic memory retrieval (pgvector Top-3)",
+    "7. Short-term memory retrieval (Redis)",
+    "8. LLM generation (Fine-tuned Llama-3)",
+    "9. Store message + embedding + mood to PostgreSQL",
+    "10. Return enriched response"
+  ],
+  "datasets": {
+    "CounselChat": {
+      "source": "nbertagnolli/counsel-chat (HuggingFace)",
+      "license": "MIT",
+      "description": "Q&A pairs from verified therapists"
+    }
+  },
+  "evaluation_methodology": {
+    "human_evaluation": "5-point Likert scale across 5 dimensions",
+    "automated_metrics": [
+      "ROUGE-L",
+      "BLEU-4"
+    ],
+    "mood_detection": "Precision / Recall / F1 per category",
+    "ablation_study": "Base vs Fine-tuned on identical test prompts"
+  }
+}

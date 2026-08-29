@@ -1,0 +1,3948 @@
+[
+  {
+    "id": "anx_001",
+    "category": "anxiety",
+    "context": "I feel anxious all the time and can't relax",
+    "response": "Living with constant anxiety is genuinely exhausting, and your feelings are completely valid. Can you tell me what situations tend to make the anxiety feel strongest?",
+    "keywords": [
+      "anxious",
+      "can't",
+      "relax"
+    ]
+  },
+  {
+    "id": "anx_002",
+    "category": "anxiety",
+    "context": "My heart races before every exam and I can't focus",
+    "response": "Exam anxiety is so common, especially when you care about doing well. That physical rush is your body trying to protect you. What helps you feel even slightly calmer before tests?",
+    "keywords": [
+      "heart",
+      "races",
+      "before",
+      "every",
+      "can't"
+    ]
+  },
+  {
+    "id": "anx_003",
+    "category": "anxiety",
+    "context": "I worry about everything — my future, family, health",
+    "response": "When worry spreads into every area of life, it can feel impossible to catch a break. You're carrying a lot. Which worry has been loudest for you lately?",
+    "keywords": [
+      "worry",
+      "about",
+      "everything",
+      "future,",
+      "family,"
+    ]
+  },
+  {
+    "id": "anx_004",
+    "category": "anxiety",
+    "context": "Social situations make me panic and I avoid people",
+    "response": "Social anxiety can make connection feel terrifying instead of comforting. Avoidance often makes sense in the moment. What would feel like a small, safe step toward someone you trust?",
+    "keywords": [
+      "social",
+      "situations",
+      "panic",
+      "avoid",
+      "people"
+    ]
+  },
+  {
+    "id": "anx_005",
+    "category": "anxiety",
+    "context": "I had a panic attack and I'm scared it will happen again",
+    "response": "Panic attacks are frightening, and fear of another one is very real. You're not weak for feeling this way. After it passed, what helped your body settle even a little?",
+    "keywords": [
+      "panic",
+      "attack",
+      "scared",
+      "happen",
+      "again"
+    ]
+  },
+  {
+    "id": "anx_006",
+    "category": "anxiety",
+    "context": "I can't stop overthinking small things at night",
+    "response": "Nighttime overthinking steals rest and peace. Your mind is trying to solve problems, even when there's no solution at 2am. Would it help to name one thought you're stuck on?",
+    "keywords": [
+      "can't",
+      "overthinking",
+      "small",
+      "things",
+      "night"
+    ]
+  },
+  {
+    "id": "anx_007",
+    "category": "anxiety",
+    "context": "I feel on edge even when nothing bad is happening",
+    "response": "That constant edge can be exhausting — like waiting for something to go wrong. Your nervous system may be overstimulated. Have you noticed anything that briefly eases that tension?",
+    "keywords": [
+      "nothing",
+      "happening"
+    ]
+  },
+  {
+    "id": "anx_008",
+    "category": "anxiety",
+    "context": "I'm anxious about my job interview tomorrow",
+    "response": "Interview nerves show you care about the opportunity. Many people rehearse, breathe, or visualize — what have you tried so far?",
+    "keywords": [
+      "anxious",
+      "about",
+      "interview",
+      "tomorrow"
+    ]
+  },
+  {
+    "id": "anx_009",
+    "category": "anxiety",
+    "context": "My parents expect too much and I feel anxious about disappointing them",
+    "response": "Family pressure in Indian households can feel heavy. Wanting to honor your parents while staying true to yourself is a real tension. What would 'good enough' look like to you right now?",
+    "keywords": [
+      "parents",
+      "expect",
+      "anxious",
+      "about",
+      "disappointing"
+    ]
+  },
+  {
+    "id": "anx_010",
+    "category": "anxiety",
+    "context": "I feel anxious in crowded places like the metro",
+    "response": "Crowds can overwhelm the senses and trigger fight-or-flight. You're not alone in this. Do you have a coping strategy that works even a little in those moments?",
+    "keywords": [
+      "anxious",
+      "crowded",
+      "places",
+      "metro"
+    ]
+  },
+  {
+    "id": "anx_011",
+    "category": "anxiety",
+    "context": "My chest feels tight when I'm anxious",
+    "response": "Physical anxiety symptoms are real and frightening. Tight chest often comes with stress breathing. Have you tried slow exhale breathing?",
+    "keywords": [
+      "chest",
+      "feels",
+      "tight",
+      "anxious"
+    ]
+  },
+  {
+    "id": "anx_012",
+    "category": "anxiety",
+    "context": "I avoid driving because of anxiety",
+    "response": "Driving anxiety can limit freedom significantly. Gradual exposure with support sometimes helps. What part of driving feels scariest?",
+    "keywords": [
+      "avoid",
+      "driving",
+      "because",
+      "anxiety"
+    ]
+  },
+  {
+    "id": "anx_013",
+    "category": "anxiety",
+    "context": "Health anxiety makes me google symptoms constantly",
+    "response": "Health anxiety feeds on uncertainty; googling often increases fear. You're trying to feel safe. What reassurance would actually help?",
+    "keywords": [
+      "health",
+      "anxiety",
+      "makes",
+      "google",
+      "symptoms"
+    ]
+  },
+  {
+    "id": "anx_014",
+    "category": "anxiety",
+    "context": "I feel anxious about climate and the future of the world",
+    "response": "Eco-anxiety reflects care for the planet and future generations. Taking small actionable steps can restore agency. What one action feels meaningful to you?",
+    "keywords": [
+      "anxious",
+      "about",
+      "climate",
+      "future",
+      "world"
+    ]
+  },
+  {
+    "id": "anx_015",
+    "category": "anxiety",
+    "context": "Presentation anxiety ruins my performance",
+    "response": "Performance anxiety is common; preparation plus grounding can help. What happens in your body right before you speak?",
+    "keywords": [
+      "presentation",
+      "anxiety",
+      "ruins",
+      "performance"
+    ]
+  },
+  {
+    "id": "anx_016",
+    "category": "anxiety",
+    "context": "I feel anxious all the time and can't relax",
+    "response": "Living with constant anxiety is genuinely exhausting, and your feelings are completely valid. Can you tell me what situations tend to make the anxiety feel strongest?",
+    "keywords": [
+      "anxious",
+      "can't",
+      "relax"
+    ]
+  },
+  {
+    "id": "anx_017",
+    "category": "anxiety",
+    "context": "My heart races before every exam and I can't focus",
+    "response": "Exam anxiety is so common, especially when you care about doing well. That physical rush is your body trying to protect you. What helps you feel even slightly calmer before tests?",
+    "keywords": [
+      "heart",
+      "races",
+      "before",
+      "every",
+      "can't"
+    ]
+  },
+  {
+    "id": "anx_018",
+    "category": "anxiety",
+    "context": "I worry about everything — my future, family, health",
+    "response": "When worry spreads into every area of life, it can feel impossible to catch a break. You're carrying a lot. Which worry has been loudest for you lately?",
+    "keywords": [
+      "worry",
+      "about",
+      "everything",
+      "future,",
+      "family,"
+    ]
+  },
+  {
+    "id": "anx_019",
+    "category": "anxiety",
+    "context": "Social situations make me panic and I avoid people",
+    "response": "Social anxiety can make connection feel terrifying instead of comforting. Avoidance often makes sense in the moment. What would feel like a small, safe step toward someone you trust?",
+    "keywords": [
+      "social",
+      "situations",
+      "panic",
+      "avoid",
+      "people"
+    ]
+  },
+  {
+    "id": "anx_020",
+    "category": "anxiety",
+    "context": "I had a panic attack and I'm scared it will happen again",
+    "response": "Panic attacks are frightening, and fear of another one is very real. You're not weak for feeling this way. After it passed, what helped your body settle even a little?",
+    "keywords": [
+      "panic",
+      "attack",
+      "scared",
+      "happen",
+      "again"
+    ]
+  },
+  {
+    "id": "anx_021",
+    "category": "anxiety",
+    "context": "I can't stop overthinking small things at night",
+    "response": "Nighttime overthinking steals rest and peace. Your mind is trying to solve problems, even when there's no solution at 2am. Would it help to name one thought you're stuck on?",
+    "keywords": [
+      "can't",
+      "overthinking",
+      "small",
+      "things",
+      "night"
+    ]
+  },
+  {
+    "id": "anx_022",
+    "category": "anxiety",
+    "context": "I feel on edge even when nothing bad is happening",
+    "response": "That constant edge can be exhausting — like waiting for something to go wrong. Your nervous system may be overstimulated. Have you noticed anything that briefly eases that tension?",
+    "keywords": [
+      "nothing",
+      "happening"
+    ]
+  },
+  {
+    "id": "anx_023",
+    "category": "anxiety",
+    "context": "I'm anxious about my job interview tomorrow",
+    "response": "Interview nerves show you care about the opportunity. Many people rehearse, breathe, or visualize — what have you tried so far?",
+    "keywords": [
+      "anxious",
+      "about",
+      "interview",
+      "tomorrow"
+    ]
+  },
+  {
+    "id": "anx_024",
+    "category": "anxiety",
+    "context": "My parents expect too much and I feel anxious about disappointing them",
+    "response": "Family pressure in Indian households can feel heavy. Wanting to honor your parents while staying true to yourself is a real tension. What would 'good enough' look like to you right now?",
+    "keywords": [
+      "parents",
+      "expect",
+      "anxious",
+      "about",
+      "disappointing"
+    ]
+  },
+  {
+    "id": "anx_025",
+    "category": "anxiety",
+    "context": "I feel anxious in crowded places like the metro",
+    "response": "Crowds can overwhelm the senses and trigger fight-or-flight. You're not alone in this. Do you have a coping strategy that works even a little in those moments?",
+    "keywords": [
+      "anxious",
+      "crowded",
+      "places",
+      "metro"
+    ]
+  },
+  {
+    "id": "anx_026",
+    "category": "anxiety",
+    "context": "My chest feels tight when I'm anxious",
+    "response": "Physical anxiety symptoms are real and frightening. Tight chest often comes with stress breathing. Have you tried slow exhale breathing?",
+    "keywords": [
+      "chest",
+      "feels",
+      "tight",
+      "anxious"
+    ]
+  },
+  {
+    "id": "anx_027",
+    "category": "anxiety",
+    "context": "I avoid driving because of anxiety",
+    "response": "Driving anxiety can limit freedom significantly. Gradual exposure with support sometimes helps. What part of driving feels scariest?",
+    "keywords": [
+      "avoid",
+      "driving",
+      "because",
+      "anxiety"
+    ]
+  },
+  {
+    "id": "anx_028",
+    "category": "anxiety",
+    "context": "Health anxiety makes me google symptoms constantly",
+    "response": "Health anxiety feeds on uncertainty; googling often increases fear. You're trying to feel safe. What reassurance would actually help?",
+    "keywords": [
+      "health",
+      "anxiety",
+      "makes",
+      "google",
+      "symptoms"
+    ]
+  },
+  {
+    "id": "anx_029",
+    "category": "anxiety",
+    "context": "I feel anxious about climate and the future of the world",
+    "response": "Eco-anxiety reflects care for the planet and future generations. Taking small actionable steps can restore agency. What one action feels meaningful to you?",
+    "keywords": [
+      "anxious",
+      "about",
+      "climate",
+      "future",
+      "world"
+    ]
+  },
+  {
+    "id": "anx_030",
+    "category": "anxiety",
+    "context": "Presentation anxiety ruins my performance",
+    "response": "Performance anxiety is common; preparation plus grounding can help. What happens in your body right before you speak?",
+    "keywords": [
+      "presentation",
+      "anxiety",
+      "ruins",
+      "performance"
+    ]
+  },
+  {
+    "id": "anx_031",
+    "category": "anxiety",
+    "context": "I feel anxious all the time and can't relax",
+    "response": "Living with constant anxiety is genuinely exhausting, and your feelings are completely valid. Can you tell me what situations tend to make the anxiety feel strongest?",
+    "keywords": [
+      "anxious",
+      "can't",
+      "relax"
+    ]
+  },
+  {
+    "id": "anx_032",
+    "category": "anxiety",
+    "context": "My heart races before every exam and I can't focus",
+    "response": "Exam anxiety is so common, especially when you care about doing well. That physical rush is your body trying to protect you. What helps you feel even slightly calmer before tests?",
+    "keywords": [
+      "heart",
+      "races",
+      "before",
+      "every",
+      "can't"
+    ]
+  },
+  {
+    "id": "anx_033",
+    "category": "anxiety",
+    "context": "I worry about everything — my future, family, health",
+    "response": "When worry spreads into every area of life, it can feel impossible to catch a break. You're carrying a lot. Which worry has been loudest for you lately?",
+    "keywords": [
+      "worry",
+      "about",
+      "everything",
+      "future,",
+      "family,"
+    ]
+  },
+  {
+    "id": "anx_034",
+    "category": "anxiety",
+    "context": "Social situations make me panic and I avoid people",
+    "response": "Social anxiety can make connection feel terrifying instead of comforting. Avoidance often makes sense in the moment. What would feel like a small, safe step toward someone you trust?",
+    "keywords": [
+      "social",
+      "situations",
+      "panic",
+      "avoid",
+      "people"
+    ]
+  },
+  {
+    "id": "anx_035",
+    "category": "anxiety",
+    "context": "I had a panic attack and I'm scared it will happen again",
+    "response": "Panic attacks are frightening, and fear of another one is very real. You're not weak for feeling this way. After it passed, what helped your body settle even a little?",
+    "keywords": [
+      "panic",
+      "attack",
+      "scared",
+      "happen",
+      "again"
+    ]
+  },
+  {
+    "id": "dep_036",
+    "category": "depression",
+    "context": "I have no motivation and feel empty inside",
+    "response": "That feeling of emptiness is one of the hardest things to carry. You're not broken. Have you been able to talk to anyone about how you've been feeling?",
+    "keywords": [
+      "motivation",
+      "empty",
+      "inside"
+    ]
+  },
+  {
+    "id": "dep_037",
+    "category": "depression",
+    "context": "I don't enjoy things I used to love",
+    "response": "Losing interest in things you once enjoyed is a painful sign something needs care. It doesn't mean those joys are gone forever. When did you last feel even a flicker of enjoyment?",
+    "keywords": [
+      "don't",
+      "enjoy",
+      "things"
+    ]
+  },
+  {
+    "id": "dep_038",
+    "category": "depression",
+    "context": "I feel hopeless about my future",
+    "response": "Hopelessness can make tomorrow feel pointless. I hear how heavy that is. Is there one small thing today that felt even slightly bearable?",
+    "keywords": [
+      "hopeless",
+      "about",
+      "future"
+    ]
+  },
+  {
+    "id": "dep_039",
+    "category": "depression",
+    "context": "I sleep all day but still feel tired",
+    "response": "Depression often disrupts sleep in both directions — too much or too little. Your body may be asking for rest in the only way it knows. How long has this pattern been going on?",
+    "keywords": [
+      "sleep",
+      "still",
+      "tired"
+    ]
+  },
+  {
+    "id": "dep_040",
+    "category": "depression",
+    "context": "I feel like a burden to my friends and family",
+    "response": "Feeling like a burden is a common thought with depression, but it doesn't reflect your worth. People who care about you often want to support you. Have you shared any of this with someone you trust?",
+    "keywords": [
+      "burden",
+      "friends",
+      "family"
+    ]
+  },
+  {
+    "id": "dep_041",
+    "category": "depression",
+    "context": "Academic pressure is making me feel depressed",
+    "response": "Academic stress in competitive environments can drain joy and energy. Your worth is not your grades. What part of school feels heaviest right now?",
+    "keywords": [
+      "academic",
+      "pressure",
+      "making",
+      "depressed"
+    ]
+  },
+  {
+    "id": "dep_042",
+    "category": "depression",
+    "context": "I cry often without knowing why",
+    "response": "Unexplained tears can be your body's way of releasing what words can't hold. You don't need a reason for your feelings to matter. Would you like to explore what was happening before the tears?",
+    "keywords": [
+      "often",
+      "without",
+      "knowing"
+    ]
+  },
+  {
+    "id": "dep_043",
+    "category": "depression",
+    "context": "I feel numb and disconnected from everyone",
+    "response": "Numbness can be as painful as sadness — it's still suffering. Connection may feel far away right now. Is there anyone, even one person, you feel slightly safer around?",
+    "keywords": [
+      "disconnected",
+      "everyone"
+    ]
+  },
+  {
+    "id": "dep_044",
+    "category": "depression",
+    "context": "I lost interest in eating and taking care of myself",
+    "response": "When basic self-care feels impossible, depression may be deep. You're not failing — you're struggling. Have you been able to eat or drink anything small today?",
+    "keywords": [
+      "interest",
+      "eating",
+      "taking",
+      "myself"
+    ]
+  },
+  {
+    "id": "dep_045",
+    "category": "depression",
+    "context": "Everything feels pointless and I question why I try",
+    "response": "Questioning effort when you're depleted is understandable. You don't have to solve life's meaning today. What's one tiny thing that used to give you a moment of peace?",
+    "keywords": [
+      "everything",
+      "feels",
+      "pointless",
+      "question"
+    ]
+  },
+  {
+    "id": "dep_046",
+    "category": "depression",
+    "context": "Seasonal changes make my depression worse",
+    "response": "Seasonal mood shifts are documented and valid. Light, routine, and support can help. Have you noticed a pattern across years?",
+    "keywords": [
+      "seasonal",
+      "changes",
+      "depression",
+      "worse"
+    ]
+  },
+  {
+    "id": "dep_047",
+    "category": "depression",
+    "context": "I feel guilty for being depressed when others have it worse",
+    "response": "Pain isn't a competition. Your suffering counts regardless of others' stories. What would self-compassion sound like today?",
+    "keywords": [
+      "guilty",
+      "being",
+      "depressed",
+      "others",
+      "worse"
+    ]
+  },
+  {
+    "id": "dep_048",
+    "category": "depression",
+    "context": "Postpartum feelings are darker than I expected",
+    "response": "Perinatal mood struggles are common and treatable. You're not a bad parent for feeling this. Have you spoken to a healthcare provider?",
+    "keywords": [
+      "postpartum",
+      "feelings",
+      "darker",
+      "expected"
+    ]
+  },
+  {
+    "id": "dep_049",
+    "category": "depression",
+    "context": "Medication for depression makes me nervous",
+    "response": "Questions about medication are important to explore with a doctor. Fear of side effects is understandable. What would you want to ask a psychiatrist?",
+    "keywords": [
+      "medication",
+      "depression",
+      "makes",
+      "nervous"
+    ]
+  },
+  {
+    "id": "dep_050",
+    "category": "depression",
+    "context": "I smile in public but fall apart alone",
+    "response": "High-functioning depression is exhausting — holding it together costs energy. You're allowed to need help even if you seem fine outside.",
+    "keywords": [
+      "smile",
+      "public",
+      "apart",
+      "alone"
+    ]
+  },
+  {
+    "id": "dep_051",
+    "category": "depression",
+    "context": "I have no motivation and feel empty inside",
+    "response": "That feeling of emptiness is one of the hardest things to carry. You're not broken. Have you been able to talk to anyone about how you've been feeling?",
+    "keywords": [
+      "motivation",
+      "empty",
+      "inside"
+    ]
+  },
+  {
+    "id": "dep_052",
+    "category": "depression",
+    "context": "I don't enjoy things I used to love",
+    "response": "Losing interest in things you once enjoyed is a painful sign something needs care. It doesn't mean those joys are gone forever. When did you last feel even a flicker of enjoyment?",
+    "keywords": [
+      "don't",
+      "enjoy",
+      "things"
+    ]
+  },
+  {
+    "id": "dep_053",
+    "category": "depression",
+    "context": "I feel hopeless about my future",
+    "response": "Hopelessness can make tomorrow feel pointless. I hear how heavy that is. Is there one small thing today that felt even slightly bearable?",
+    "keywords": [
+      "hopeless",
+      "about",
+      "future"
+    ]
+  },
+  {
+    "id": "dep_054",
+    "category": "depression",
+    "context": "I sleep all day but still feel tired",
+    "response": "Depression often disrupts sleep in both directions — too much or too little. Your body may be asking for rest in the only way it knows. How long has this pattern been going on?",
+    "keywords": [
+      "sleep",
+      "still",
+      "tired"
+    ]
+  },
+  {
+    "id": "dep_055",
+    "category": "depression",
+    "context": "I feel like a burden to my friends and family",
+    "response": "Feeling like a burden is a common thought with depression, but it doesn't reflect your worth. People who care about you often want to support you. Have you shared any of this with someone you trust?",
+    "keywords": [
+      "burden",
+      "friends",
+      "family"
+    ]
+  },
+  {
+    "id": "dep_056",
+    "category": "depression",
+    "context": "Academic pressure is making me feel depressed",
+    "response": "Academic stress in competitive environments can drain joy and energy. Your worth is not your grades. What part of school feels heaviest right now?",
+    "keywords": [
+      "academic",
+      "pressure",
+      "making",
+      "depressed"
+    ]
+  },
+  {
+    "id": "dep_057",
+    "category": "depression",
+    "context": "I cry often without knowing why",
+    "response": "Unexplained tears can be your body's way of releasing what words can't hold. You don't need a reason for your feelings to matter. Would you like to explore what was happening before the tears?",
+    "keywords": [
+      "often",
+      "without",
+      "knowing"
+    ]
+  },
+  {
+    "id": "dep_058",
+    "category": "depression",
+    "context": "I feel numb and disconnected from everyone",
+    "response": "Numbness can be as painful as sadness — it's still suffering. Connection may feel far away right now. Is there anyone, even one person, you feel slightly safer around?",
+    "keywords": [
+      "disconnected",
+      "everyone"
+    ]
+  },
+  {
+    "id": "dep_059",
+    "category": "depression",
+    "context": "I lost interest in eating and taking care of myself",
+    "response": "When basic self-care feels impossible, depression may be deep. You're not failing — you're struggling. Have you been able to eat or drink anything small today?",
+    "keywords": [
+      "interest",
+      "eating",
+      "taking",
+      "myself"
+    ]
+  },
+  {
+    "id": "dep_060",
+    "category": "depression",
+    "context": "Everything feels pointless and I question why I try",
+    "response": "Questioning effort when you're depleted is understandable. You don't have to solve life's meaning today. What's one tiny thing that used to give you a moment of peace?",
+    "keywords": [
+      "everything",
+      "feels",
+      "pointless",
+      "question"
+    ]
+  },
+  {
+    "id": "dep_061",
+    "category": "depression",
+    "context": "Seasonal changes make my depression worse",
+    "response": "Seasonal mood shifts are documented and valid. Light, routine, and support can help. Have you noticed a pattern across years?",
+    "keywords": [
+      "seasonal",
+      "changes",
+      "depression",
+      "worse"
+    ]
+  },
+  {
+    "id": "dep_062",
+    "category": "depression",
+    "context": "I feel guilty for being depressed when others have it worse",
+    "response": "Pain isn't a competition. Your suffering counts regardless of others' stories. What would self-compassion sound like today?",
+    "keywords": [
+      "guilty",
+      "being",
+      "depressed",
+      "others",
+      "worse"
+    ]
+  },
+  {
+    "id": "dep_063",
+    "category": "depression",
+    "context": "Postpartum feelings are darker than I expected",
+    "response": "Perinatal mood struggles are common and treatable. You're not a bad parent for feeling this. Have you spoken to a healthcare provider?",
+    "keywords": [
+      "postpartum",
+      "feelings",
+      "darker",
+      "expected"
+    ]
+  },
+  {
+    "id": "dep_064",
+    "category": "depression",
+    "context": "Medication for depression makes me nervous",
+    "response": "Questions about medication are important to explore with a doctor. Fear of side effects is understandable. What would you want to ask a psychiatrist?",
+    "keywords": [
+      "medication",
+      "depression",
+      "makes",
+      "nervous"
+    ]
+  },
+  {
+    "id": "dep_065",
+    "category": "depression",
+    "context": "I smile in public but fall apart alone",
+    "response": "High-functioning depression is exhausting — holding it together costs energy. You're allowed to need help even if you seem fine outside.",
+    "keywords": [
+      "smile",
+      "public",
+      "apart",
+      "alone"
+    ]
+  },
+  {
+    "id": "dep_066",
+    "category": "depression",
+    "context": "I have no motivation and feel empty inside",
+    "response": "That feeling of emptiness is one of the hardest things to carry. You're not broken. Have you been able to talk to anyone about how you've been feeling?",
+    "keywords": [
+      "motivation",
+      "empty",
+      "inside"
+    ]
+  },
+  {
+    "id": "dep_067",
+    "category": "depression",
+    "context": "I don't enjoy things I used to love",
+    "response": "Losing interest in things you once enjoyed is a painful sign something needs care. It doesn't mean those joys are gone forever. When did you last feel even a flicker of enjoyment?",
+    "keywords": [
+      "don't",
+      "enjoy",
+      "things"
+    ]
+  },
+  {
+    "id": "dep_068",
+    "category": "depression",
+    "context": "I feel hopeless about my future",
+    "response": "Hopelessness can make tomorrow feel pointless. I hear how heavy that is. Is there one small thing today that felt even slightly bearable?",
+    "keywords": [
+      "hopeless",
+      "about",
+      "future"
+    ]
+  },
+  {
+    "id": "dep_069",
+    "category": "depression",
+    "context": "I sleep all day but still feel tired",
+    "response": "Depression often disrupts sleep in both directions — too much or too little. Your body may be asking for rest in the only way it knows. How long has this pattern been going on?",
+    "keywords": [
+      "sleep",
+      "still",
+      "tired"
+    ]
+  },
+  {
+    "id": "dep_070",
+    "category": "depression",
+    "context": "I feel like a burden to my friends and family",
+    "response": "Feeling like a burden is a common thought with depression, but it doesn't reflect your worth. People who care about you often want to support you. Have you shared any of this with someone you trust?",
+    "keywords": [
+      "burden",
+      "friends",
+      "family"
+    ]
+  },
+  {
+    "id": "str_071",
+    "category": "stress",
+    "context": "Work deadlines are crushing me and I can't cope",
+    "response": "Deadline pressure can feel like drowning. Your stress is a signal that your load may be too heavy. Which deadline is weighing on you most?",
+    "keywords": [
+      "deadlines",
+      "crushing",
+      "can't"
+    ]
+  },
+  {
+    "id": "str_072",
+    "category": "stress",
+    "context": "I'm stressed about money and supporting my family",
+    "response": "Financial stress affects the whole household and carries deep responsibility. You're carrying a lot. Have you been able to talk to anyone about practical next steps?",
+    "keywords": [
+      "stressed",
+      "about",
+      "money",
+      "supporting",
+      "family"
+    ]
+  },
+  {
+    "id": "str_073",
+    "category": "stress",
+    "context": "Balancing college, internship, and family is overwhelming",
+    "response": "Wearing multiple roles at once is genuinely overwhelming. Something often has to give — and that's not failure. Which role feels most urgent this week?",
+    "keywords": [
+      "balancing",
+      "college,",
+      "internship,",
+      "family",
+      "overwhelming"
+    ]
+  },
+  {
+    "id": "str_074",
+    "category": "stress",
+    "context": "My boss is toxic and I'm stressed every Sunday night",
+    "response": "Sunday scaries tied to a difficult workplace are exhausting. Your reaction makes sense. What would feeling even slightly safer at work look like?",
+    "keywords": [
+      "toxic",
+      "stressed",
+      "every",
+      "sunday",
+      "night"
+    ]
+  },
+  {
+    "id": "str_075",
+    "category": "stress",
+    "context": "I feel stressed but I don't know the exact cause",
+    "response": "Sometimes stress shows up before we can name it. Your body may be responding to accumulated pressure. What's changed in your life recently, even small things?",
+    "keywords": [
+      "stressed",
+      "don't",
+      "exact",
+      "cause"
+    ]
+  },
+  {
+    "id": "str_076",
+    "category": "stress",
+    "context": "Family arguments leave me stressed for days",
+    "response": "Family conflict can linger in your body long after the conversation ends. That residual stress is valid. Do you have space to decompress after those moments?",
+    "keywords": [
+      "family",
+      "arguments",
+      "leave",
+      "stressed"
+    ]
+  },
+  {
+    "id": "str_077",
+    "category": "stress",
+    "context": "I'm stressed about my board exam results",
+    "response": "Waiting for results can be agonizing — the uncertainty is its own kind of pain. Many students feel this. What helps you get through difficult waiting periods?",
+    "keywords": [
+      "stressed",
+      "about",
+      "board",
+      "results"
+    ]
+  },
+  {
+    "id": "str_078",
+    "category": "stress",
+    "context": "Too many responsibilities — I can't say no to anyone",
+    "response": "Difficulty saying no often comes from wanting to be helpful or avoid conflict. Your limits matter too. What would you say no to if you felt you could?",
+    "keywords": [
+      "responsibilities",
+      "can't",
+      "anyone"
+    ]
+  },
+  {
+    "id": "str_079",
+    "category": "stress",
+    "context": "I'm stressed about moving to a new city for work",
+    "response": "Big transitions stir stress even when they're positive. Leaving familiar support takes courage. What part of the move worries you most?",
+    "keywords": [
+      "stressed",
+      "about",
+      "moving"
+    ]
+  },
+  {
+    "id": "str_080",
+    "category": "stress",
+    "context": "Constant notifications and hustle culture stress me out",
+    "response": "Always-on culture can keep your nervous system activated. It's okay to want boundaries. Have you tried any digital or schedule boundaries?",
+    "keywords": [
+      "constant",
+      "notifications",
+      "hustle",
+      "culture",
+      "stress"
+    ]
+  },
+  {
+    "id": "str_081",
+    "category": "stress",
+    "context": "Caregiver burnout is destroying my mental health",
+    "response": "Caring for others while neglecting yourself depletes reserves. Burnout is not selfishness. What tiny respite could you schedule this week?",
+    "keywords": [
+      "caregiver",
+      "burnout",
+      "destroying",
+      "mental",
+      "health"
+    ]
+  },
+  {
+    "id": "str_082",
+    "category": "stress",
+    "context": "Startup life stress is constant",
+    "response": "Entrepreneurial stress rarely has an off switch. Boundaries protect sustainability. What would a non-negotiable rest block look like?",
+    "keywords": [
+      "startup",
+      "stress",
+      "constant"
+    ]
+  },
+  {
+    "id": "str_083",
+    "category": "stress",
+    "context": "Wedding planning stress is overwhelming",
+    "response": "Big life events carry joy and pressure together. It's okay to ask for help delegating. What task could someone else take?",
+    "keywords": [
+      "wedding",
+      "planning",
+      "stress",
+      "overwhelming"
+    ]
+  },
+  {
+    "id": "str_084",
+    "category": "stress",
+    "context": "I'm stressed about my visa and immigration status",
+    "response": "Immigration uncertainty is a profound stressor. Your fear is understandable. Do you have legal or community support available?",
+    "keywords": [
+      "stressed",
+      "about",
+      "immigration",
+      "status"
+    ]
+  },
+  {
+    "id": "str_085",
+    "category": "stress",
+    "context": "Political news stress affects my daily mood",
+    "response": "Staying informed while protecting mental health is a balance many struggle with. Curating intake can help. What limit might feel right?",
+    "keywords": [
+      "political",
+      "stress",
+      "affects",
+      "daily"
+    ]
+  },
+  {
+    "id": "str_086",
+    "category": "stress",
+    "context": "Work deadlines are crushing me and I can't cope",
+    "response": "Deadline pressure can feel like drowning. Your stress is a signal that your load may be too heavy. Which deadline is weighing on you most?",
+    "keywords": [
+      "deadlines",
+      "crushing",
+      "can't"
+    ]
+  },
+  {
+    "id": "str_087",
+    "category": "stress",
+    "context": "I'm stressed about money and supporting my family",
+    "response": "Financial stress affects the whole household and carries deep responsibility. You're carrying a lot. Have you been able to talk to anyone about practical next steps?",
+    "keywords": [
+      "stressed",
+      "about",
+      "money",
+      "supporting",
+      "family"
+    ]
+  },
+  {
+    "id": "str_088",
+    "category": "stress",
+    "context": "Balancing college, internship, and family is overwhelming",
+    "response": "Wearing multiple roles at once is genuinely overwhelming. Something often has to give — and that's not failure. Which role feels most urgent this week?",
+    "keywords": [
+      "balancing",
+      "college,",
+      "internship,",
+      "family",
+      "overwhelming"
+    ]
+  },
+  {
+    "id": "str_089",
+    "category": "stress",
+    "context": "My boss is toxic and I'm stressed every Sunday night",
+    "response": "Sunday scaries tied to a difficult workplace are exhausting. Your reaction makes sense. What would feeling even slightly safer at work look like?",
+    "keywords": [
+      "toxic",
+      "stressed",
+      "every",
+      "sunday",
+      "night"
+    ]
+  },
+  {
+    "id": "str_090",
+    "category": "stress",
+    "context": "I feel stressed but I don't know the exact cause",
+    "response": "Sometimes stress shows up before we can name it. Your body may be responding to accumulated pressure. What's changed in your life recently, even small things?",
+    "keywords": [
+      "stressed",
+      "don't",
+      "exact",
+      "cause"
+    ]
+  },
+  {
+    "id": "str_091",
+    "category": "stress",
+    "context": "Family arguments leave me stressed for days",
+    "response": "Family conflict can linger in your body long after the conversation ends. That residual stress is valid. Do you have space to decompress after those moments?",
+    "keywords": [
+      "family",
+      "arguments",
+      "leave",
+      "stressed"
+    ]
+  },
+  {
+    "id": "str_092",
+    "category": "stress",
+    "context": "I'm stressed about my board exam results",
+    "response": "Waiting for results can be agonizing — the uncertainty is its own kind of pain. Many students feel this. What helps you get through difficult waiting periods?",
+    "keywords": [
+      "stressed",
+      "about",
+      "board",
+      "results"
+    ]
+  },
+  {
+    "id": "str_093",
+    "category": "stress",
+    "context": "Too many responsibilities — I can't say no to anyone",
+    "response": "Difficulty saying no often comes from wanting to be helpful or avoid conflict. Your limits matter too. What would you say no to if you felt you could?",
+    "keywords": [
+      "responsibilities",
+      "can't",
+      "anyone"
+    ]
+  },
+  {
+    "id": "str_094",
+    "category": "stress",
+    "context": "I'm stressed about moving to a new city for work",
+    "response": "Big transitions stir stress even when they're positive. Leaving familiar support takes courage. What part of the move worries you most?",
+    "keywords": [
+      "stressed",
+      "about",
+      "moving"
+    ]
+  },
+  {
+    "id": "str_095",
+    "category": "stress",
+    "context": "Constant notifications and hustle culture stress me out",
+    "response": "Always-on culture can keep your nervous system activated. It's okay to want boundaries. Have you tried any digital or schedule boundaries?",
+    "keywords": [
+      "constant",
+      "notifications",
+      "hustle",
+      "culture",
+      "stress"
+    ]
+  },
+  {
+    "id": "sle_096",
+    "category": "sleep",
+    "context": "I can't fall asleep no matter how tired I am",
+    "response": "Insomnia when you're exhausted is cruel. Your mind may be protecting you by staying alert. What tends to run through your head at bedtime?",
+    "keywords": [
+      "can't",
+      "asleep",
+      "matter",
+      "tired"
+    ]
+  },
+  {
+    "id": "sle_097",
+    "category": "sleep",
+    "context": "I wake up at 3am and can't go back to sleep",
+    "response": "Middle-of-the-night waking is common with stress and anxiety. You're not alone. What do you usually do when you're awake at that hour?",
+    "keywords": [
+      "can't",
+      "sleep"
+    ]
+  },
+  {
+    "id": "sle_098",
+    "category": "sleep",
+    "context": "I have nightmares about past events",
+    "response": "Nightmares can make sleep feel unsafe. Your mind may be processing trauma or stress. Have these been recent, and do you feel safe during the day?",
+    "keywords": [
+      "nightmares",
+      "about",
+      "events"
+    ]
+  },
+  {
+    "id": "sle_099",
+    "category": "sleep",
+    "context": "I sleep too much but never feel rested",
+    "response": "Oversleeping without rest often points to depression or burnout. Your body may need recovery, not just hours. How's your mood when you wake up?",
+    "keywords": [
+      "sleep",
+      "never",
+      "rested"
+    ]
+  },
+  {
+    "id": "sle_100",
+    "category": "sleep",
+    "context": "My sleep schedule is completely irregular",
+    "response": "Irregular sleep disrupts mood and energy. Small consistency can help over time. What time do you usually feel most naturally sleepy?",
+    "keywords": [
+      "sleep",
+      "schedule",
+      "completely",
+      "irregular"
+    ]
+  },
+  {
+    "id": "sle_101",
+    "category": "sleep",
+    "context": "I stay up scrolling because quiet feels uncomfortable",
+    "response": "Late-night scrolling often fills silence when feelings feel too big. That's a common coping pattern. What might feel gentler than the phone before bed?",
+    "keywords": [
+      "scrolling",
+      "because",
+      "quiet",
+      "feels",
+      "uncomfortable"
+    ]
+  },
+  {
+    "id": "sle_102",
+    "category": "sleep",
+    "context": "I'm exhausted from caring for a sick parent at night",
+    "response": "Caregiver fatigue is real and often invisible. You're giving a lot. Is there anyone who could share even one night of responsibility?",
+    "keywords": [
+      "exhausted",
+      "caring",
+      "parent",
+      "night"
+    ]
+  },
+  {
+    "id": "sle_103",
+    "category": "sleep",
+    "context": "Caffeine and stress are ruining my sleep",
+    "response": "Stress and stimulants can feed each other in a loop. Noticing the pattern is a good first step. When do you usually have your last coffee or tea?",
+    "keywords": [
+      "caffeine",
+      "stress",
+      "ruining",
+      "sleep"
+    ]
+  },
+  {
+    "id": "sle_104",
+    "category": "sleep",
+    "context": "I dread going to bed because my thoughts get louder",
+    "response": "Bedtime can amplify worries when there's no distraction. A wind-down ritual sometimes helps. Have you tried journaling or breathing before sleep?",
+    "keywords": [
+      "dread",
+      "going",
+      "because",
+      "thoughts",
+      "louder"
+    ]
+  },
+  {
+    "id": "sle_105",
+    "category": "sleep",
+    "context": "Shift work is destroying my sleep and mood",
+    "response": "Shift work challenges your body's natural rhythm. That strain is legitimate. What small adjustment has helped even slightly?",
+    "keywords": [
+      "shift",
+      "destroying",
+      "sleep"
+    ]
+  },
+  {
+    "id": "sle_106",
+    "category": "sleep",
+    "context": "Partner's snoring keeps me awake and irritable",
+    "response": "Sleep disruption affects mood and patience. Earplugs, separate sleep, or medical check may help. Have you been able to discuss it calmly?",
+    "keywords": [
+      "partner's",
+      "snoring",
+      "keeps",
+      "awake",
+      "irritable"
+    ]
+  },
+  {
+    "id": "sle_107",
+    "category": "sleep",
+    "context": "Jet lag messed up my sleep for weeks",
+    "response": "Travel across time zones disrupts circadian rhythm. Recovery takes patience. Are you back home now or still adjusting?",
+    "keywords": [
+      "messed",
+      "sleep",
+      "weeks"
+    ]
+  },
+  {
+    "id": "sle_108",
+    "category": "sleep",
+    "context": "I use alcohol to fall asleep but feel worse",
+    "response": "Alcohol may induce sleep but reduces quality. Wanting rest is valid; healthier tools exist. Would you consider talking to a doctor?",
+    "keywords": [
+      "alcohol",
+      "asleep",
+      "worse"
+    ]
+  },
+  {
+    "id": "sle_109",
+    "category": "sleep",
+    "context": "Menopause hot flashes wake me every night",
+    "response": "Hormonal sleep disruption is real and tiring. Medical support can improve nights. Have you explored options with a clinician?",
+    "keywords": [
+      "menopause",
+      "flashes",
+      "every",
+      "night"
+    ]
+  },
+  {
+    "id": "sle_110",
+    "category": "sleep",
+    "context": "Anxiety about tomorrow's meeting keeps me awake",
+    "response": "Anticipatory anxiety at night is common. Writing worries down or a brief plan sometimes eases the mind. What's the main fear about the meeting?",
+    "keywords": [
+      "anxiety",
+      "about",
+      "tomorrow's",
+      "meeting",
+      "keeps"
+    ]
+  },
+  {
+    "id": "sle_111",
+    "category": "sleep",
+    "context": "I can't fall asleep no matter how tired I am",
+    "response": "Insomnia when you're exhausted is cruel. Your mind may be protecting you by staying alert. What tends to run through your head at bedtime?",
+    "keywords": [
+      "can't",
+      "asleep",
+      "matter",
+      "tired"
+    ]
+  },
+  {
+    "id": "sle_112",
+    "category": "sleep",
+    "context": "I wake up at 3am and can't go back to sleep",
+    "response": "Middle-of-the-night waking is common with stress and anxiety. You're not alone. What do you usually do when you're awake at that hour?",
+    "keywords": [
+      "can't",
+      "sleep"
+    ]
+  },
+  {
+    "id": "sle_113",
+    "category": "sleep",
+    "context": "I have nightmares about past events",
+    "response": "Nightmares can make sleep feel unsafe. Your mind may be processing trauma or stress. Have these been recent, and do you feel safe during the day?",
+    "keywords": [
+      "nightmares",
+      "about",
+      "events"
+    ]
+  },
+  {
+    "id": "sle_114",
+    "category": "sleep",
+    "context": "I sleep too much but never feel rested",
+    "response": "Oversleeping without rest often points to depression or burnout. Your body may need recovery, not just hours. How's your mood when you wake up?",
+    "keywords": [
+      "sleep",
+      "never",
+      "rested"
+    ]
+  },
+  {
+    "id": "sle_115",
+    "category": "sleep",
+    "context": "My sleep schedule is completely irregular",
+    "response": "Irregular sleep disrupts mood and energy. Small consistency can help over time. What time do you usually feel most naturally sleepy?",
+    "keywords": [
+      "sleep",
+      "schedule",
+      "completely",
+      "irregular"
+    ]
+  },
+  {
+    "id": "lon_116",
+    "category": "loneliness",
+    "context": "I feel lonely even when I'm around people",
+    "response": "Loneliness in a crowd is painfully common — it's about connection quality, not headcount. What kind of connection do you wish you had?",
+    "keywords": [
+      "lonely",
+      "around",
+      "people"
+    ]
+  },
+  {
+    "id": "lon_117",
+    "category": "loneliness",
+    "context": "I moved away from home and feel isolated",
+    "response": "Moving away from familiar support is a major adjustment. Missing home doesn't mean you're failing. Who do you still feel connected to, even from a distance?",
+    "keywords": [
+      "moved",
+      "isolated"
+    ]
+  },
+  {
+    "id": "lon_118",
+    "category": "loneliness",
+    "context": "No one really understands what I'm going through",
+    "response": "Feeling misunderstood can deepen loneliness. Your experience is valid even if others don't get it yet. Would talking to a counselor or support group feel possible?",
+    "keywords": [
+      "really",
+      "understands",
+      "going",
+      "through"
+    ]
+  },
+  {
+    "id": "lon_119",
+    "category": "loneliness",
+    "context": "I lost touch with friends after graduation",
+    "response": "Life transitions often scatter friend groups. That loss hurts. Is there one person you'd consider reaching out to?",
+    "keywords": [
+      "touch",
+      "friends",
+      "after",
+      "graduation"
+    ]
+  },
+  {
+    "id": "lon_120",
+    "category": "loneliness",
+    "context": "I spend weekends alone and it hurts",
+    "response": "Empty weekends can amplify loneliness. You're not alone in feeling this. What would a comforting weekend look like, even in a small way?",
+    "keywords": [
+      "spend",
+      "weekends",
+      "alone",
+      "hurts"
+    ]
+  },
+  {
+    "id": "lon_121",
+    "category": "loneliness",
+    "context": "I feel like I don't belong anywhere",
+    "response": "Belonging is a deep human need. Feeling outside can be crushing. Where have you felt even slightly accepted before?",
+    "keywords": [
+      "don't",
+      "belong",
+      "anywhere"
+    ]
+  },
+  {
+    "id": "lon_122",
+    "category": "loneliness",
+    "context": "Social media makes me feel more lonely",
+    "response": "Comparing curated lives to your own often deepens isolation. Your feelings make sense. What would taking a break from scrolling feel like?",
+    "keywords": [
+      "social",
+      "media",
+      "makes",
+      "lonely"
+    ]
+  },
+  {
+    "id": "lon_123",
+    "category": "loneliness",
+    "context": "I'm introverted but I still crave connection",
+    "response": "Wanting connection while needing solitude isn't contradictory. Both can be true. What low-energy connection might feel doable?",
+    "keywords": [
+      "introverted",
+      "still",
+      "crave",
+      "connection"
+    ]
+  },
+  {
+    "id": "lon_124",
+    "category": "loneliness",
+    "context": "My roommate and I don't talk — I feel alone at home",
+    "response": "Home should feel safe; silence there can sting. Would a small gesture — tea, a note — feel possible to break the ice?",
+    "keywords": [
+      "roommate",
+      "don't",
+      "alone"
+    ]
+  },
+  {
+    "id": "lon_125",
+    "category": "loneliness",
+    "context": "I work from home and barely see anyone",
+    "response": "Remote work can shrink your social world quickly. Loneliness here is structural, not personal failing. What one social ritual could you add this week?",
+    "keywords": [
+      "barely",
+      "anyone"
+    ]
+  },
+  {
+    "id": "lon_126",
+    "category": "loneliness",
+    "context": "I'm the only one in my friend group without a partner",
+    "response": "Singlehood in coupled friend groups can feel isolating. Your timeline is your own. What connections nourish you outside romance?",
+    "keywords": [
+      "friend",
+      "group",
+      "without",
+      "partner"
+    ]
+  },
+  {
+    "id": "lon_127",
+    "category": "loneliness",
+    "context": "Chronic illness limits my social life",
+    "response": "Health barriers to socializing are real, not personal failure. Online or low-energy connection may help. What format feels most doable?",
+    "keywords": [
+      "chronic",
+      "illness",
+      "limits",
+      "social"
+    ]
+  },
+  {
+    "id": "lon_128",
+    "category": "loneliness",
+    "context": "I feel lonely in my marriage",
+    "response": "Loneliness within partnership hurts deeply. Naming it is brave. Have you been able to tell your partner what you need?",
+    "keywords": [
+      "lonely",
+      "marriage"
+    ]
+  },
+  {
+    "id": "lon_129",
+    "category": "loneliness",
+    "context": "Retirement left me without daily social contact",
+    "response": "Work often provides structure and connection; retirement shifts both. New routines take time. What activity might bring you near people?",
+    "keywords": [
+      "retirement",
+      "without",
+      "daily",
+      "social",
+      "contact"
+    ]
+  },
+  {
+    "id": "lon_130",
+    "category": "loneliness",
+    "context": "I'm shy and lonely but afraid of rejection",
+    "response": "Fear of rejection keeps many people isolated. Small steps reduce risk. What's the gentlest social step you could try?",
+    "keywords": [
+      "lonely",
+      "afraid",
+      "rejection"
+    ]
+  },
+  {
+    "id": "lon_131",
+    "category": "loneliness",
+    "context": "I feel lonely even when I'm around people",
+    "response": "Loneliness in a crowd is painfully common — it's about connection quality, not headcount. What kind of connection do you wish you had?",
+    "keywords": [
+      "lonely",
+      "around",
+      "people"
+    ]
+  },
+  {
+    "id": "lon_132",
+    "category": "loneliness",
+    "context": "I moved away from home and feel isolated",
+    "response": "Moving away from familiar support is a major adjustment. Missing home doesn't mean you're failing. Who do you still feel connected to, even from a distance?",
+    "keywords": [
+      "moved",
+      "isolated"
+    ]
+  },
+  {
+    "id": "lon_133",
+    "category": "loneliness",
+    "context": "No one really understands what I'm going through",
+    "response": "Feeling misunderstood can deepen loneliness. Your experience is valid even if others don't get it yet. Would talking to a counselor or support group feel possible?",
+    "keywords": [
+      "really",
+      "understands",
+      "going",
+      "through"
+    ]
+  },
+  {
+    "id": "lon_134",
+    "category": "loneliness",
+    "context": "I lost touch with friends after graduation",
+    "response": "Life transitions often scatter friend groups. That loss hurts. Is there one person you'd consider reaching out to?",
+    "keywords": [
+      "touch",
+      "friends",
+      "after",
+      "graduation"
+    ]
+  },
+  {
+    "id": "lon_135",
+    "category": "loneliness",
+    "context": "I spend weekends alone and it hurts",
+    "response": "Empty weekends can amplify loneliness. You're not alone in feeling this. What would a comforting weekend look like, even in a small way?",
+    "keywords": [
+      "spend",
+      "weekends",
+      "alone",
+      "hurts"
+    ]
+  },
+  {
+    "id": "sel_136",
+    "category": "self_esteem",
+    "context": "I feel worthless compared to everyone on LinkedIn",
+    "response": "Comparison on professional platforms can shrink your sense of worth. Your path is yours alone. What achievement of yours gets overlooked when you scroll?",
+    "keywords": [
+      "worthless",
+      "compared",
+      "everyone",
+      "linkedin"
+    ]
+  },
+  {
+    "id": "sel_137",
+    "category": "self_esteem",
+    "context": "I feel like an imposter at my new job",
+    "response": "Imposter feelings often visit capable people in new roles. Evidence of your skills may exist even if you dismiss it. What feedback have you received that you brushed off?",
+    "keywords": [
+      "imposter"
+    ]
+  },
+  {
+    "id": "sel_138",
+    "category": "self_esteem",
+    "context": "I hate how I look and avoid mirrors",
+    "response": "Body image struggles are painful and common. You deserve kindness toward yourself. When did these feelings become strongest?",
+    "keywords": [
+      "avoid",
+      "mirrors"
+    ]
+  },
+  {
+    "id": "sel_139",
+    "category": "self_esteem",
+    "context": "I never feel good enough for my parents",
+    "response": "Seeking parental approval while building your own identity is hard. Your worth isn't only their approval. What would you say to a friend in your situation?",
+    "keywords": [
+      "never",
+      "enough",
+      "parents"
+    ]
+  },
+  {
+    "id": "sel_140",
+    "category": "self_esteem",
+    "context": "I criticize myself constantly in my head",
+    "response": "That inner critic can be relentless. Noticing it is already a step toward change. What would you say if a friend spoke about themselves that way?",
+    "keywords": [
+      "criticize",
+      "myself",
+      "constantly"
+    ]
+  },
+  {
+    "id": "sel_141",
+    "category": "self_esteem",
+    "context": "I failed an exam and feel like a complete failure",
+    "response": "One exam measures performance in a moment, not your value as a person. Many successful people have failed tests. What would recovery look like step by step?",
+    "keywords": [
+      "failed",
+      "complete",
+      "failure"
+    ]
+  },
+  {
+    "id": "sel_142",
+    "category": "self_esteem",
+    "context": "Everyone seems more confident than me",
+    "response": "Confidence often looks louder than it feels inside. Many people mask insecurity. What would acting 'as if' look like in one small situation?",
+    "keywords": [
+      "everyone",
+      "seems",
+      "confident"
+    ]
+  },
+  {
+    "id": "sel_143",
+    "category": "self_esteem",
+    "context": "I don't believe compliments people give me",
+    "response": "Dismissing praise often protects against disappointment but also blocks self-compassion. What if one compliment were partly true?",
+    "keywords": [
+      "don't",
+      "believe",
+      "compliments",
+      "people"
+    ]
+  },
+  {
+    "id": "sel_144",
+    "category": "self_esteem",
+    "context": "I feel stupid when I speak up in meetings",
+    "response": "Speaking up takes courage; self-doubt afterward is common. Your voice matters. What would help you prepare for the next meeting?",
+    "keywords": [
+      "stupid",
+      "speak",
+      "meetings"
+    ]
+  },
+  {
+    "id": "sel_145",
+    "category": "self_esteem",
+    "context": "I've been rejected and my self-esteem crashed",
+    "response": "Rejection hurts deeply and can shake how you see yourself. The pain is real. What do you know to be true about yourself beyond this moment?",
+    "keywords": [
+      "rejected",
+      "self-esteem",
+      "crashed"
+    ]
+  },
+  {
+    "id": "sel_146",
+    "category": "self_esteem",
+    "context": "Therapy made me realize how harsh my inner voice is",
+    "response": "Noticing the inner critic is powerful — awareness precedes change. What would a kinder voice say about today?",
+    "keywords": [
+      "therapy",
+      "realize",
+      "harsh",
+      "inner",
+      "voice"
+    ]
+  },
+  {
+    "id": "sel_147",
+    "category": "self_esteem",
+    "context": "I compare my body to influencers daily",
+    "response": "Curated images distort reality. Your body deserves respect. What account or habit could you change first?",
+    "keywords": [
+      "compare",
+      "influencers",
+      "daily"
+    ]
+  },
+  {
+    "id": "sel_148",
+    "category": "self_esteem",
+    "context": "I feel behind in life at 30",
+    "response": "Societal timelines are arbitrary; many paths unfold later. Your pace is valid. What would 'enough' mean for you this year?",
+    "keywords": [
+      "behind"
+    ]
+  },
+  {
+    "id": "sel_149",
+    "category": "self_esteem",
+    "context": "Public speaking terror hurts my career",
+    "response": "Speaking anxiety is treatable with practice and support. Many leaders still feel nerves. What small speaking practice could you try?",
+    "keywords": [
+      "public",
+      "speaking",
+      "terror",
+      "hurts",
+      "career"
+    ]
+  },
+  {
+    "id": "sel_150",
+    "category": "self_esteem",
+    "context": "I was bullied and still carry low self-worth",
+    "response": "Bullying wounds can last years; healing is possible with support. You deserved better then. What would you tell your younger self?",
+    "keywords": [
+      "bullied",
+      "still",
+      "carry",
+      "self-worth"
+    ]
+  },
+  {
+    "id": "sel_151",
+    "category": "self_esteem",
+    "context": "I feel worthless compared to everyone on LinkedIn",
+    "response": "Comparison on professional platforms can shrink your sense of worth. Your path is yours alone. What achievement of yours gets overlooked when you scroll?",
+    "keywords": [
+      "worthless",
+      "compared",
+      "everyone",
+      "linkedin"
+    ]
+  },
+  {
+    "id": "sel_152",
+    "category": "self_esteem",
+    "context": "I feel like an imposter at my new job",
+    "response": "Imposter feelings often visit capable people in new roles. Evidence of your skills may exist even if you dismiss it. What feedback have you received that you brushed off?",
+    "keywords": [
+      "imposter"
+    ]
+  },
+  {
+    "id": "sel_153",
+    "category": "self_esteem",
+    "context": "I hate how I look and avoid mirrors",
+    "response": "Body image struggles are painful and common. You deserve kindness toward yourself. When did these feelings become strongest?",
+    "keywords": [
+      "avoid",
+      "mirrors"
+    ]
+  },
+  {
+    "id": "sel_154",
+    "category": "self_esteem",
+    "context": "I never feel good enough for my parents",
+    "response": "Seeking parental approval while building your own identity is hard. Your worth isn't only their approval. What would you say to a friend in your situation?",
+    "keywords": [
+      "never",
+      "enough",
+      "parents"
+    ]
+  },
+  {
+    "id": "sel_155",
+    "category": "self_esteem",
+    "context": "I criticize myself constantly in my head",
+    "response": "That inner critic can be relentless. Noticing it is already a step toward change. What would you say if a friend spoke about themselves that way?",
+    "keywords": [
+      "criticize",
+      "myself",
+      "constantly"
+    ]
+  },
+  {
+    "id": "gri_156",
+    "category": "grief",
+    "context": "I lost my grandmother and can't stop grieving",
+    "response": "Losing someone who raised or loved you leaves a lasting ache. Grief has no timetable. What do you miss most about her?",
+    "keywords": [
+      "grandmother",
+      "can't",
+      "grieving"
+    ]
+  },
+  {
+    "id": "gri_157",
+    "category": "grief",
+    "context": "I feel guilty for laughing after someone died",
+    "response": "Guilt mixed with moments of joy is normal in grief. Laughing doesn't mean you love them less. How are you caring for yourself through this?",
+    "keywords": [
+      "guilty",
+      "laughing",
+      "after",
+      "someone"
+    ]
+  },
+  {
+    "id": "gri_158",
+    "category": "grief",
+    "context": "I never got to say goodbye properly",
+    "response": "Unfinished goodbyes can haunt grief. Your longing to have said more is love speaking. Would writing a letter to them feel meaningful?",
+    "keywords": [
+      "never",
+      "goodbye",
+      "properly"
+    ]
+  },
+  {
+    "id": "gri_159",
+    "category": "grief",
+    "context": "Anniversaries of their death are especially hard",
+    "response": "Anniversary grief can feel as fresh as the first day. Planning gentle support for those dates can help. What would comfort you on that day?",
+    "keywords": [
+      "anniversaries",
+      "their",
+      "death",
+      "especially"
+    ]
+  },
+  {
+    "id": "gri_160",
+    "category": "grief",
+    "context": "My family expects me to move on but I'm not ready",
+    "response": "Grief timelines differ; pressure to 'move on' can isolate you. Your pace is valid. What do you need from people around you?",
+    "keywords": [
+      "family",
+      "expects",
+      "ready"
+    ]
+  },
+  {
+    "id": "gri_161",
+    "category": "grief",
+    "context": "I lost a pet and people don't understand my pain",
+    "response": "Pet loss is real grief. Those bonds matter deeply. Tell me about them — what made your connection special?",
+    "keywords": [
+      "people",
+      "don't",
+      "understand"
+    ]
+  },
+  {
+    "id": "gri_162",
+    "category": "grief",
+    "context": "I'm grieving the end of a relationship",
+    "response": "Relationship loss is a form of grief — dreams and routines die too. Heartbreak is legitimate. What part of the loss hurts most right now?",
+    "keywords": [
+      "grieving",
+      "relationship"
+    ]
+  },
+  {
+    "id": "gri_163",
+    "category": "grief",
+    "context": "I feel angry at the world after my loss",
+    "response": "Anger is a common part of grief, not a character flaw. It often protects deeper sadness. What are you most angry about?",
+    "keywords": [
+      "angry",
+      "world",
+      "after"
+    ]
+  },
+  {
+    "id": "gri_164",
+    "category": "grief",
+    "context": "I dream about the person I lost every night",
+    "response": "Grief dreams can feel like visits or reopening wounds. Both are normal. Do the dreams bring comfort or more pain?",
+    "keywords": [
+      "dream",
+      "about",
+      "person",
+      "every",
+      "night"
+    ]
+  },
+  {
+    "id": "gri_165",
+    "category": "grief",
+    "context": "I moved on practically but emotionally I'm stuck",
+    "response": "Functioning while grieving inside is exhausting. You're allowed to still hurt. What feeling have you been pushing away?",
+    "keywords": [
+      "moved",
+      "practically",
+      "emotionally",
+      "stuck"
+    ]
+  },
+  {
+    "id": "gri_166",
+    "category": "grief",
+    "context": "Miscarriage grief feels invisible to others",
+    "response": "Pregnancy loss grief is profound and often minimized. Your baby mattered. Have you found anyone who validates this loss?",
+    "keywords": [
+      "miscarriage",
+      "grief",
+      "feels",
+      "invisible",
+      "others"
+    ]
+  },
+  {
+    "id": "gri_167",
+    "category": "grief",
+    "context": "I lost my job and I'm grieving that identity",
+    "response": "Job loss is identity loss too. Mourning that is appropriate. What parts of yourself did that role hold?",
+    "keywords": [
+      "grieving",
+      "identity"
+    ]
+  },
+  {
+    "id": "gri_168",
+    "category": "grief",
+    "context": "My sibling died and our family doesn't talk about it",
+    "response": "Silent grief in families can isolate survivors. Breaking silence takes courage. Would sharing a memory feel possible?",
+    "keywords": [
+      "sibling",
+      "family",
+      "doesn't",
+      "about"
+    ]
+  },
+  {
+    "id": "gri_169",
+    "category": "grief",
+    "context": "I'm grieving my health after diagnosis",
+    "response": "Health grief is real — mourning the body or life you expected. Adjustment takes time. What support have you found?",
+    "keywords": [
+      "grieving",
+      "health",
+      "after",
+      "diagnosis"
+    ]
+  },
+  {
+    "id": "gri_170",
+    "category": "grief",
+    "context": "Holiday seasons without them are unbearable",
+    "response": "First holidays without someone are especially sharp. Planning rituals of remembrance may help. What tradition would honor them?",
+    "keywords": [
+      "holiday",
+      "seasons",
+      "without",
+      "unbearable"
+    ]
+  },
+  {
+    "id": "ang_171",
+    "category": "anger",
+    "context": "I snap at people I love and regret it immediately",
+    "response": "Anger toward loved ones often comes from stress or hurt underneath. Regret shows you care. What usually triggers the snap?",
+    "keywords": [
+      "people",
+      "regret",
+      "immediately"
+    ]
+  },
+  {
+    "id": "ang_172",
+    "category": "anger",
+    "context": "I feel rage I can't express safely",
+    "response": "Unexpressed anger can build pressure. Finding safe outlets matters. What happens to your body when rage rises?",
+    "keywords": [
+      "can't",
+      "express",
+      "safely"
+    ]
+  },
+  {
+    "id": "ang_173",
+    "category": "anger",
+    "context": "Traffic and daily irritations make me furious",
+    "response": "Daily friction can accumulate into disproportionate anger. Your nervous system may be overloaded. What else has been stressing you lately?",
+    "keywords": [
+      "traffic",
+      "daily",
+      "irritations",
+      "furious"
+    ]
+  },
+  {
+    "id": "ang_174",
+    "category": "anger",
+    "context": "I'm angry at myself for past mistakes",
+    "response": "Self-directed anger can be harsh and looping. You were doing your best with what you knew then. What would forgiveness look like in one small step?",
+    "keywords": [
+      "angry",
+      "myself",
+      "mistakes"
+    ]
+  },
+  {
+    "id": "ang_175",
+    "category": "anger",
+    "context": "Injustice in the news makes me constantly angry",
+    "response": "Moral anger at injustice is human. It can also drain you. How do you balance caring with protecting your peace?",
+    "keywords": [
+      "injustice",
+      "makes",
+      "constantly",
+      "angry"
+    ]
+  },
+  {
+    "id": "ang_176",
+    "category": "anger",
+    "context": "I was yelled at growing up and now I struggle with anger",
+    "response": "Childhood exposure to anger shapes how we regulate it. Patterns can be unlearned with support. Have you considered talking to a therapist about this?",
+    "keywords": [
+      "yelled",
+      "growing",
+      "struggle",
+      "anger"
+    ]
+  },
+  {
+    "id": "ang_177",
+    "category": "anger",
+    "context": "I feel angry when I'm actually hurt or scared",
+    "response": "Anger often masks softer feelings like hurt or fear. Naming the primary emotion can help. Under the anger, what might you be feeling?",
+    "keywords": [
+      "angry",
+      "actually",
+      "scared"
+    ]
+  },
+  {
+    "id": "ang_178",
+    "category": "anger",
+    "context": "My partner and I fight loudly and I hate it",
+    "response": "Conflict cycles can feel scary and shameful. Pausing before escalation is a skill you can build. What usually starts the fights?",
+    "keywords": [
+      "partner",
+      "fight",
+      "loudly"
+    ]
+  },
+  {
+    "id": "ang_179",
+    "category": "anger",
+    "context": "I punch walls when overwhelmed — I want to stop",
+    "response": "Physical anger outlets can feel urgent but risky. Wanting to stop is important. What warning signs appear in your body before you hit a wall?",
+    "keywords": [
+      "punch",
+      "walls",
+      "overwhelmed"
+    ]
+  },
+  {
+    "id": "ang_180",
+    "category": "anger",
+    "context": "Passive aggression is ruining my friendships",
+    "response": "Indirect anger often protects against vulnerability but damages trust. Noticing the pattern is a start. What are you afraid would happen if you spoke directly?",
+    "keywords": [
+      "passive",
+      "aggression",
+      "ruining",
+      "friendships"
+    ]
+  },
+  {
+    "id": "ang_181",
+    "category": "anger",
+    "context": "Road rage scares me — I want calmer reactions",
+    "response": "Recognizing dangerous anger patterns is important. Pause techniques and therapy can help. What happens in the seconds before you react?",
+    "keywords": [
+      "scares",
+      "calmer",
+      "reactions"
+    ]
+  },
+  {
+    "id": "ang_182",
+    "category": "anger",
+    "context": "I'm angry at God or fate after tragedy",
+    "response": "Spiritual or existential anger is part of many grief journeys. Your questions are allowed. What would comfort look like if not answers?",
+    "keywords": [
+      "angry",
+      "after",
+      "tragedy"
+    ]
+  },
+  {
+    "id": "ang_183",
+    "category": "anger",
+    "context": "Workplace bullying makes me angry and helpless",
+    "response": "Bullying combines anger with powerlessness. Documenting and seeking HR or external support may help. Do you feel safe reporting?",
+    "keywords": [
+      "workplace",
+      "bullying",
+      "makes",
+      "angry",
+      "helpless"
+    ]
+  },
+  {
+    "id": "ang_184",
+    "category": "anger",
+    "context": "I dissociate when angry instead of expressing it",
+    "response": "Shutdown during anger is a protective response. Learning safe expression takes time. Do you notice body signals before shutdown?",
+    "keywords": [
+      "dissociate",
+      "angry",
+      "instead",
+      "expressing"
+    ]
+  },
+  {
+    "id": "ang_185",
+    "category": "anger",
+    "context": "Hormonal changes make my anger unpredictable",
+    "response": "Hormonal mood shifts are physical, not character flaws. Tracking cycles and talking to a doctor can help. Have you discussed this with a clinician?",
+    "keywords": [
+      "hormonal",
+      "changes",
+      "anger",
+      "unpredictable"
+    ]
+  },
+  {
+    "id": "rel_186",
+    "category": "relationships",
+    "context": "My partner and I keep having the same argument",
+    "response": "Repeating arguments often mean an underlying need isn't met. The topic may be a symptom. What do you each really need in those moments?",
+    "keywords": [
+      "partner",
+      "having",
+      "argument"
+    ]
+  },
+  {
+    "id": "rel_187",
+    "category": "relationships",
+    "context": "I'm heartbroken after a breakup",
+    "response": "Breakups can feel like grief — because they are. Allow yourself time. What part of the relationship do you miss most?",
+    "keywords": [
+      "heartbroken",
+      "after",
+      "breakup"
+    ]
+  },
+  {
+    "id": "rel_188",
+    "category": "relationships",
+    "context": "I don't trust my partner after they lied",
+    "response": "Broken trust is painful and takes time to rebuild, if you choose to. Your caution makes sense. What would rebuilding trust require from both of you?",
+    "keywords": [
+      "don't",
+      "trust",
+      "partner",
+      "after"
+    ]
+  },
+  {
+    "id": "rel_189",
+    "category": "relationships",
+    "context": "My parents don't approve of my relationship",
+    "response": "Family disapproval adds stress to love. Your feelings and their concerns both matter. What would a honest conversation look like?",
+    "keywords": [
+      "parents",
+      "don't",
+      "approve",
+      "relationship"
+    ]
+  },
+  {
+    "id": "rel_190",
+    "category": "relationships",
+    "context": "I feel neglected in my marriage",
+    "response": "Feeling unseen by a partner is lonely. Your need for attention is valid. Have you been able to name what neglect looks like for you?",
+    "keywords": [
+      "neglected",
+      "marriage"
+    ]
+  },
+  {
+    "id": "rel_191",
+    "category": "relationships",
+    "context": "Friend drama is affecting my mental health",
+    "response": "Friendship conflict can destabilize your whole week. Boundaries may help. What outcome would feel fairest to you?",
+    "keywords": [
+      "friend",
+      "drama",
+      "affecting",
+      "mental",
+      "health"
+    ]
+  },
+  {
+    "id": "rel_192",
+    "category": "relationships",
+    "context": "I'm scared of being abandoned",
+    "response": "Abandonment fear often comes from past experiences. It can shape how you attach now. When do you notice this fear strongest?",
+    "keywords": [
+      "scared",
+      "being",
+      "abandoned"
+    ]
+  },
+  {
+    "id": "rel_193",
+    "category": "relationships",
+    "context": "I can't set boundaries with toxic family",
+    "response": "Boundaries with family are among the hardest. Small limits still count. What's one boundary that would protect your peace?",
+    "keywords": [
+      "can't",
+      "boundaries",
+      "toxic",
+      "family"
+    ]
+  },
+  {
+    "id": "rel_194",
+    "category": "relationships",
+    "context": "Long distance is straining our relationship",
+    "response": "Distance tests trust and communication. Strain doesn't mean failure. What helps you feel connected across the miles?",
+    "keywords": [
+      "distance",
+      "straining",
+      "relationship"
+    ]
+  },
+  {
+    "id": "rel_195",
+    "category": "relationships",
+    "context": "I feel jealous and ashamed of it",
+    "response": "Jealousy often signals insecurity or unmet needs, not bad character. Shame makes it harder to address. What fear sits under the jealousy?",
+    "keywords": [
+      "jealous",
+      "ashamed"
+    ]
+  },
+  {
+    "id": "rel_196",
+    "category": "relationships",
+    "context": "We're considering couples therapy",
+    "response": "Choosing therapy together shows commitment to the relationship. That's a positive step. What issues do you most want to address?",
+    "keywords": [
+      "we're",
+      "considering",
+      "couples",
+      "therapy"
+    ]
+  },
+  {
+    "id": "rel_197",
+    "category": "relationships",
+    "context": "I love my friend but they crossed a boundary",
+    "response": "Boundary violations strain trust. Naming the hurt is valid. What would repair require from them?",
+    "keywords": [
+      "friend",
+      "crossed",
+      "boundary"
+    ]
+  },
+  {
+    "id": "rel_198",
+    "category": "relationships",
+    "context": "Cultural differences with in-laws cause tension",
+    "response": "Blending families across cultures takes negotiation. Your stress is understandable. What boundary would help most?",
+    "keywords": [
+      "cultural",
+      "differences",
+      "in-laws",
+      "cause",
+      "tension"
+    ]
+  },
+  {
+    "id": "rel_199",
+    "category": "relationships",
+    "context": "I'm codependent and lose myself in relationships",
+    "response": "Codependency often comes from early patterns of caregiving. Recovery involves reclaiming self. What do you enjoy when you're alone?",
+    "keywords": [
+      "codependent",
+      "myself",
+      "relationships"
+    ]
+  },
+  {
+    "id": "rel_200",
+    "category": "relationships",
+    "context": "Online dating rejection is hurting my confidence",
+    "response": "Dating app rejection is high-volume and impersonal — it rarely reflects your worth. Taking breaks can restore perspective. How long have you been at it?",
+    "keywords": [
+      "online",
+      "dating",
+      "rejection",
+      "hurting",
+      "confidence"
+    ]
+  },
+  {
+    "id": "crisis_201",
+    "category": "crisis",
+    "context": "I don't want to be here anymore",
+    "response": "CRISIS",
+    "keywords": [
+      "don't",
+      "anymore"
+    ]
+  },
+  {
+    "id": "crisis_202",
+    "category": "crisis",
+    "context": "I've been thinking about hurting myself",
+    "response": "CRISIS",
+    "keywords": [
+      "thinking",
+      "about",
+      "hurting",
+      "myself"
+    ]
+  },
+  {
+    "id": "crisis_203",
+    "category": "crisis",
+    "context": "Sometimes I think everyone would be better off without me",
+    "response": "CRISIS",
+    "keywords": [
+      "sometimes",
+      "think",
+      "everyone",
+      "would",
+      "better"
+    ]
+  },
+  {
+    "id": "crisis_204",
+    "category": "crisis",
+    "context": "I have a plan to end my life",
+    "response": "CRISIS",
+    "keywords": []
+  },
+  {
+    "id": "crisis_205",
+    "category": "crisis",
+    "context": "I can't go on like this anymore",
+    "response": "CRISIS",
+    "keywords": [
+      "can't",
+      "anymore"
+    ]
+  },
+  {
+    "id": "crisis_206",
+    "category": "crisis",
+    "context": "I want to die and I mean it",
+    "response": "CRISIS",
+    "keywords": []
+  },
+  {
+    "id": "crisis_207",
+    "category": "crisis",
+    "context": "I've been cutting myself to feel something",
+    "response": "CRISIS",
+    "keywords": [
+      "cutting",
+      "myself",
+      "something"
+    ]
+  },
+  {
+    "id": "crisis_208",
+    "category": "crisis",
+    "context": "I took pills hoping I wouldn't wake up",
+    "response": "CRISIS",
+    "keywords": [
+      "pills",
+      "hoping",
+      "wouldn't"
+    ]
+  },
+  {
+    "id": "crisis_209",
+    "category": "crisis",
+    "context": "There's no point in living anymore",
+    "response": "CRISIS",
+    "keywords": [
+      "there's",
+      "point",
+      "living",
+      "anymore"
+    ]
+  },
+  {
+    "id": "crisis_210",
+    "category": "crisis",
+    "context": "I'm going to kill myself tonight",
+    "response": "CRISIS",
+    "keywords": [
+      "going",
+      "myself",
+      "tonight"
+    ]
+  },
+  {
+    "id": "crisis_211",
+    "category": "crisis",
+    "context": "I researched methods to end my life",
+    "response": "CRISIS",
+    "keywords": [
+      "researched",
+      "methods"
+    ]
+  },
+  {
+    "id": "crisis_212",
+    "category": "crisis",
+    "context": "Nobody would miss me if I were gone",
+    "response": "CRISIS",
+    "keywords": [
+      "nobody",
+      "would"
+    ]
+  },
+  {
+    "id": "crisis_213",
+    "category": "crisis",
+    "context": "I feel suicidal but I'm scared to tell anyone",
+    "response": "CRISIS",
+    "keywords": [
+      "suicidal",
+      "scared",
+      "anyone"
+    ]
+  },
+  {
+    "id": "crisis_214",
+    "category": "crisis",
+    "context": "Self-harm is the only way I cope with pain",
+    "response": "CRISIS",
+    "keywords": [
+      "self-harm"
+    ]
+  },
+  {
+    "id": "crisis_215",
+    "category": "crisis",
+    "context": "I don't see any way out of this pain",
+    "response": "CRISIS",
+    "keywords": [
+      "don't"
+    ]
+  },
+  {
+    "id": "gri_216",
+    "category": "grief",
+    "context": "It's been a year since my father died and people think I should be over it by now",
+    "response": "Grief doesn't run on other people's timelines. A year is nothing when it comes to losing a parent. What has been the hardest part of this anniversary?",
+    "keywords": [
+      "since",
+      "father",
+      "people",
+      "think",
+      "should"
+    ]
+  },
+  {
+    "id": "gri_217",
+    "category": "grief",
+    "context": "I feel guilty for laughing at a joke last week, like I betrayed my mom's memory",
+    "response": "Feeling joy again after loss can bring guilt, but it doesn't mean you've forgotten her. Grief and living alongside it can coexist. What do you think she would want for you?",
+    "keywords": [
+      "guilty",
+      "laughing",
+      "week",
+      "betrayed",
+      "mom's"
+    ]
+  },
+  {
+    "id": "gri_218",
+    "category": "grief",
+    "context": "My grandmother passed away and I wasn't able to say goodbye in person",
+    "response": "Not being there at the end can leave a painful, unfinished feeling. That regret is real and valid. Is there something you wish you'd said to her?",
+    "keywords": [
+      "grandmother",
+      "passed",
+      "wasn't",
+      "goodbye",
+      "person"
+    ]
+  },
+  {
+    "id": "gri_219",
+    "category": "grief",
+    "context": "I keep reaching for my phone to call my brother before remembering he's gone",
+    "response": "Those small automatic habits are some of the hardest reminders of loss. Your mind is still adjusting to a world without him. How long has it been since he passed?",
+    "keywords": [
+      "reaching",
+      "phone",
+      "brother",
+      "before",
+      "remembering"
+    ]
+  },
+  {
+    "id": "gri_220",
+    "category": "grief",
+    "context": "Our family pet died and everyone says it's just a dog but it feels devastating",
+    "response": "Losing a pet is a real loss, not a lesser one. That bond mattered. What do you miss most about them?",
+    "keywords": [
+      "family",
+      "everyone",
+      "feels",
+      "devastating"
+    ]
+  },
+  {
+    "id": "gri_221",
+    "category": "grief",
+    "context": "I lost my best friend to an accident and I keep replaying our last conversation",
+    "response": "Sudden loss can leave the mind stuck on the last moments, searching for meaning or closure. That's a natural response to shock. What do you remember most from that conversation?",
+    "keywords": [
+      "friend",
+      "accident",
+      "replaying",
+      "conversation"
+    ]
+  },
+  {
+    "id": "gri_222",
+    "category": "grief",
+    "context": "My parents got divorced and I'm grieving the family I thought I'd always have",
+    "response": "Grieving a family structure that's changed is a real form of loss, even without anyone dying. That adjustment takes time. What part of the old normal do you miss most?",
+    "keywords": [
+      "parents",
+      "divorced",
+      "grieving",
+      "family",
+      "thought"
+    ]
+  },
+  {
+    "id": "gri_223",
+    "category": "grief",
+    "context": "I feel like I'm supposed to be strong for my younger siblings after losing our mother",
+    "response": "Carrying grief while also holding others up is an enormous weight, especially for someone still grieving themselves. Who is helping carry that for you?",
+    "keywords": [
+      "supposed",
+      "strong",
+      "younger",
+      "siblings",
+      "after"
+    ]
+  },
+  {
+    "id": "gri_224",
+    "category": "grief",
+    "context": "It's been years since my loss but certain songs still make me fall apart",
+    "response": "Grief doesn't disappear on a schedule — certain triggers can bring it back sharply even years later. That's a normal part of carrying loss long-term. What usually helps you through those moments?",
+    "keywords": [
+      "years",
+      "since",
+      "certain",
+      "songs",
+      "still"
+    ]
+  },
+  {
+    "id": "gri_225",
+    "category": "grief",
+    "context": "I never got to properly grieve because I had to take care of funeral arrangements for everyone else",
+    "response": "Being the one who holds everything together often means your own grief gets postponed. It's still there, waiting. Have you had space yet to just feel it?",
+    "keywords": [
+      "never",
+      "properly",
+      "grieve",
+      "because",
+      "funeral"
+    ]
+  },
+  {
+    "id": "gri_226",
+    "category": "grief",
+    "context": "My friend died by suicide and I keep wondering what I could have done differently",
+    "response": "Losing someone to suicide often comes with guilt and unanswered questions that may never fully resolve. That weight is heavy to carry alone. Have you been able to talk to anyone about this specifically?",
+    "keywords": [
+      "friend",
+      "suicide",
+      "wondering",
+      "could",
+      "differently"
+    ]
+  },
+  {
+    "id": "gri_227",
+    "category": "grief",
+    "context": "I dread visiting home because the house still feels full of my late father's presence",
+    "response": "Spaces can hold grief in a very physical way — every room a reminder. That avoidance makes sense as a form of protection. What would make going back feel even a little easier?",
+    "keywords": [
+      "dread",
+      "visiting",
+      "because",
+      "house",
+      "still"
+    ]
+  },
+  {
+    "id": "gri_228",
+    "category": "grief",
+    "context": "I'm the only one in my family who still cries about losing my sister two years ago",
+    "response": "Everyone grieves differently and on a different timeline — that doesn't mean your grief is wrong or excessive. It sounds lonely to feel out of step with your family. Have you told them how this feels for you?",
+    "keywords": [
+      "family",
+      "still",
+      "cries",
+      "about",
+      "losing"
+    ]
+  },
+  {
+    "id": "gri_229",
+    "category": "grief",
+    "context": "I found out my childhood friend passed away through a social media post",
+    "response": "Learning about a loss that way can feel especially jarring and isolating, without anyone to share the moment with. That's a hard way to receive news like this. How are you processing it right now?",
+    "keywords": [
+      "found",
+      "childhood",
+      "friend",
+      "passed",
+      "through"
+    ]
+  },
+  {
+    "id": "gri_230",
+    "category": "grief",
+    "context": "I feel like I have to hide my grief at work because it's been too long to still be sad",
+    "response": "Grief doesn't follow a workplace-appropriate schedule, even though it can feel like there's pressure to perform being okay. Your feelings are still valid. Is there anyone at work you trust enough to be honest with?",
+    "keywords": [
+      "grief",
+      "because",
+      "still"
+    ]
+  },
+  {
+    "id": "gri_231",
+    "category": "grief",
+    "context": "My partner and I lost a pregnancy and I don't know how to talk about it with anyone",
+    "response": "Pregnancy loss is a real, profound grief that's often met with silence from others. You don't have to carry this quietly if you don't want to. Has your partner been able to grieve alongside you?",
+    "keywords": [
+      "partner",
+      "pregnancy",
+      "don't",
+      "about",
+      "anyone"
+    ]
+  },
+  {
+    "id": "gri_232",
+    "category": "grief",
+    "context": "I'm angry at my father for dying so young and leaving us to handle everything",
+    "response": "Anger is a completely normal part of grief, even directed at the person you lost. It doesn't mean you loved them any less. What feels most unfair about how things happened?",
+    "keywords": [
+      "angry",
+      "father",
+      "dying",
+      "young",
+      "leaving"
+    ]
+  },
+  {
+    "id": "gri_233",
+    "category": "grief",
+    "context": "Every festival season reminds me painfully of who used to be at the table with us",
+    "response": "Holidays and festivals can sharpen absence in a way ordinary days don't. That anticipatory dread before those days is real. Is there a way you'd want to honor their memory during the season?",
+    "keywords": [
+      "every",
+      "festival",
+      "season",
+      "reminds",
+      "painfully"
+    ]
+  },
+  {
+    "id": "gri_234",
+    "category": "grief",
+    "context": "I don't know how to support my mother through her grief while also grieving myself",
+    "response": "Grieving alongside someone else while also trying to support them is exhausting and complicated. You're allowed to need support too, not just give it. Who is checking in on you?",
+    "keywords": [
+      "don't",
+      "support",
+      "mother",
+      "through",
+      "grief"
+    ]
+  },
+  {
+    "id": "gri_235",
+    "category": "grief",
+    "context": "I feel disconnected from my faith after losing someone I prayed so hard to save",
+    "response": "Loss can shake even deeply held beliefs, and that questioning doesn't make your faith or your grief wrong. Many people go through this kind of crisis after loss. What has that shift felt like for you?",
+    "keywords": [
+      "disconnected",
+      "faith",
+      "after",
+      "losing",
+      "someone"
+    ]
+  },
+  {
+    "id": "ang_236",
+    "category": "anger",
+    "context": "I snapped at my little sister over something small and now I feel terrible about it",
+    "response": "Snapping at someone we love, especially over something small, often means the anger was really about something bigger underneath. What do you think was really building up before that moment?",
+    "keywords": [
+      "snapped",
+      "little",
+      "sister",
+      "something",
+      "small"
+    ]
+  },
+  {
+    "id": "ang_237",
+    "category": "anger",
+    "context": "I get so angry at myself when I make small mistakes at work",
+    "response": "Turning anger inward toward yourself over small mistakes can be its own painful pattern. You're allowed to be human and imperfect. What would you say to a friend who made the same mistake?",
+    "keywords": [
+      "angry",
+      "myself",
+      "small",
+      "mistakes"
+    ]
+  },
+  {
+    "id": "ang_238",
+    "category": "anger",
+    "context": "My anger comes out as silence and shutting people out instead of talking",
+    "response": "Withdrawing can be a way of managing anger when expressing it feels unsafe or overwhelming. That's a real coping pattern, even if it creates distance. What usually happens right before you go quiet?",
+    "keywords": [
+      "anger",
+      "comes",
+      "silence",
+      "shutting",
+      "people"
+    ]
+  },
+  {
+    "id": "ang_239",
+    "category": "anger",
+    "context": "I feel rage bubble up whenever someone brings up my ex",
+    "response": "Strong anger tied to a past relationship often means there's unresolved pain underneath it. That reaction makes sense given what you went through. What part of that history feels most unresolved?",
+    "keywords": [
+      "bubble",
+      "whenever",
+      "someone",
+      "brings"
+    ]
+  },
+  {
+    "id": "ang_240",
+    "category": "anger",
+    "context": "I yelled at my kids today and I hate the parent I'm becoming",
+    "response": "Losing your temper with your kids doesn't erase everything else you do for them, but I hear how much this is weighing on you. What do you think triggered it in that moment?",
+    "keywords": [
+      "yelled",
+      "today",
+      "parent",
+      "becoming"
+    ]
+  },
+  {
+    "id": "ang_241",
+    "category": "anger",
+    "context": "I feel constant low-grade irritation at everyone around me lately",
+    "response": "A persistent short fuse can sometimes be a sign of built-up exhaustion or stress rather than the people around you. What's been draining your patience lately?",
+    "keywords": [
+      "constant",
+      "low-grade",
+      "irritation",
+      "everyone",
+      "around"
+    ]
+  },
+  {
+    "id": "ang_242",
+    "category": "anger",
+    "context": "My anger scares me because I don't recognize myself when it happens",
+    "response": "Feeling scared of your own anger is a significant thing to sit with, and it's good that you're paying attention to it. Has this intensity been new, or has it built up over time?",
+    "keywords": [
+      "anger",
+      "scares",
+      "because",
+      "don't",
+      "recognize"
+    ]
+  },
+  {
+    "id": "ang_243",
+    "category": "anger",
+    "context": "I get furious when people don't listen to me even about small things",
+    "response": "Feeling unheard, even in small moments, can trigger a disproportionately strong reaction if it echoes a bigger pattern in your life. Does this feeling of not being listened to show up elsewhere too?",
+    "keywords": [
+      "furious",
+      "people",
+      "don't",
+      "listen",
+      "about"
+    ]
+  },
+  {
+    "id": "ang_244",
+    "category": "anger",
+    "context": "I slammed a door so hard it scared my roommate and I feel ashamed now",
+    "response": "Shame after an angry outburst is common, and noticing it shows self-awareness. What do you think you needed in that moment that you didn't have?",
+    "keywords": [
+      "slammed",
+      "scared",
+      "roommate",
+      "ashamed"
+    ]
+  },
+  {
+    "id": "ang_245",
+    "category": "anger",
+    "context": "I hold grudges for way too long and it eats me up inside",
+    "response": "Holding onto anger over time can feel protective, but it often ends up hurting the person carrying it the most. Is there a grudge that's been especially heavy lately?",
+    "keywords": [
+      "grudges",
+      "inside"
+    ]
+  },
+  {
+    "id": "ang_246",
+    "category": "anger",
+    "context": "I feel angry that my illness has taken away so much of my independence",
+    "response": "Anger at a body or health situation that's changed your life is a legitimate response to real loss of control. What part of your independence do you miss the most?",
+    "keywords": [
+      "angry",
+      "illness",
+      "taken",
+      "independence"
+    ]
+  },
+  {
+    "id": "ang_247",
+    "category": "anger",
+    "context": "My temper flares up fast and I say things I regret almost immediately",
+    "response": "A fast temper followed by quick regret suggests the anger surfaces before you have time to process it. Have you noticed any early warning signs right before it flares?",
+    "keywords": [
+      "temper",
+      "flares",
+      "things",
+      "regret",
+      "almost"
+    ]
+  },
+  {
+    "id": "ang_248",
+    "category": "anger",
+    "context": "I'm angry that I have to be the responsible one in my family all the time",
+    "response": "Resentment builds naturally when responsibility feels unequally distributed for a long time. That frustration is valid. What would sharing that load look like, even a little?",
+    "keywords": [
+      "angry",
+      "responsible",
+      "family"
+    ]
+  },
+  {
+    "id": "ang_249",
+    "category": "anger",
+    "context": "I get angry at traffic and small inconveniences way more than they deserve",
+    "response": "Overreacting to small frustrations can sometimes be a sign that anger from bigger stressors is spilling over into everyday moments. What's been weighing on you outside of these situations?",
+    "keywords": [
+      "angry",
+      "traffic",
+      "small",
+      "inconveniences",
+      "deserve"
+    ]
+  },
+  {
+    "id": "ang_250",
+    "category": "anger",
+    "context": "I'm angry with myself for staying in a bad relationship for so long",
+    "response": "It's common to feel anger toward yourself in hindsight, even though you made the best decisions you could with what you knew then. What would help you be gentler with your past self?",
+    "keywords": [
+      "angry",
+      "myself",
+      "staying",
+      "relationship"
+    ]
+  },
+  {
+    "id": "ang_251",
+    "category": "anger",
+    "context": "I feel a flash of anger every time my parents compare me to my cousin",
+    "response": "Comparison from family can strike at something deeply personal, and anger is a natural response to feeling diminished. What do you wish they understood about your path instead?",
+    "keywords": [
+      "flash",
+      "anger",
+      "every",
+      "parents",
+      "compare"
+    ]
+  },
+  {
+    "id": "ang_252",
+    "category": "anger",
+    "context": "I clench my jaw and fists when I'm angry but never say anything out loud",
+    "response": "Physical tension without verbal expression suggests your body is holding anger that hasn't found a safe outlet yet. What usually stops you from voicing it in the moment?",
+    "keywords": [
+      "clench",
+      "fists",
+      "angry",
+      "never",
+      "anything"
+    ]
+  },
+  {
+    "id": "ang_253",
+    "category": "anger",
+    "context": "My anger toward my abuser still controls parts of my life years later",
+    "response": "Anger toward someone who caused real harm can linger for a long time, and that's not a failure on your part. Have you had space to process this with a professional?",
+    "keywords": [
+      "anger",
+      "toward",
+      "abuser",
+      "still",
+      "controls"
+    ]
+  },
+  {
+    "id": "ang_254",
+    "category": "anger",
+    "context": "I get defensive and angry the moment anyone gives me feedback",
+    "response": "Feedback can feel like an attack when self-worth feels fragile underneath, even if that's not the intention. What does it feel like in your body right before the defensiveness kicks in?",
+    "keywords": [
+      "defensive",
+      "angry",
+      "moment",
+      "anyone",
+      "gives"
+    ]
+  },
+  {
+    "id": "ang_255",
+    "category": "anger",
+    "context": "I'm furious that my hard work keeps getting overlooked for promotions",
+    "response": "Feeling repeatedly overlooked despite effort is a legitimate source of anger and frustration. That's about fairness, not just ego. What's kept you from addressing it directly so far?",
+    "keywords": [
+      "furious",
+      "keeps",
+      "getting",
+      "overlooked",
+      "promotions"
+    ]
+  },
+  {
+    "id": "rel_256",
+    "category": "relationships",
+    "context": "My partner and I keep having the same fight over and over with no resolution",
+    "response": "Recurring fights usually mean the real issue underneath hasn't actually been named yet. What do you think the fight is really about, beneath the surface topic?",
+    "keywords": [
+      "partner",
+      "having",
+      "fight",
+      "resolution"
+    ]
+  },
+  {
+    "id": "rel_257",
+    "category": "relationships",
+    "context": "I feel like I'm always the one putting in effort in my friendships",
+    "response": "Feeling like the only one investing in a friendship is exhausting and can quietly erode your sense of connection. Have you been able to express this to any of your friends directly?",
+    "keywords": [
+      "always",
+      "putting",
+      "effort",
+      "friendships"
+    ]
+  },
+  {
+    "id": "rel_258",
+    "category": "relationships",
+    "context": "My in-laws don't approve of me and it's straining my marriage",
+    "response": "Family disapproval can create pressure that seeps into even a strong relationship. That's a lot to navigate. How has your partner been showing up for you through this?",
+    "keywords": [
+      "in-laws",
+      "don't",
+      "approve",
+      "straining",
+      "marriage"
+    ]
+  },
+  {
+    "id": "rel_259",
+    "category": "relationships",
+    "context": "I'm scared to be vulnerable with my partner because I've been hurt before",
+    "response": "Protecting yourself after being hurt is a natural response, even when it makes closeness harder now. What would help you feel even slightly safer opening up?",
+    "keywords": [
+      "scared",
+      "vulnerable",
+      "partner",
+      "because",
+      "before"
+    ]
+  },
+  {
+    "id": "rel_260",
+    "category": "relationships",
+    "context": "My friend group excluded me from a trip and I don't know if I should say something",
+    "response": "Being excluded can bring up real hurt, whether or not it was intentional. Your feelings about it are worth addressing. What outcome are you hoping for if you do bring it up?",
+    "keywords": [
+      "friend",
+      "group",
+      "excluded",
+      "don't",
+      "should"
+    ]
+  },
+  {
+    "id": "rel_261",
+    "category": "relationships",
+    "context": "I think my partner and I have grown apart but I'm scared to admit it",
+    "response": "Recognizing distance in a relationship is often the hardest and most honest first step. That fear of admitting it out loud makes sense. What has felt different between you two lately?",
+    "keywords": [
+      "think",
+      "partner",
+      "grown",
+      "apart",
+      "scared"
+    ]
+  },
+  {
+    "id": "rel_262",
+    "category": "relationships",
+    "context": "My mother and I have a complicated relationship and I don't know how to set boundaries",
+    "response": "Setting boundaries with a parent, especially in a complicated dynamic, can feel like betraying loyalty even when it's necessary for your wellbeing. What boundary feels most important to start with?",
+    "keywords": [
+      "mother",
+      "complicated",
+      "relationship",
+      "don't",
+      "boundaries"
+    ]
+  },
+  {
+    "id": "rel_263",
+    "category": "relationships",
+    "context": "I'm the one who always apologizes first even when I'm not wrong",
+    "response": "Consistently being the one to smooth things over can quietly wear down your sense of fairness in a relationship. What do you think keeps you in that role?",
+    "keywords": [
+      "always",
+      "apologizes",
+      "first",
+      "wrong"
+    ]
+  },
+  {
+    "id": "rel_264",
+    "category": "relationships",
+    "context": "My best friend and I haven't spoken in months after a small disagreement",
+    "response": "Silence after a small disagreement can grow heavier the longer it goes unaddressed. Sometimes both people are just waiting for the other to reach out first. Would reaching out feel possible for you?",
+    "keywords": [
+      "friend",
+      "haven't",
+      "spoken",
+      "months",
+      "after"
+    ]
+  },
+  {
+    "id": "rel_265",
+    "category": "relationships",
+    "context": "I feel like my partner only shows affection when it's convenient for them",
+    "response": "Feeling like affection is conditional can leave you constantly uncertain about where you stand. That uncertainty is exhausting to carry. Have you shared this feeling with them directly?",
+    "keywords": [
+      "partner",
+      "shows",
+      "affection",
+      "convenient"
+    ]
+  },
+  {
+    "id": "rel_266",
+    "category": "relationships",
+    "context": "My siblings and I compete for our parents' approval even as adults",
+    "response": "Sibling dynamics around parental approval can persist well into adulthood, even when everyone involved wishes it didn't. What would feel different if that competition wasn't part of the relationship?",
+    "keywords": [
+      "siblings",
+      "compete",
+      "parents'",
+      "approval",
+      "adults"
+    ]
+  },
+  {
+    "id": "rel_267",
+    "category": "relationships",
+    "context": "I'm afraid my friends only tolerate me and don't actually enjoy my company",
+    "response": "That fear can distort how you read genuine care from people close to you, especially if you've felt this way before. What evidence, if any, points against that fear?",
+    "keywords": [
+      "afraid",
+      "friends",
+      "tolerate",
+      "don't",
+      "actually"
+    ]
+  },
+  {
+    "id": "rel_268",
+    "category": "relationships",
+    "context": "My long-distance relationship is taking a toll and I don't know if it's worth continuing",
+    "response": "Long-distance relationships carry a specific kind of strain that's hard for people who haven't experienced it to fully understand. What's been the hardest part of the distance lately?",
+    "keywords": [
+      "long-distance",
+      "relationship",
+      "taking",
+      "don't",
+      "worth"
+    ]
+  },
+  {
+    "id": "rel_269",
+    "category": "relationships",
+    "context": "I feel jealous of my partner's friendships and I don't know if it's reasonable",
+    "response": "Jealousy often points to an underlying insecurity rather than something wrong with the friendship itself, though it can be both. What do you think is underneath that jealousy for you?",
+    "keywords": [
+      "jealous",
+      "partner's",
+      "friendships",
+      "don't",
+      "reasonable"
+    ]
+  },
+  {
+    "id": "rel_270",
+    "category": "relationships",
+    "context": "My parents still treat me like a child even though I'm financially independent now",
+    "response": "Being treated as less capable than you actually are can feel undermining, especially after you've worked hard for that independence. What would it look like for them to see you differently?",
+    "keywords": [
+      "parents",
+      "still",
+      "treat",
+      "child",
+      "though"
+    ]
+  },
+  {
+    "id": "rel_271",
+    "category": "relationships",
+    "context": "I don't know how to tell my partner I need more emotional support without sounding needy",
+    "response": "Needing support isn't neediness — it's a normal relational need that deserves to be voiced clearly. What specific kind of support do you feel is missing right now?",
+    "keywords": [
+      "don't",
+      "partner",
+      "emotional",
+      "support",
+      "without"
+    ]
+  },
+  {
+    "id": "rel_272",
+    "category": "relationships",
+    "context": "My friendship group has a lot of unspoken tension that no one addresses directly",
+    "response": "Groups with unspoken tension often carry an undercurrent of stress for everyone involved, even if it's never named. Is there someone in the group you'd trust to have an honest conversation with?",
+    "keywords": [
+      "friendship",
+      "group",
+      "unspoken",
+      "tension",
+      "addresses"
+    ]
+  },
+  {
+    "id": "rel_273",
+    "category": "relationships",
+    "context": "I keep comparing my relationship to my friends' relationships on social media",
+    "response": "Comparing your relationship to curated online versions of other people's lives rarely gives an accurate picture and often leaves you feeling worse. What does a good relationship look like to you, apart from comparison?",
+    "keywords": [
+      "comparing",
+      "relationship",
+      "friends'",
+      "relationships",
+      "social"
+    ]
+  },
+  {
+    "id": "rel_274",
+    "category": "relationships",
+    "context": "My partner and I have very different love languages and keep missing each other",
+    "response": "Mismatched ways of expressing and receiving care can lead to both people feeling unappreciated, even when love is genuinely there. Have you two talked directly about what makes you each feel cared for?",
+    "keywords": [
+      "partner",
+      "different",
+      "languages",
+      "missing",
+      "other"
+    ]
+  },
+  {
+    "id": "rel_275",
+    "category": "relationships",
+    "context": "I feel disconnected from my partner after having a baby together",
+    "response": "Major life changes like having a child often shift a relationship's rhythm in ways that can feel isolating for both partners. That disconnect is common, even if it feels lonely right now. What has changed the most between you two?",
+    "keywords": [
+      "disconnected",
+      "partner",
+      "after",
+      "having",
+      "together"
+    ]
+  },
+  {
+    "id": "crisis_276",
+    "category": "crisis",
+    "context": "I've been thinking about ending things and I have a plan",
+    "response": "CRISIS",
+    "keywords": [
+      "thinking",
+      "about",
+      "ending",
+      "things"
+    ]
+  },
+  {
+    "id": "crisis_277",
+    "category": "crisis",
+    "context": "I don't think I can keep going anymore, I just want the pain to stop",
+    "response": "CRISIS",
+    "keywords": [
+      "don't",
+      "think",
+      "going",
+      "anymore"
+    ]
+  },
+  {
+    "id": "crisis_278",
+    "category": "crisis",
+    "context": "I wrote a note to my family because I don't think I'll be here much longer",
+    "response": "CRISIS",
+    "keywords": [
+      "wrote",
+      "family",
+      "because",
+      "don't",
+      "think"
+    ]
+  },
+  {
+    "id": "crisis_279",
+    "category": "crisis",
+    "context": "I've been saving up pills because I don't want to wake up tomorrow",
+    "response": "CRISIS",
+    "keywords": [
+      "saving",
+      "pills",
+      "because",
+      "don't",
+      "tomorrow"
+    ]
+  },
+  {
+    "id": "crisis_280",
+    "category": "crisis",
+    "context": "Everyone would be better off without me around",
+    "response": "CRISIS",
+    "keywords": [
+      "everyone",
+      "would",
+      "better",
+      "without",
+      "around"
+    ]
+  },
+  {
+    "id": "crisis_281",
+    "category": "crisis",
+    "context": "I keep thinking about how I would do it if I ever decided to",
+    "response": "CRISIS",
+    "keywords": [
+      "thinking",
+      "about",
+      "would",
+      "decided"
+    ]
+  },
+  {
+    "id": "crisis_282",
+    "category": "crisis",
+    "context": "I cut myself last night and I don't know if I can stop doing this",
+    "response": "CRISIS",
+    "keywords": [
+      "myself",
+      "night",
+      "don't",
+      "doing"
+    ]
+  },
+  {
+    "id": "crisis_283",
+    "category": "crisis",
+    "context": "I feel like disappearing completely and never coming back",
+    "response": "CRISIS",
+    "keywords": [
+      "disappearing",
+      "completely",
+      "never",
+      "coming"
+    ]
+  },
+  {
+    "id": "crisis_284",
+    "category": "crisis",
+    "context": "I've given away some of my things because I don't think I'll need them",
+    "response": "CRISIS",
+    "keywords": [
+      "given",
+      "things",
+      "because",
+      "don't",
+      "think"
+    ]
+  },
+  {
+    "id": "crisis_285",
+    "category": "crisis",
+    "context": "I don't see any future for myself anymore, there's no point in trying",
+    "response": "CRISIS",
+    "keywords": [
+      "don't",
+      "future",
+      "myself",
+      "anymore",
+      "there's"
+    ]
+  },
+  {
+    "id": "crisis_286",
+    "category": "crisis",
+    "context": "I've been standing near the train tracks thinking about jumping",
+    "response": "CRISIS",
+    "keywords": [
+      "standing",
+      "train",
+      "tracks",
+      "thinking",
+      "about"
+    ]
+  },
+  {
+    "id": "crisis_287",
+    "category": "crisis",
+    "context": "I told my friend goodbye in a way that felt final and I meant it",
+    "response": "CRISIS",
+    "keywords": [
+      "friend",
+      "goodbye",
+      "final",
+      "meant"
+    ]
+  },
+  {
+    "id": "crisis_288",
+    "category": "crisis",
+    "context": "The pain is too much and I just want to not exist anymore",
+    "response": "CRISIS",
+    "keywords": [
+      "exist",
+      "anymore"
+    ]
+  },
+  {
+    "id": "crisis_289",
+    "category": "crisis",
+    "context": "I've researched how much medication it would take to not wake up",
+    "response": "CRISIS",
+    "keywords": [
+      "researched",
+      "medication",
+      "would"
+    ]
+  },
+  {
+    "id": "crisis_290",
+    "category": "crisis",
+    "context": "I feel like I'm a burden to everyone and they'd be relieved if I was gone",
+    "response": "CRISIS",
+    "keywords": [
+      "burden",
+      "everyone",
+      "they'd",
+      "relieved"
+    ]
+  },
+  {
+    "id": "gri_291",
+    "category": "grief",
+    "context": "I keep setting a second plate at dinner out of habit since my husband passed",
+    "response": "Old habits from a life shared with someone can linger long after they're gone, and each one can bring the loss freshly back. What has been the hardest daily habit to unlearn?",
+    "keywords": [
+      "setting",
+      "second",
+      "plate",
+      "dinner",
+      "habit"
+    ]
+  },
+  {
+    "id": "gri_292",
+    "category": "grief",
+    "context": "I visit the cemetery every week but I don't know if that's healthy or if I'm stuck",
+    "response": "There's no fixed rule for how often visiting helps versus holds you in place — it depends on what it feels like afterward for you. Does going leave you feeling more at peace or more weighed down?",
+    "keywords": [
+      "visit",
+      "cemetery",
+      "every",
+      "don't",
+      "that's"
+    ]
+  },
+  {
+    "id": "gri_293",
+    "category": "grief",
+    "context": "My uncle died overseas and I couldn't attend the funeral, so it still doesn't feel real",
+    "response": "Missing the chance to say a physical goodbye can leave a loss feeling unfinished or unreal for a long time. Is there a way you'd want to mark it, even now, on your own terms?",
+    "keywords": [
+      "uncle",
+      "overseas",
+      "couldn't",
+      "attend",
+      "funeral"
+    ]
+  },
+  {
+    "id": "gri_294",
+    "category": "grief",
+    "context": "I still have my late mother's voicemail saved and I listen to it sometimes",
+    "response": "Holding onto small traces like a voice recording is a common and tender way people stay connected to someone they've lost. What does listening to it feel like for you now?",
+    "keywords": [
+      "still",
+      "mother's",
+      "voicemail",
+      "saved",
+      "listen"
+    ]
+  },
+  {
+    "id": "gri_295",
+    "category": "grief",
+    "context": "I feel like the world kept moving on after my loss but I got stuck in that moment",
+    "response": "That gap between how time feels for you and how it moves for everyone else is one of the loneliest parts of grief. What does 'stuck' feel like day to day for you?",
+    "keywords": [
+      "world",
+      "moving",
+      "after",
+      "stuck",
+      "moment"
+    ]
+  },
+  {
+    "id": "gri_296",
+    "category": "grief",
+    "context": "I was the one who found my father after he passed and I can't stop thinking about that morning",
+    "response": "Being the one who discovered a loss can leave a particularly vivid and painful imprint that's hard to set down. Have you had space to talk through that specific memory with someone?",
+    "keywords": [
+      "found",
+      "father",
+      "after",
+      "passed",
+      "can't"
+    ]
+  },
+  {
+    "id": "gri_297",
+    "category": "grief",
+    "context": "My childhood home was sold after my parents died and I feel like I lost them twice",
+    "response": "Losing the physical place tied to someone can reopen grief in a way that feels like losing them all over again. What did that home represent for you beyond the walls themselves?",
+    "keywords": [
+      "childhood",
+      "after",
+      "parents",
+      "twice"
+    ]
+  },
+  {
+    "id": "gri_298",
+    "category": "grief",
+    "context": "I don't know how to celebrate my own birthday now that my twin sister is gone",
+    "response": "Milestones that were always shared can become some of the hardest days to face alone. Is there a way you might want to include her memory in how you mark the day?",
+    "keywords": [
+      "don't",
+      "celebrate",
+      "birthday",
+      "sister"
+    ]
+  },
+  {
+    "id": "gri_299",
+    "category": "grief",
+    "context": "I feel numb about my grandfather's death and I'm scared that means I didn't love him enough",
+    "response": "Numbness is actually a common way the mind protects itself from an overwhelming loss — it doesn't reflect how much you loved him. Has this numbness felt different from sadness, or does it come and go?",
+    "keywords": [
+      "about",
+      "grandfather's",
+      "death",
+      "scared",
+      "means"
+    ]
+  },
+  {
+    "id": "gri_300",
+    "category": "grief",
+    "context": "My son passed away and people keep telling me time heals, but it just feels heavier",
+    "response": "For a loss like losing a child, time doesn't erase the pain so much as change your relationship to carrying it — and it's completely valid if it feels heavier, not lighter, right now. What has felt different about how you're carrying it lately?",
+    "keywords": [
+      "passed",
+      "people",
+      "telling",
+      "heals",
+      "feels"
+    ]
+  },
+  {
+    "id": "gri_301",
+    "category": "grief",
+    "context": "I regret the last conversation I had with my friend before they died unexpectedly",
+    "response": "Sudden loss often leaves people replaying a final conversation, wishing it had gone differently. That regret is a common and painful part of grieving suddenly. What do you wish you'd said instead?",
+    "keywords": [
+      "regret",
+      "conversation",
+      "friend",
+      "before",
+      "unexpectedly"
+    ]
+  },
+  {
+    "id": "gri_302",
+    "category": "grief",
+    "context": "I feel like I have to perform being okay around my coworkers just weeks after the funeral",
+    "response": "Returning to daily life so soon after a loss often means putting on a mask that doesn't match what's underneath. Is there anyone at work who knows what you're actually carrying right now?",
+    "keywords": [
+      "perform",
+      "being",
+      "around",
+      "coworkers",
+      "weeks"
+    ]
+  },
+  {
+    "id": "gri_303",
+    "category": "grief",
+    "context": "My mother's belongings are still in boxes because I can't bring myself to sort through them",
+    "response": "Going through a loved one's things can feel like facing the loss all over again, so it's understandable to put it off. Is there a small piece you might feel ready to look at first, or is it too soon still?",
+    "keywords": [
+      "mother's",
+      "belongings",
+      "still",
+      "boxes",
+      "because"
+    ]
+  },
+  {
+    "id": "gri_304",
+    "category": "grief",
+    "context": "I keep dreaming my late husband is still alive and waking up to lose him all over again",
+    "response": "Those dreams can be one of the cruelest parts of grief, giving you back what's missing only to take it away again each morning. How do those mornings usually feel for you?",
+    "keywords": [
+      "dreaming",
+      "husband",
+      "still",
+      "alive",
+      "waking"
+    ]
+  },
+  {
+    "id": "gri_305",
+    "category": "grief",
+    "context": "I lost my mentor recently and I feel like I lost a part of my future along with them",
+    "response": "Losing someone who shaped your path forward is its own kind of grief — not just for who they were, but for the future you imagined with them in it. What are you most afraid of losing without their guidance?",
+    "keywords": [
+      "mentor",
+      "recently",
+      "future",
+      "along"
+    ]
+  },
+  {
+    "id": "gri_306",
+    "category": "grief",
+    "context": "I feel disloyal to my late wife whenever I think about possibly dating again someday",
+    "response": "Feeling disloyal for imagining a future again doesn't mean you're forgetting what you shared — it's a common and painful conflict after loss. What does that guilt feel connected to the most?",
+    "keywords": [
+      "disloyal",
+      "whenever",
+      "think",
+      "about",
+      "possibly"
+    ]
+  },
+  {
+    "id": "gri_307",
+    "category": "grief",
+    "context": "My grief comes in waves and just when I think I'm okay it hits me out of nowhere",
+    "response": "That's a very common pattern with grief — it doesn't move in a straight line, it circles back unpredictably. What tends to trigger those waves when they hit?",
+    "keywords": [
+      "grief",
+      "comes",
+      "waves",
+      "think",
+      "nowhere"
+    ]
+  },
+  {
+    "id": "gri_308",
+    "category": "grief",
+    "context": "I'm grieving my grandmother but also feel relief that her suffering with illness is finally over",
+    "response": "Feeling both grief and relief at the same time is a very normal, if confusing, response when someone's passing follows a long illness. Does the relief bring its own guilt for you?",
+    "keywords": [
+      "grieving",
+      "grandmother",
+      "relief",
+      "suffering",
+      "illness"
+    ]
+  },
+  {
+    "id": "gri_309",
+    "category": "grief",
+    "context": "I feel like no one remembers my brother the way I do, and that scares me more than the loss itself",
+    "response": "The fear of a loved one's memory fading with time is its own quiet grief, separate from the initial loss. What's something about him you'd want to make sure is never forgotten?",
+    "keywords": [
+      "remembers",
+      "brother",
+      "scares",
+      "itself"
+    ]
+  },
+  {
+    "id": "gri_310",
+    "category": "grief",
+    "context": "I put on a brave face for my children after losing their father but I fall apart when I'm alone",
+    "response": "Holding steady for your children while grieving privately is an enormous, often invisible weight to carry. Who is there to hold you up while you're holding everyone else together?",
+    "keywords": [
+      "brave",
+      "children",
+      "after",
+      "losing",
+      "their"
+    ]
+  },
+  {
+    "id": "rel_311",
+    "category": "relationships",
+    "context": "My partner shuts down and stops talking whenever we disagree about something",
+    "response": "When one partner withdraws during conflict, it can leave the other feeling shut out mid-conversation, even if it's a self-protective habit for them. Have you been able to name this pattern together outside of an actual argument?",
+    "keywords": [
+      "partner",
+      "shuts",
+      "stops",
+      "talking",
+      "whenever"
+    ]
+  },
+  {
+    "id": "rel_312",
+    "category": "relationships",
+    "context": "I found messages on my partner's phone that made me question if they're being honest with me",
+    "response": "Discovering something that raises doubt can shake the foundation of trust very quickly, even before you know the full story. Have you had a chance to talk to your partner directly about what you found?",
+    "keywords": [
+      "found",
+      "messages",
+      "partner's",
+      "phone",
+      "question"
+    ]
+  },
+  {
+    "id": "rel_313",
+    "category": "relationships",
+    "context": "My partner and I want different things for the future and I don't know how to bring it up",
+    "response": "Mismatched visions for the future are one of the harder relationship conversations to start, but avoiding it usually makes the gap feel bigger over time. What's the piece you're most afraid of hearing if you bring it up?",
+    "keywords": [
+      "partner",
+      "different",
+      "things",
+      "future",
+      "don't"
+    ]
+  },
+  {
+    "id": "rel_314",
+    "category": "relationships",
+    "context": "I feel like my partner and I communicate completely differently and it causes constant misunderstandings",
+    "response": "Different communication styles can turn small moments into recurring friction if neither person feels understood. What does a misunderstanding usually look like when it starts between you two?",
+    "keywords": [
+      "partner",
+      "communicate",
+      "completely",
+      "differently",
+      "causes"
+    ]
+  },
+  {
+    "id": "rel_315",
+    "category": "relationships",
+    "context": "My roommate and I have very different expectations about shared responsibilities and it's creating tension",
+    "response": "Living closely with someone who has different expectations can wear down a relationship even outside of romance. Have you two sat down to explicitly agree on what's expected from each of you?",
+    "keywords": [
+      "roommate",
+      "different",
+      "expectations",
+      "about",
+      "shared"
+    ]
+  },
+  {
+    "id": "rel_316",
+    "category": "relationships",
+    "context": "I feel torn between my partner and my family because they don't get along",
+    "response": "Being caught in the middle of two important relationships that clash can leave you feeling like you constantly have to choose sides. What would it look like to set a boundary that protects you from being the go-between?",
+    "keywords": [
+      "between",
+      "partner",
+      "family",
+      "because",
+      "don't"
+    ]
+  },
+  {
+    "id": "rel_317",
+    "category": "relationships",
+    "context": "My partner apologizes but keeps repeating the same hurtful behavior anyway",
+    "response": "An apology without a change in behavior can start to feel hollow over time, even if it's sincere in the moment. What would it look like for you to see real change, beyond just the words?",
+    "keywords": [
+      "partner",
+      "apologizes",
+      "keeps",
+      "repeating",
+      "hurtful"
+    ]
+  },
+  {
+    "id": "rel_318",
+    "category": "relationships",
+    "context": "I struggle to open up emotionally to my partner even though I want to feel closer to them",
+    "response": "Wanting closeness while also struggling to be vulnerable is a common and difficult tension, especially if opening up hasn't felt safe before. What usually gets in the way in the moment you want to share something real?",
+    "keywords": [
+      "struggle",
+      "emotionally",
+      "partner",
+      "though",
+      "closer"
+    ]
+  },
+  {
+    "id": "rel_319",
+    "category": "relationships",
+    "context": "My partner and I argue about finances constantly and it's creating real distance between us",
+    "response": "Financial stress is one of the most common relationship strains, and it often becomes about more than just money — control, security, values. What do you think the money arguments are really about underneath?",
+    "keywords": [
+      "partner",
+      "argue",
+      "about",
+      "finances",
+      "constantly"
+    ]
+  },
+  {
+    "id": "rel_320",
+    "category": "relationships",
+    "context": "I feel like my needs get dismissed every time I bring them up in my relationship",
+    "response": "Feeling consistently dismissed can erode your willingness to keep speaking up at all over time. Has your partner responded differently when you've framed it as a need rather than a complaint?",
+    "keywords": [
+      "needs",
+      "dismissed",
+      "every",
+      "bring",
+      "relationship"
+    ]
+  },
+  {
+    "id": "rel_321",
+    "category": "relationships",
+    "context": "My friend constantly cancels plans last minute and I don't know if I should keep trying",
+    "response": "Repeated last-minute cancellations can leave you feeling like a low priority, even if that's not the intention. What would you want to say to them if you brought this pattern up directly?",
+    "keywords": [
+      "friend",
+      "constantly",
+      "cancels",
+      "plans",
+      "minute"
+    ]
+  },
+  {
+    "id": "rel_322",
+    "category": "relationships",
+    "context": "I feel controlled by my partner's need to know where I am at all times",
+    "response": "Constant monitoring, even when framed as care, can start to feel restrictive and erode your sense of independence. How does that level of check-in make you feel day to day?",
+    "keywords": [
+      "controlled",
+      "partner's",
+      "where",
+      "times"
+    ]
+  },
+  {
+    "id": "rel_323",
+    "category": "relationships",
+    "context": "My partner and I have completely opposite conflict styles, one of us yells and the other goes silent",
+    "response": "Mismatched conflict styles — one loud, one withdrawn — often leave both people feeling unheard in a different way. Have you two ever talked about what each style is trying to protect?",
+    "keywords": [
+      "partner",
+      "completely",
+      "opposite",
+      "conflict",
+      "styles"
+    ]
+  },
+  {
+    "id": "rel_324",
+    "category": "relationships",
+    "context": "I feel like I have to walk on eggshells around my partner's moods",
+    "response": "Constantly adjusting your behavior to avoid triggering someone's mood can be exhausting and can shrink how much of yourself you feel safe showing. How long has this pattern been going on?",
+    "keywords": [
+      "eggshells",
+      "around",
+      "partner's",
+      "moods"
+    ]
+  },
+  {
+    "id": "rel_325",
+    "category": "relationships",
+    "context": "My partner dismisses my feelings as overreacting whenever I bring something up",
+    "response": "Being told you're overreacting can make you doubt your own feelings over time, even when your concerns are valid. How has that affected how willing you are to bring things up now?",
+    "keywords": [
+      "partner",
+      "dismisses",
+      "feelings",
+      "overreacting",
+      "whenever"
+    ]
+  },
+  {
+    "id": "rel_326",
+    "category": "relationships",
+    "context": "I feel unappreciated at home even though I handle most of the household responsibilities",
+    "response": "Carrying an unequal share of responsibility without acknowledgment can build quiet resentment over time. Have you been able to name this imbalance directly to your partner?",
+    "keywords": [
+      "unappreciated",
+      "though",
+      "handle",
+      "household",
+      "responsibilities"
+    ]
+  },
+  {
+    "id": "rel_327",
+    "category": "relationships",
+    "context": "My partner and I keep breaking up and getting back together and I don't know if that's healthy",
+    "response": "A repeating cycle of breaking up and reconciling often means the same underlying issue keeps resurfacing without ever really being resolved. What tends to be the reason each time you get back together?",
+    "keywords": [
+      "partner",
+      "breaking",
+      "getting",
+      "together",
+      "don't"
+    ]
+  },
+  {
+    "id": "rel_328",
+    "category": "relationships",
+    "context": "I feel like my partner's family involves themselves too much in our relationship decisions",
+    "response": "Outside involvement in a couple's decisions, even from family, can create pressure that strains the relationship itself. Have you and your partner agreed on where that boundary should sit?",
+    "keywords": [
+      "partner's",
+      "family",
+      "involves",
+      "themselves",
+      "relationship"
+    ]
+  },
+  {
+    "id": "rel_329",
+    "category": "relationships",
+    "context": "My partner and I rarely spend quality time together anymore between work and responsibilities",
+    "response": "It's easy for connection to quietly erode under the weight of busy schedules, even when the relationship itself is fine. What would even a small amount of intentional time together look like for you two?",
+    "keywords": [
+      "partner",
+      "rarely",
+      "spend",
+      "quality",
+      "together"
+    ]
+  },
+  {
+    "id": "rel_330",
+    "category": "relationships",
+    "context": "I feel like I'm the only one making an effort to keep our long friendship alive",
+    "response": "Carrying a friendship alone for a long time can leave you wondering whether it's still mutual. Have you considered telling them directly how this imbalance feels to you?",
+    "keywords": [
+      "making",
+      "effort",
+      "friendship",
+      "alive"
+    ]
+  }
+]

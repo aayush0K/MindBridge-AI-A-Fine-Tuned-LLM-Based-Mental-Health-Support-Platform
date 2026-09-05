@@ -28,7 +28,7 @@ async def lifespan(app: FastAPI):
     """Startup and shutdown lifecycle events."""
     logger.info("🚀 MindBridge AI starting up...")
 
-    # ── Create tables (SQLite / fresh DB) ────────────────────────────────────
+    # ── Create tables (PostgreSQL / fresh DB) ────────────────────────────────────
     from app.database import engine, Base
     from app.models import User, ChatSession, Message, MoodLog, WellnessReport, JournalEntry  # noqa: F401
     async with engine.begin() as conn:

@@ -1,6 +1,6 @@
 """
 Quick demo: shows the trained classifier's category prediction + confidence
-for a handful of test messages, without going through the full Gemini
+for a handful of test messages, without going through the full LLM
 pipeline. Good for a live demo moment in your review.
 
 Run from backend/:

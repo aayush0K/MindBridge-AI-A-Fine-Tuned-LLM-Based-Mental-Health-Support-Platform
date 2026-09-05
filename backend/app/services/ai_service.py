@@ -3,7 +3,7 @@ AI Service — Main Orchestrator
 ===============================
 Implements the full pipeline from the IEEE ICDSBS 2025 paper:
   1. Sanitise → 2. Embed → 3. Relevance check → 4. Crisis detection
-  → 5. Few-shot retrieval → 6. Build Gemini history (with memory)
+  → 5. Few-shot retrieval → 6. Build Llama prompt & history (with memory)
   → 7. Generate → 8. Store to memory → 9. Return enriched payload
 
 New in this version
@@ -23,9 +23,12 @@ New in this version
 
 from __future__ import annotations
 
+import time
 import logging
+from typing import Optional
 
 import httpx
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from .embedder import embedder
 from .crisis_service import is_crisis_message, CRISIS_RESPONSE
@@ -36,6 +39,8 @@ from .classifier_service import (
     MIN_WORDS_FOR_CLASSIFIER_TRUST,
 )
 from .memory_service import memory_service, HISTORY_FOR_LLM
+from .cache_service import cache_service
+from .metrics_service import cache_metrics
 from app.safety.output_safety import sanitize_model_output
 from app.config import settings
 
@@ -46,8 +51,10 @@ SYSTEM_PROMPT = """You are MindBridge, a compassionate AI mental health companio
 
 Core principles:
 - Always validate the user's feelings FIRST before offering any perspective
+- For general greetings (e.g. "hello", "hi", "hey", "good morning"), greet the user warmly and invite them to share how they are feeling or what's on their mind. Do NOT assume distress or sadness for a simple greeting.
 - Use open-ended questions to encourage self-reflection and exploration
 - NEVER diagnose any mental health condition or prescribe medication
+- If recommending crisis support, only reference official Indian resources: Tele-MANAS (14416 / 1800-89-14416) or India Emergency 112. Never output foreign numbers.
 - Always recommend professional help for persistent or serious issues
 - Keep your tone warm, calm, supportive, and hopeful
 - Responses should be 2-4 sentences unless the user clearly needs more
@@ -63,6 +70,12 @@ Topic steering & Context:
 
 # ── Static few-shot seed examples (always injected, model never changes them) ─
 STATIC_EXAMPLES = [
+    {
+        "user": "Hello!",
+        "assistant": (
+            "Hello! It's great to connect with you. How are you feeling today, and what's on your mind?"
+        ),
+    },
     {
         "user": "I feel overwhelmed and don't know what to do.",
         "assistant": (
@@ -93,6 +106,7 @@ STATIC_EXAMPLES = [
 # The static examples are folded in here at module load time.
 # The dynamic few-shot section (retrieved per request) is appended per call.
 _STATIC_PROMPT_PREFIX: str = SYSTEM_PROMPT + "\n\nHere are some examples of how you should respond:\n"
+_STATIC_PROMPT_PREFIX += "\nUser: Hello!\nMindBridge: Hello! It's great to connect with you. How are you feeling today, and what's on your mind?\n"
 _STATIC_PROMPT_PREFIX += "\nUser: I feel overwhelmed and don't know what to do.\nMindBridge: That sounds really exhausting — feeling overwhelmed takes so much out of you, and I can hear how heavy this feels right now. You don't have to figure everything out at once. Can you tell me what's weighing on you the most right now?\n"
 _STATIC_PROMPT_PREFIX += "\nUser: I've been anxious about everything lately.\nMindBridge: Anxiety can be so consuming, especially when it feels like it's everywhere at once — like your mind won't let you rest. You're not alone in feeling this way. What situation feels most pressing or difficult for you today?\n"
 _STATIC_PROMPT_PREFIX += "\nUser: I feel like no one understands me.\nMindBridge: That feeling of being misunderstood can be really lonely and painful. You deserve to be heard and seen for who you truly are. Can you tell me more about what's been happening that's made you feel this way?\n"
@@ -239,30 +253,10 @@ async def process_message(
     user_message: str,
     session_id: str,
     session_history: list[dict],   # DB history (fallback when Redis unavailable)
+    db: Optional[AsyncSession] = None,
 ) -> dict:
     """
-    Full AI pipeline.
-
-    Parameters
-    ----------
-    user_message    : Raw user input (will be trimmed + capped at 1 000 chars)
-    session_id      : Chat session UUID string — used as Redis memory key
-    session_history : Messages loaded from PostgreSQL (used as fallback when
-                      Redis memory is not available)
-
-    Returns
-    -------
-    {
-        "response"              : str,
-        "is_crisis"             : bool,
-        "is_relevant"           : bool,
-        "relevance_score"       : float,
-        "few_shot_count"        : int,
-        "predicted_category"    : str | None,
-        "classifier_confidence" : float,
-        "uncertainty"           : float,
-        "memory_used"           : bool,   # True when Redis history was injected
-    }
+    Full AI pipeline with Semantic Response Caching.
     """
     # ── Step 1: Sanitise ──────────────────────────────────────────────────────
     # The schema validator already strips and caps at 1000 chars.
@@ -279,11 +273,15 @@ async def process_message(
             "classifier_confidence" : 0.0,
             "uncertainty"           : 0.0,
             "memory_used"           : False,
+            "cache_hit"             : False,
+            "cached_similarity"     : 0.0,
         }
     word_count = len(user_message.split())
 
     # ── Step 2: Embed ─────────────────────────────────────────────────────────
+    embed_start = time.perf_counter()
     query_vec = embedder.embed(user_message)
+    cache_metrics.record_embedding_latency((time.perf_counter() - embed_start) * 1000.0)
 
     # ── Step 3: Relevance check (soft — LLM steers off-topic, not hard-block) ─
     is_relevant, relevance_score = embedder.check_relevance(query_vec)
@@ -346,6 +344,8 @@ async def process_message(
             "classifier_confidence" : classifier_confidence,
             "uncertainty"           : classifier_uncertainty,
             "memory_used"           : memory_service.available,
+            "cache_hit"             : False,
+            "cached_similarity"     : 0.0,
         }
     
     # ── Step 4.5: Suppress confusing classifier output ────────────────────────
@@ -353,6 +353,47 @@ async def process_message(
     # change the predicted category so the frontend/logs don't misleadingly say "Category=crisis".
     if predicted_category == "crisis" and not final_is_crisis:
         predicted_category = "ambiguous"
+
+    # ── Step 4.7: Semantic Cache Lookup (strictly after crisis check) ───────────
+    # If the message is safe and cache is enabled, look up semantically similar
+    # guidance in PostgreSQL. If similarity >= threshold (default 0.90) and mood
+    # is compatible, return cached guidance immediately and avoid remote GPU call.
+    if db is not None and getattr(settings, "SEMANTIC_CACHE_ENABLED", True):
+        try:
+            cache_hit = await cache_service.lookup(
+                db=db,
+                query_text=user_message,
+                query_vector=query_vec,
+                current_mood=predicted_category,
+            )
+            if cache_hit is not None:
+                logger.info(
+                    f"[AI Service] Semantic Cache HIT (sim={cache_hit['similarity']:.4f})! "
+                    f"Bypassing Llama 3 inference."
+                )
+                # Persist turn to Redis memory so conversation continuity is preserved
+                await memory_service.append_turn(
+                    session_id,
+                    user_message=user_message,
+                    ai_message=cache_hit["response"],
+                    category=cache_hit.get("category") or predicted_category,
+                    confidence=float(cache_hit.get("similarity", 1.0)),
+                )
+                return {
+                    "response": cache_hit["response"],
+                    "is_crisis": False,
+                    "is_relevant": is_relevant,
+                    "relevance_score": relevance_score,
+                    "few_shot_count": 0,
+                    "predicted_category": cache_hit.get("category") or predicted_category,
+                    "classifier_confidence": classifier_confidence,
+                    "uncertainty": classifier_uncertainty,
+                    "memory_used": memory_service.available,
+                    "cache_hit": True,
+                    "cached_similarity": cache_hit["similarity"],
+                }
+        except Exception as cache_err:
+            logger.error(f"[AI Service] Cache lookup error (graceful fallback): {cache_err}")
 
     # ── Step 5: Few-shot retrieval ────────────────────────────────────────────
     category_for_retrieval = (
@@ -364,9 +405,15 @@ async def process_message(
         )
         else None
     )
-    examples = embedder.get_few_shot_examples_by_category(query_vec, category_for_retrieval)
+    is_greeting = user_message.lower().strip("!.? ") in [
+        "hello", "hi", "hey", "good morning", "good evening", "good afternoon", "hi there", "greetings"
+    ]
+    if is_greeting:
+        examples = []
+    else:
+        examples = embedder.get_few_shot_examples_by_category(query_vec, category_for_retrieval)
 
-    # ── Step 6: Build Gemini prompt & history ─────────────────────────────────
+    # ── Step 6: Build Llama prompt & history ─────────────────────────────────
 
     # Dynamic portion: only the retrieved few-shot examples change per request.
     # The static prefix (_STATIC_PROMPT_PREFIX) was built once at module load.
@@ -402,6 +449,7 @@ async def process_message(
         {"role": "system", "content": dynamic_system_prompt}
     ] + messages
 
+    llama_start = time.perf_counter()
     try:
         if not _http_client:
             _initialize_inference()
@@ -424,6 +472,8 @@ async def process_message(
         if not ai_text:
             raise ValueError("Inference server returned empty response")
 
+        cache_metrics.record_llama_latency((time.perf_counter() - llama_start) * 1000.0)
+
     except Exception as exc:
         logger.error(f"[AI Service] Remote GPU inference error at {settings.INFERENCE_URL}: {exc}")
         ai_text = (
@@ -433,6 +483,20 @@ async def process_message(
 
     # ── Step 7.5: Output Safety Guard (Sanitize against medical/diagnostic claims) ─
     ai_text = sanitize_model_output(ai_text)
+
+    # ── Step 7.8: Store to Semantic Cache (if safe, generic, and reusable) ───
+    if db is not None and getattr(settings, "SEMANTIC_CACHE_ENABLED", True) and not final_is_crisis:
+        try:
+            await cache_service.store(
+                db=db,
+                query_text=user_message,
+                query_vector=query_vec,
+                response_text=ai_text,
+                detected_mood=predicted_category,
+                category=predicted_category,
+            )
+        except Exception as cache_store_err:
+            logger.error(f"[AI Service] Cache store error: {cache_store_err}")
 
     # ── Step 8: Persist to Redis memory (single pipeline, both messages) ─────
     await memory_service.append_turn(
@@ -454,4 +518,6 @@ async def process_message(
         "classifier_confidence" : classifier_confidence,
         "uncertainty"           : classifier_uncertainty,
         "memory_used"           : memory_used,
+        "cache_hit"             : False,
+        "cached_similarity"     : 0.0,
     }

@@ -45,23 +45,26 @@ We practice coordinated disclosure: we will credit you in the changelog and rele
 - The JWT `type` field (`access` / `refresh`) is validated on every request to prevent token-type confusion attacks.
 
 ### Secrets Management
-- `GEMINI_API_KEY` and `JWT_SECRET_KEY` are read from environment variables only.
+- `JWT_SECRET_KEY` and optional `REMOTE_INFERENCE_API_KEY` are read from environment variables only.
 - No secrets are committed to the repository (`.env` is in `.gitignore`).
 - `.env.example` contains only placeholder values.
 
-### Input Validation
+### Input Validation & Privacy
 - All user messages are capped at 1000 characters before AI processing.
 - Pydantic schemas validate and reject malformed request payloads at the HTTP boundary.
 - CORS origins are strictly configured and configurable per environment.
+- **Semantic Caching Privacy & PII Filter**: User messages are scanned for personal names, emails, phone numbers, and identifying disclosures before considering any response for the semantic cache. Responses containing personal disclosures are strictly excluded from shared caching.
 
 ### Crisis Safety
 - The crisis detection pipeline uses 100%-recall keyword matching as its hard safety net.
+- Crisis evaluation runs **prior to** any semantic cache lookup or model generation.
 - The ML classifier is used as an **additional signal only** and never overrides the keyword check.
-- Crisis responses always include verified helpline numbers; the system never diagnoses or dismisses.
+- Crisis responses always include verified helpline numbers (Tele-MANAS, 112); the system never diagnoses or dismisses.
 
 ### Data Retention
 - Redis conversation memory auto-expires after 24 hours of inactivity (configurable via `MEMORY_TTL_SECONDS`).
 - Deleting a chat session also clears its Redis memory.
+- Semantic cache entries expire automatically based on `SEMANTIC_CACHE_TTL_DAYS` (default: 30 days).
 
 ---
 
@@ -69,4 +72,4 @@ We practice coordinated disclosure: we will credit you in the changelog and rele
 
 The following are acknowledged and not treated as vulnerabilities for this project:
 - Rate limiting (not yet implemented — see [ROADMAP.md](ROADMAP.md))
-- Gemini API key theft via server-side SSRF (mitigated by the key being server-only)
+- Client-side token storage in browser localStorage (industry standard for single-page applications without custom cookie domains)

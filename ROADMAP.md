@@ -10,12 +10,14 @@ Completed items are tracked in [CHANGELOG.md](CHANGELOG.md).
 
 **Target: Q3 2025**
 
+- [x] **Pydantic v2 ConfigDict** — migrated `Settings` from deprecated `class Config` to modern `model_config = SettingsConfigDict(...)`
+- [x] **PostgreSQL 16 + pgvector Semantic Response Caching** — sub-50ms cosine similarity caching with HNSW vector index
+- [x] **Meta Llama-3-8B Fine-Tuned Model Integration** — dedicated QLoRA inference microservice with GPU support
+- [x] **Localized Indian Crisis Support** — integrated Tele-MANAS (14416), Emergency 112, NIMHANS, and Vandrevala helplines
+- [x] **Private Reflection Journaling** — secure journal entry and wellness report endpoints
 - [ ] **Rate limiting** — per-user and per-IP request throttling (e.g. 60 req/min chat)
 - [ ] **Crisis alert notification** — optional SMS/email to an emergency contact when crisis protocol activates
-- [ ] **Classifier retraining** — larger, balanced dataset; multi-label support for comorbid presentations
 - [ ] **Session search** — full-text search across past conversations
-- [ ] **Webhook for crisis events** — allow operators to integrate with their own escalation systems
-- [ ] **Pydantic v2 ConfigDict** — migrate `Settings` from deprecated `class Config` to `model_config = ConfigDict(...)`
 
 ---
 

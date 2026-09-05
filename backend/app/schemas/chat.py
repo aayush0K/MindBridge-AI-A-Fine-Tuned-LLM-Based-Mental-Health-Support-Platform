@@ -50,6 +50,10 @@ class ChatResponse(BaseModel):
     detected_mood: str | None = None
     mood_confidence: float = 0.0
 
+    # Semantic Cache metadata
+    cache_hit: bool = False
+    cached_similarity: float = 0.0
+
 
 class SessionResponse(BaseModel):
     id: uuid.UUID

@@ -11,7 +11,7 @@ This guide covers deploying MindBridge AI to a production server.
 - A Linux server (Ubuntu 22.04 LTS recommended)
 - Docker Engine 24+ and Docker Compose v2
 - A domain name with DNS configured (for HTTPS)
-- A Google Gemini API key
+- A GPU inference server or Google Colab node running Meta Llama 3 8B + MindBridge LoRA
 
 ---
 
@@ -37,8 +37,12 @@ Edit `backend/.env` and set:
 ```env
 DATABASE_URL=postgresql+asyncpg://postgres:<STRONG_PASSWORD>@localhost:5435/mindbridge
 JWT_SECRET_KEY=<generate: python -c "import secrets; print(secrets.token_urlsafe(48))">
-GEMINI_API_KEY=<your-gemini-api-key>
+INFERENCE_URL=https://your-gpu-server-or-ngrok-url/generate
+REMOTE_INFERENCE_API_KEY=
 REDIS_URL=redis://localhost:6380
+SEMANTIC_CACHE_ENABLED=true
+SEMANTIC_CACHE_THRESHOLD=0.90
+SEMANTIC_CACHE_TTL_DAYS=30
 CORS_ORIGINS=https://your-domain.com
 APP_ENV=production
 ```
@@ -236,5 +240,6 @@ Redis uses AOF persistence by default — the `mindbridge_redisdata` volume is p
 ## Notes
 
 - **Redis TTL**: Conversation memory expires after 24 hours of inactivity. This is by design. No manual cleanup is needed.
-- **Gemini quota**: The free Gemini tier has rate limits (RPM). If you hit 429 errors, the backend gracefully falls back to corpus examples. For production, use a paid tier.
+- **Semantic Caching**: Common repetitive queries are served directly from PostgreSQL vector cache in ~20ms, bypassing the remote GPU and significantly reducing server costs.
+- **GPU Inference Server**: The backend communicates with your fine-tuned Llama 3 8B + LoRA endpoint over HTTP. If the remote GPU experiences downtime, the backend automatically returns a non-fatal service notice without crashing.
 - **Classifier weights**: `backend/app/models/classifier_weights.pt` must be present. It is committed to the repository (103 KB). If it is absent, the system falls back to cosine-similarity-only retrieval — crisis keyword detection still works.

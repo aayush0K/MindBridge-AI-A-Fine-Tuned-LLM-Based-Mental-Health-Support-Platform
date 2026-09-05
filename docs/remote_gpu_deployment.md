@@ -1,6 +1,6 @@
 # 🌐 MindBridge AI — Remote GPU Inference Deployment Guide
 
-This guide explains how to host your fine-tuned **Meta Llama-3-8B-Instruct + aayush0K/Llama-3-MindBridge** model on a **Remote GPU Server** while keeping your **Next.js frontend, FastAPI backend, and SQLite database running locally on your PC**.
+This guide explains how to host your fine-tuned **Meta Llama-3-8B-Instruct + aayush0K/Llama-3-MindBridge** model on a **Remote GPU Server** while keeping your **Next.js frontend, FastAPI backend, PostgreSQL database, and Redis cache running locally or in Docker on your PC**.
 
 ---
 

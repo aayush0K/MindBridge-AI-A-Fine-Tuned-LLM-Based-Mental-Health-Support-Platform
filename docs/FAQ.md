@@ -16,23 +16,32 @@ No. MindBridge AI is a software application, not a medical device. It does not d
 
 The system activates a crisis protocol that:
 1. Immediately returns a compassionate response acknowledging the user's distress
-2. Provides verified helpline numbers (India-specific + international via findahelpline.com)
+2. Provides verified Indian national helpline numbers (Tele-MANAS `14416` / `1800-89-14416` and Emergency `112`)
 3. Persists the event in PostgreSQL (`crisis_flagged = true`) for audit purposes
-4. Clears further AI generation — no Gemini call is made for crisis messages
+4. Clears further AI generation — no GPU inference or cache lookup is executed for crisis messages
 
 ### What data is stored?
 
-- **PostgreSQL**: User accounts, chat sessions, message history, mood logs. Messages include `is_crisis` flag and `relevance_score`.
+- **PostgreSQL**: User accounts, chat sessions, message history, mood logs, wellness reports, journal entries, and the reusable `semantic_cache`. Messages include `is_crisis` flag and `relevance_score`.
 - **Redis**: Rolling conversation window (last 20 messages per session) — auto-deleted after 24 hours of inactivity.
-- No analytics, no third-party tracking, no cross-user data sharing.
+- **Privacy Assurance**: Shared cache entries are filtered by a strict PII engine — names, phone numbers, emails, and personal disclosures are never stored.
 
 ---
 
-## Setup
+## Architecture & Models
 
-### Do I need a Gemini API key to run locally?
+### What LLM does MindBridge AI use?
 
-No. The system has a graceful fallback: if `GEMINI_API_KEY` is not set or if the Gemini API is unavailable, it returns the best-matching corpus example response instead. Crisis detection and relevance filtering still work fully without the key.
+MindBridge AI runs a fine-tuned **Meta Llama-3-8B-Instruct** model adapted using **QLoRA** (`aayush0K/Llama-3-MindBridge`). It is hosted on a remote GPU server (such as Google Colab with a Tesla T4 GPU or local GPU node) and communicated with via an HTTP REST endpoint (`INFERENCE_URL`).
+
+### How does Semantic Response Caching work?
+
+Common or repetitive wellness inquiries are vectorized with `all-MiniLM-L6-v2` into 384-dimensional embeddings and matched against PostgreSQL using `pgvector` (`<=>` cosine distance with an HNSW index).
+If the similarity is &ge; 0.90 and the emotional context is compatible, the cached guidance is returned in **~20 ms**, bypassing remote GPU execution and eliminating inference latency.
+
+### What happens if the remote GPU is offline?
+
+The backend handles this gracefully — if `INFERENCE_URL` cannot be reached, the server catches the timeout or connection failure and returns a non-fatal service notice without crashing. Crisis detection and semantic cache lookups still function normally.
 
 ### The server starts but corpus isn't loading — what's wrong?
 
@@ -46,10 +55,6 @@ No. It means `backend/app/models/classifier_weights.pt` is absent. The system fa
 
 The `docker-compose.yml` maps Redis to **port 6380** (not the default 6379) to avoid conflicts with any existing local Redis instance. Make sure your `REDIS_URL` is `redis://localhost:6380`.
 
-### Gemini returns 429 Too Many Requests
-
-You've hit the free tier rate limit. The backend handles this gracefully — it logs the error and returns a corpus fallback response. For production workloads, use a paid Gemini tier.
-
 ---
 
 ## AI Behavior
@@ -60,7 +65,7 @@ The relevance gate uses cosine similarity to the mental health corpus. Off-topic
 
 ### Why do short messages like "yes" show `predicted_category: "ambiguous"`?
 
-Messages shorter than 4 words are not trusted by the classifier — the confidence score is deceptively high on short inputs because the model has almost no semantic signal to go on. The category is overridden to `"ambiguous"` to prevent misleading frontend displays. This is intentional.
+Messages shorter than 5 words are not trusted by the classifier — the confidence score is deceptively high on short inputs because the model has almost no semantic signal to go on. The category is overridden to `"ambiguous"` to prevent misleading frontend displays. This is intentional.
 
 ### Can the AI miss a crisis message?
 
@@ -68,7 +73,7 @@ The keyword layer uses compiled regex with word-boundary matching and covers all
 
 ### The AI lost context from a previous message
 
-Check `memory_used` in the response. If it is `false`, Redis was unavailable at the time. The PostgreSQL fallback is used, but it only covers messages persisted to the DB — very recent messages in the same request may not appear in the fallback history. Ensure Redis is running and reachable.
+Check `memory_used` in the response. If it is `false`, Redis was unavailable at the time. The PostgreSQL fallback is used, but it only covers messages persisted to the DB. Ensure Redis is running and reachable.
 
 ---
 
@@ -81,7 +86,3 @@ Yes. Edit `CRISIS_KEYWORDS` in `backend/app/services/crisis_service.py`. Add una
 ### How do I retrain the classifier?
 
 The training script is in `backend/scripts/train_classifier.py`. Edit the corpus, run the script, and replace `backend/app/models/classifier_weights.pt` and `label_map.json` with the new outputs. Restart the server.
-
-### Can I use a different LLM instead of Gemini?
-
-The Gemini integration is encapsulated in `_initialize_gemini()` and the `generate_content` call in `ai_service.py`. Replacing it with another provider requires modifying `Step 7` of the pipeline and adjusting the message format (OpenAI uses a different dict structure than Gemini's `{role, parts}` format).

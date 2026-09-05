@@ -8,9 +8,14 @@ import torch
 import uvicorn
 from typing import Optional
 
-from .schemas import InferenceRequest, InferenceResponse, ChatMessage
-from .model_loader import model_manager
-from .config import settings
+try:
+    from .schemas import InferenceRequest, InferenceResponse, ChatMessage
+    from .model_loader import model_manager
+    from .config import settings
+except ImportError:  # pragma: no cover - supports running file directly
+    from schemas import InferenceRequest, InferenceResponse, ChatMessage
+    from model_loader import model_manager
+    from config import settings
 
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 

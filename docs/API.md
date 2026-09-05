@@ -155,7 +155,11 @@ Send a user message and receive an AI response. This is the core endpoint.
   "predicted_category": "anxiety",
   "classifier_confidence": 0.84,
   "uncertainty": 0.012,
-  "memory_used": true
+  "memory_used": true,
+  "detected_mood": "anxiety",
+  "mood_confidence": 0.89,
+  "cache_hit": false,
+  "cached_similarity": 0.0
 }
 ```
 
@@ -173,9 +177,35 @@ Send a user message and receive an AI response. This is the core endpoint.
 | `classifier_confidence` | float | Classifier confidence (0–1) |
 | `uncertainty` | float | MC Dropout uncertainty (lower = more confident) |
 | `memory_used` | bool | True if conversation history was injected |
+| `detected_mood` | string\|null | DistilBERT detected emotion label |
+| `mood_confidence` | float | Emotion detection confidence (0–1) |
+| `cache_hit` | bool | True if served from PostgreSQL semantic cache (bypassed GPU) |
+| `cached_similarity` | float | Cosine similarity score on semantic cache match (0–1) |
 
 **Crisis response:**  
-When `is_crisis=true`, `response` contains helpline numbers (India + international). `few_shot_count` will be 0.
+When `is_crisis=true`, `response` contains Indian national helpline numbers (Tele-MANAS `14416` / `1800-89-14416` and Emergency `112`). `few_shot_count` will be 0 and `cache_hit` will be false.
+
+---
+
+### `GET /api/v1/chat/cache-metrics` 🔒
+
+Retrieve live performance metrics for Semantic Response Caching.
+
+**Response `200`:**
+```json
+{
+  "total_queries": 45,
+  "cache_hits": 25,
+  "cache_misses": 20,
+  "gpu_calls_avoided": 25,
+  "hit_rate_percentage": 55.56,
+  "avg_cache_lookup_ms": 21.33,
+  "avg_embedding_ms": 25.96,
+  "avg_llama_inference_ms": 1420.5,
+  "avg_hit_similarity_score": 0.965,
+  "recent_samples_tracked": 45
+}
+```
 
 ---
 
@@ -284,6 +314,75 @@ Get aggregated mood statistics for the last 30 days.
 ```
 
 - `trend`: `"improving"` | `"declining"` | `"stable"` (based on first-half vs second-half average)
+
+---
+
+## Journal Endpoints
+
+### `POST /api/v1/journal` 🔒
+
+Create a private reflective journal entry.
+
+**Request:**
+```json
+{
+  "title": "Evening Reflections",
+  "content": "Spent time outside today and felt a noticeable lift in mood.",
+  "mood_tag": "calm"
+}
+```
+
+**Response `201`:** The created journal entry object (`id`, `user_id`, `title`, `content`, `mood_tag`, `created_at`, `updated_at`).
+
+---
+
+### `GET /api/v1/journal` 🔒
+
+List user's journal entries (ordered newest first, up to 100 entries).
+
+**Response `200`:** Array of journal entry objects.
+
+---
+
+### `GET /api/v1/journal/{entry_id}` 🔒
+
+Retrieve a specific journal entry by ID.
+
+---
+
+### `DELETE /api/v1/journal/{entry_id}` 🔒
+
+Delete a specific journal entry.
+
+---
+
+## Report Endpoints
+
+### `POST /api/v1/reports/generate` 🔒
+
+Generate an AI-driven wellness summary report for a given time window.
+
+**Request:**
+```json
+{
+  "report_type": "weekly",
+  "days": 7
+}
+```
+
+**Response `201`:**
+```json
+{
+  "id": "uuid",
+  "report_type": "weekly",
+  "period_start": "2026-08-29T00:00:00Z",
+  "period_end": "2026-09-05T00:00:00Z",
+  "summary": "Over the past 7 days, your emotional wellbeing showed steady improvement...",
+  "key_topics": ["work-life balance", "sleep hygiene"],
+  "mood_analysis": { "predominant_mood": "calm", "avg_score": 7.2 },
+  "recommendations": "Continue regular journaling and maintaining boundary times for work."
+}
+```
 
 ---
 

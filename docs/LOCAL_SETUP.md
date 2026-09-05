@@ -1,53 +1,78 @@
-# Local setup — environment variables
+# Local Setup — Environment & Running Guide
 
-## Do you need `.env`?
+## Environment Files
 
-| File | Required? | Notes |
-|------|-----------|--------|
-| `backend/.env` | **Yes** (file exists) | DB + JWT must match your Postgres. Gemini is optional for first run. |
-| `frontend/.env.local` | **Yes** (already set) | Points to `http://localhost:8000` — no API keys on frontend. |
+| File | Required? | Purpose |
+|------|-----------|---------|
+| `backend/.env` | **Yes** | PostgreSQL connection, Redis, JWT secret, Inference URL, and Semantic Cache parameters. |
+| `frontend/.env.local` | **Yes** | Points to `http://localhost:8000` — client API URL (no private secrets). |
 
-## Where to get each value
+---
 
-### `DATABASE_URL` (required)
+## Configuration Variables Explained
 
-**Default (no change if using Docker):**
+### 1. `DATABASE_URL` (Required)
 
 ```env
 DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5435/mindbridge
 ```
 
-- **Source:** `docker-compose.yml` (`POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`)
-- **Start DB:** Open **Docker Desktop**, then run `docker compose up -d` from project root
-- **Port 5435:** Used because Windows may already run PostgreSQL on 5432/5433
-
-If you use local Postgres without Docker, set user/password/db to match your install.
+- **Database Engine:** PostgreSQL 16 with `pgvector` extension (container `mindbridge-db`).
+- **Port 5435:** Port mapped on host in `docker-compose.yml` to prevent conflict with any native PostgreSQL running on 5432.
+- **Start Container:** Open **Docker Desktop**, then run `docker compose up -d` from the repository root.
 
 ---
 
-### `JWT_SECRET_KEY` (required)
+### 2. `REDIS_URL` (Required)
 
-- **Local dev:** Already set in `.env` — you can keep it as-is.
-- **Production:** Generate a long random string:
+```env
+REDIS_URL=redis://localhost:6380
+```
+
+- **Redis Engine:** Redis 7-Alpine with AOF persistence (container `mindbridge-redis`).
+- **Port 6380:** Port mapped on host in `docker-compose.yml`. Used for rolling 24h conversation context.
+
+---
+
+### 3. `JWT_SECRET_KEY` (Required)
+
+- **Local dev:** Already configured in `backend/.env`.
+- **Production:** Generate a secure random string:
   ```bash
   python -c "import secrets; print(secrets.token_urlsafe(32))"
   ```
 
 ---
 
-### `GEMINI_API_KEY` (optional for local testing)
+### 4. `INFERENCE_URL` (Llama 3 8B + LoRA Remote GPU Server)
 
-- **Get it:** [Google AI Studio → API keys](https://aistudio.google.com/app/apikey)
-  1. Sign in with Google
-  2. Click **Create API key**
-  3. Paste into `backend/.env` → `GEMINI_API_KEY=...`
-- **Without key:** Backend still runs; chat uses a **fallback** message instead of real Gemini replies. Crisis detection and relevance filtering still work.
+```env
+INFERENCE_URL=http://localhost:8001/generate
+```
+
+- Points to your GPU inference server running `Meta-Llama-3-8B-Instruct` with the fine-tuned MindBridge LoRA adapter (`aayush0K/Llama-3-MindBridge`).
+- For Google Colab Tesla T4 execution, set this to your active ngrok tunnel URL:
+  ```env
+  INFERENCE_URL=https://<your-ngrok-subdomain>.ngrok-free.dev/generate
+  ```
+- If the GPU server is offline, the backend gracefully falls back without crashing.
 
 ---
 
-### Frontend (`frontend/.env.local`)
+### 5. Semantic Response Cache Configuration
 
-Already configured — no secrets:
+```env
+SEMANTIC_CACHE_ENABLED=true
+SEMANTIC_CACHE_THRESHOLD=0.90
+SEMANTIC_CACHE_TTL_DAYS=30
+```
+
+- Bypasses remote GPU invocation for common inquiries matching previous responses with cosine similarity &ge; 0.90.
+- Preserves privacy (rejects PII) and checks mood compatibility before returning cached responses.
+
+---
+
+### 6. Frontend Configuration (`frontend/.env.local`)
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:8000
@@ -56,22 +81,37 @@ NEXT_PUBLIC_WS_URL=ws://localhost:8000
 
 ---
 
-## Run order
+## Step-by-Step Run Instructions
+
+### Step 1: Start Docker Infrastructure
+Ensure **Docker Desktop** is running, then execute:
 
 ```powershell
-# 1. Start Docker Desktop, then:
-cd c:\mindbridge
 docker compose up -d
+docker ps
+```
+Verify `mindbridge-db` (port 5435) and `mindbridge-redis` (port 6380) show as healthy.
 
-# 2. Backend
+---
+
+### Step 2: Start Backend Server
+
+```powershell
 cd backend
 .\venv\Scripts\activate
 alembic upgrade head
 uvicorn app.main:app --reload --port 8000
+```
+- API Documentation: **http://localhost:8000/docs**
+- Health Check: **http://localhost:8000/health**
+- Cache Metrics: **http://localhost:8000/api/v1/chat/cache-metrics**
 
-# 3. Frontend (new terminal)
+---
+
+### Step 3: Start Frontend Server (In a separate terminal)
+
+```powershell
 cd frontend
 npm run dev
 ```
-
-Open http://localhost:3000
+Open **http://localhost:3000** in your browser.

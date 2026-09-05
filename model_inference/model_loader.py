@@ -2,7 +2,11 @@ import os
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel
-from .config import settings
+
+try:
+    from .config import settings
+except ImportError:  # pragma: no cover - supports running file directly
+    from config import settings
 
 class ModelManager:
     def __init__(self):

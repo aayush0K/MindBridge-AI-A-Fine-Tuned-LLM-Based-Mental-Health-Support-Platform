@@ -22,6 +22,7 @@
 
 ### Key Capabilities:
 - **Domain Fine-Tuned LLM:** Meta Llama-3-8B fine-tuned using QLoRA for empathetic, non-judgmental conversational support.
+- **Semantic Response Caching:** Inference-time optimization using MiniLM-L6-v2 embeddings and PostgreSQL pgvector (HNSW index) to bypass remote GPU calls for reusable queries.
 - **Multi-Layer Safety Engine:** Deterministic input/output filtering preventing unauthorized medical diagnoses, psychiatric prescriptions, and violence.
 - **Crisis Escalation:** Immediate detection of self-harm / suicidal ideation with localized emergency hotline intervention.
 - **Semantic Memory & Tracking:** Redis-backed short-term conversation context and PostgreSQL long-term history.
@@ -46,20 +47,23 @@
 ├────────────────────────────────────────────────────────┤
 │ • Authentication (JWT, bcrypt password hashing)        │
 │ • Database (PostgreSQL: Users, Chats, Moods, Journal)  │
+│ • Semantic Cache (pgvector: Cosine similarity search)  │
 │ • Cache & Memory (Redis: 24h Conversation Memory)      │
 │ • Sentence-Transformers (Relevance & Semantic Search)  │
 │ • Emotion Classifier (DistilBERT Mood Detector)        │
 └───────────────────────────┬────────────────────────────┘
-                            │ Internal HTTP (Port: 8001)
+                            │
                             ▼
 ┌────────────────────────────────────────────────────────┐
-│               MindBridge Safety Layer                  │
+│           MindBridge Safety & Crisis Gate              │
 ├────────────────────────────────────────────────────────┤
-│ 1. Input Safety Filter (Crisis Regex & Keyword Guards) │
-│ 2. System Prompt Injection (Domain Rules & Boundaries) │
+│ 1. Crisis Check: Keyword + Embedding + Classifier      │
+│    • IF CRISIS: Halt, return Tele-MANAS hotlines       │
+│ 2. Semantic Cache Lookup (Cosine Similarity >= 0.90)   │
+│    • IF CACHE HIT: Return cached guidance (0ms GPU)    │
 │ 3. Output Sanitizer (Prohibits Clinical Claims)        │
 └───────────────────────────┬────────────────────────────┘
-                            │
+                            │ On Cache Miss (HTTP: 8001)
                             ▼
 ┌────────────────────────────────────────────────────────┐
 │       Dedicated Model Inference Server (Port: 8001)    │
@@ -115,6 +119,9 @@ REDIS_URL=redis://localhost:6380
 MINDBRIDGE_BASE_MODEL=meta-llama/Meta-Llama-3-8B-Instruct
 MINDBRIDGE_ADAPTER_ID=YOUR_USERNAME/Llama-3-MindBridge
 INFERENCE_URL=http://localhost:8001/generate
+SEMANTIC_CACHE_ENABLED=true
+SEMANTIC_CACHE_THRESHOLD=0.90
+SEMANTIC_CACHE_TTL_DAYS=30
 ```
 
 ---
@@ -168,18 +175,31 @@ npm run dev
 
 ## 🧪 7. Verification & Evaluation
 
-### 1. Verify Model Loading:
+### 1. Run Automated Backend Test Suite (Safety, Pipeline & Semantic Cache):
+```bash
+cd backend
+python -m pytest tests/test_ai_pipeline.py tests/test_semantic_cache.py -v
+```
+*Validates full AI pipeline, crisis detection, PII filtering, and pgvector cosine similarity caching.*
+
+### 2. Verify Semantic Cache Metrics:
+```bash
+curl http://localhost:8000/api/v1/chat/cache-metrics
+```
+*Returns real-time metrics: hits, misses, hit rate, latency, and avoided GPU calls.*
+
+### 3. Verify Model Loading (Local Mode):
 ```bash
 python test_model.py
 ```
 *Loads the base model, attaches the LoRA adapter, and runs a test conversation.*
 
-### 2. Verify Inference Service Status:
+### 4. Verify Remote Inference Service Status:
 ```bash
 curl http://localhost:8001/model/status
 ```
 
-### 3. Run Academic Evaluation Suite:
+### 5. Run Academic Evaluation Suite:
 ```bash
 python evaluation/evaluate_model.py
 ```
@@ -189,19 +209,35 @@ python evaluation/evaluate_model.py
 
 ## 🛡️ 8. Safety & Crisis Management
 
-MindBridge implements a 3-stage deterministic safety architecture:
+MindBridge implements a multi-stage deterministic safety architecture:
 1. **Input Guard:** Real-time regex and embedding matching on self-harm, suicidal intent, and violence.
-2. **Crisis Response:** Automatically returns verified Government of India emergency and mental health resources:
+2. **Immediate Crisis Escalation (Pre-Cache):** Automatically returns verified Government of India emergency and mental health resources:
    - **Unified Emergency:** **112** (Immediate Police, Ambulance, Fire)
    - **Tele-MANAS (Govt of India):** **14416** or **1800-89-14416** (24×7 National Tele-Mental Health)
    - **NIMHANS Helpline:** **080-46110007** (24×7 National Apex Institute)
    - **Vandrevala Foundation:** **9999 666 555** / **1860-2662-345** (24×7 Free Psychological Support)
    - **iCall (TISS):** **9152987821** (Mon–Sat, 8 AM – 10 PM)
-3. **Output Sanitizer:** Verifies that model responses never claim doctor status, diagnose clinical illnesses, or prescribe pharmaceuticals.
+3. **Semantic Response Cache Guard:** Evaluated only after passing safety checks; uses PII filtering, emotional compatibility guards, and clinical restriction checks.
+4. **Output Sanitizer:** Verifies that model responses never claim doctor status, diagnose clinical illnesses, or prescribe pharmaceuticals.
 
 ---
 
-## 📄 9. License & Attribution
+## 📚 10. Documentation Index
+
+- [Architecture & Data Flow](docs/ARCHITECTURE.md)
+- [REST & WebSocket API Reference](docs/API.md)
+- [Semantic Response Caching Guide](docs/semantic_caching.md)
+- [Remote GPU Inference Deployment](docs/remote_gpu_deployment.md)
+- [Local Development Setup](docs/LOCAL_SETUP.md)
+- [Production Deployment Guide](docs/DEPLOYMENT.md)
+- [Model Card & Fine-Tuning](docs/MODEL_CARD.md)
+- [Project Structure & Tree](docs/PROJECT_STRUCTURE.md)
+- [Project Statistics & Metrics](docs/project_statistics.md)
+- [Frequently Asked Questions (FAQ)](docs/FAQ.md)
+
+---
+
+## 📄 11. License & Attribution
 
 - **Base Model:** Meta Llama 3 ([Meta Llama 3 Community License](https://llama.meta.com/llama3/license/))
 - **Source Code:** MIT License

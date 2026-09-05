@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MoodChart } from "@/components/dashboard/MoodChart";
 import { moodApi, chatApi, reportApi } from "@/lib/api";
+import { formatIndianDate } from "@/lib/utils";
 import type { ChatSession } from "@/types/chat.types";
 
 interface Report {
@@ -123,7 +124,7 @@ export default function DashboardPage() {
                 <li key={r.id} className="flex items-center justify-between rounded-xl border border-ink/8 px-4 py-3">
                   <div>
                     <p className="font-medium text-sm text-ink">
-                      {new Date(r.period_start).toLocaleDateString()} — {new Date(r.period_end).toLocaleDateString()}
+                      {formatIndianDate(r.period_start)} — {formatIndianDate(r.period_end)}
                     </p>
                     <p className="text-xs text-ink/50 line-clamp-1">{r.summary.slice(0, 100)}...</p>
                   </div>
@@ -155,7 +156,7 @@ export default function DashboardPage() {
                   <div>
                     <p className="font-medium text-sm text-ink truncate max-w-xs">{s.title}</p>
                     <p className="text-xs text-ink/50">
-                      {s.message_count} messages · {new Date(s.started_at).toLocaleDateString()}
+                      {s.message_count} messages · {formatIndianDate(s.started_at)}
                     </p>
                   </div>
                   <Link href="/dashboard/chat">

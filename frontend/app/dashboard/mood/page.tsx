@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { MoodChart } from "@/components/dashboard/MoodChart";
 import { AutoMoodTrends } from "@/components/dashboard/AutoMoodTrends";
 import { moodApi } from "@/lib/api";
+import { formatIndianDateTime } from "@/lib/utils";
 
 const LABELS = ["anxious", "sad", "neutral", "calm", "happy"];
 
@@ -151,7 +152,7 @@ export default function MoodPage() {
                   {log.auto_detected && <span className="text-xs bg-sage/10 text-sage px-1.5 py-0.5 rounded mr-2">AI</span>}
                   {log.mood_label} · {log.mood_score}/10
                 </span>
-                <span className="text-ink/50">{new Date(log.logged_at).toLocaleString()}</span>
+                <span className="text-ink/50 text-xs">{formatIndianDateTime(log.logged_at)}</span>
               </li>
             ))}
           </ul>

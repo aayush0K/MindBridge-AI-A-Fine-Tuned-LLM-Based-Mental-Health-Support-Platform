@@ -88,6 +88,7 @@ async def send_message(
         user_message=data.message,
         session_id=str(session.id),
         session_history=session_history,
+        db=db,
     )
 
     # ── Persist to PostgreSQL (source of truth / audit trail) ───────────────
@@ -173,7 +174,20 @@ async def send_message(
         # Phase 7: Mood detection result
         detected_mood=mood_result["mood_label"],
         mood_confidence=mood_result["confidence"],
+        # Semantic Cache metadata
+        cache_hit=ai_result.get("cache_hit", False),
+        cached_similarity=ai_result.get("cached_similarity", 0.0),
     )
+
+
+@router.get("/cache-metrics")
+async def get_cache_metrics():
+    """
+    Retrieve live performance metrics for Semantic Response Caching:
+    hit counts, miss counts, GPU calls avoided, latencies, and hit rate.
+    """
+    from app.services.metrics_service import cache_metrics
+    return cache_metrics.get_metrics()
 
 
 @router.get("/sessions", response_model=list[SessionResponse])

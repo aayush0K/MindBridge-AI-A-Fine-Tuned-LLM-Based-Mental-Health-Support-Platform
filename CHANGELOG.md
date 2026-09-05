@@ -7,6 +7,37 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.0] — 2026-09-05
+
+### Added
+- **Domain Fine-Tuned LLM Microservice**:
+  - Fine-tuned `meta-llama/Meta-Llama-3-8B-Instruct` using QLoRA (4-bit NF4 quantization, $r=16, \alpha=32$).
+  - MindBridge LoRA adapter (`aayush0K/Llama-3-MindBridge`) deployed on remote GPU inference server (`/generate`).
+  - Strict input-guarding and empathetic tone enforcement.
+- **Semantic Response Caching (PostgreSQL `pgvector`)**:
+  - Inference-time optimization generating 384-dimensional `all-MiniLM-L6-v2` query embeddings.
+  - Cosine distance nearest-neighbor lookups using PostgreSQL HNSW index (`vector_cosine_ops`).
+  - Configurable similarity threshold (`SEMANTIC_CACHE_THRESHOLD=0.90`) and auto-invalidation TTL (`SEMANTIC_CACHE_TTL_DAYS=30`).
+  - Cache telemetry and monitoring via `GET /api/v1/chat/cache-metrics`.
+- **Privacy & PII Protection**:
+  - `pii_filter` engine blocking names, email addresses, phone numbers, and personal identifiers from entering shared cache.
+  - Reusable guidance validation preventing error messages and emergency alerts from being cached.
+  - Emotional state compatibility filter ensuring cached advice matches the user's current affective state.
+- **Localized Crisis Escalation**:
+  - Direct integration with verified Government of India emergency helplines: **Tele-MANAS (14416 / 1800-89-14416)**, **Unified Emergency 112**, **NIMHANS (080-46110007)**, and **Vandrevala Foundation (9999 666 555)**.
+  - Strict safety ordering: Crisis protocol always triggers **before** semantic cache lookups or model generation.
+- **Journaling & Report Endpoints**:
+  - RESTful APIs for private reflection journaling (`/api/v1/journal`) and automated wellness summary reports (`/api/v1/reports`).
+
+### Changed
+- **Database Architecture Standardized**:
+  - Completely removed SQLite across all code, tests, configuration, and migrations.
+  - Standardized on **PostgreSQL 16** with `pgvector` extension for persistence and **Redis 7** for short-term conversation context.
+- **CI/CD Pipeline**:
+  - Updated GitHub Actions to run tests against the standardized PostgreSQL/Redis environment and modern inference pipeline.
+
+---
+
 ## [1.0.0] — 2025-07-09
 
 ### Added

@@ -1,10 +1,10 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List
 
 
 class Settings(BaseSettings):
     # ── Database ──────────────────────────────────────────────────────────────
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost:5432/mindbridge"
+    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost:5435/mindbridge"
 
     # ── JWT Auth ──────────────────────────────────────────────────────────────
     JWT_SECRET_KEY: str  # No default — must be set in .env / environment
@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6380"
     MEMORY_TTL_SECONDS: int = 86_400          # 24 h — auto-expire idle sessions
 
+    # ── Semantic Response Cache ───────────────────────────────────────────────
+    SEMANTIC_CACHE_ENABLED: bool = True
+    SEMANTIC_CACHE_THRESHOLD: float = 0.90
+    SEMANTIC_CACHE_TTL_DAYS: int = 30
+
     # ── App ───────────────────────────────────────────────────────────────────
     CORS_ORIGINS: str = "http://localhost:3000"
     CORPUS_PATH: str = "./corpus/mental_health_corpus.json"
@@ -31,10 +36,11 @@ class Settings(BaseSettings):
     def cors_origins_list(self) -> List[str]:
         return [o.strip() for o in self.CORS_ORIGINS.split(",")]
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        extra = "ignore"
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
 
 settings = Settings()

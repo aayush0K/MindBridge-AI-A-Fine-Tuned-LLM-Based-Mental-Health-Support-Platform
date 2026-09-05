@@ -34,9 +34,11 @@ jobs:
         run: |
           echo "DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/mindbridge" >> .env
           echo "JWT_SECRET_KEY=ci-test-secret-key-not-for-production" >> .env
-          echo "GEMINI_API_KEY=ci-dummy-key" >> .env
+          echo "INFERENCE_URL=http://localhost:8001/generate" >> .env
           echo "REDIS_URL=redis://localhost:6379" >> .env
+          echo "SEMANTIC_CACHE_ENABLED=true" >> .env
+          echo "SEMANTIC_CACHE_THRESHOLD=0.90" >> .env
 
       - name: Run unit tests
         working-directory: backend
-        run: python -m pytest tests/test_ai_pipeline.py -v --tb=short
+        run: python -m pytest tests/test_ai_pipeline.py tests/test_semantic_cache.py -v --tb=short

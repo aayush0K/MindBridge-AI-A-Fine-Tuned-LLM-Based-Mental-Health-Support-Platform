@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Trash2, Edit3, BookOpen, Search, Sparkles, Check, X } from "lucide-react";
 import { journalApi } from "@/lib/api";
+import { formatIndianDateTime } from "@/lib/utils";
 
 interface JournalEntry {
   id: string;
@@ -287,14 +288,7 @@ export default function JournalPage() {
                     )}
                   </div>
                   <p className="text-xs text-slate-400 mt-1">
-                    {new Date(entry.created_at).toLocaleDateString(undefined, {
-                      weekday: "short",
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
+                    {formatIndianDateTime(entry.created_at)}
                   </p>
                   <p className="text-sm text-slate-600 mt-3 whitespace-pre-line line-clamp-4">
                     {entry.content}

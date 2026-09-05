@@ -59,7 +59,8 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env:
 # - Set JWT_SECRET_KEY to any long random string for local dev
-# - Set GEMINI_API_KEY if you have one (fallback works without it)
+# - Set INFERENCE_URL to your GPU endpoint or local model microservice (default: http://localhost:8001/generate)
+# - SEMANTIC_CACHE_ENABLED=true for pgvector caching
 
 alembic upgrade head
 uvicorn app.main:app --reload --port 8000
@@ -124,10 +125,10 @@ Open an issue with the `enhancement` label. Describe the problem you're solving,
 
 ## Testing
 
-### Unit tests (no server required)
+### Unit & Integration tests
 ```bash
 cd backend
-python -m pytest tests/test_ai_pipeline.py -v
+python -m pytest tests/test_ai_pipeline.py tests/test_semantic_cache.py -v
 ```
 
 ### Integration tests (server + Docker required)

@@ -42,7 +42,7 @@ Training Hardware:           NVIDIA Tesla T4 GPU (Google Colab, 15 GB VRAM)
 
 ```text
 ┌────────────────────────────────────────────────────────┐
-│                   React + Vite Frontend                │
+│               Next.js 14 / React Frontend              │
 │ (Chat UI, Mood Tracker, Private Journal, Resources)    │
 └───────────────────────────┬────────────────────────────┘
                             │ (REST / JSON + JWT)
@@ -52,21 +52,23 @@ Training Hardware:           NVIDIA Tesla T4 GPU (Google Colab, 15 GB VRAM)
 │                 (Port: 8000 /api/v1)                   │
 ├────────────────────────────────────────────────────────┤
 │ • JWT Authentication & User Session Management         │
-│ • PostgreSQL Database (Users, Chats, Moods, Journal)   │
-│ • Redis Cache (Conversation Memory & History TTL)      │
-│ • Sentence-Transformers (Relevance & Semantic Search)  │
+│ • PostgreSQL 16 DB (Users, Chats, Moods, Journal)      │
+│ • pgvector Semantic Response Cache (Cosine Sim >= 0.90)│
+│ • Redis 7 Memory (Conversation Window & Session TTL)   │
+│ • Sentence-Transformers (MiniLM Dense Embeddings)      │
 │ • DistilBERT Emotion & Mood Classifier                 │
 └───────────────────────────┬────────────────────────────┘
-                            │ (Internal HTTP)
+                            │ (Internal Flow)
                             ▼
 ┌────────────────────────────────────────────────────────┐
 │               MindBridge Safety Layer                  │
 ├────────────────────────────────────────────────────────┤
-│ 1. Input Safety Guard (Crisis Regex & Risk Scoring)    │
-│ 2. System Prompt Injection (Domain Rules & Empathy)    │
-│ 3. Output Sanitizer (No Medical Claims / Prescriptions)│
+│ 1. Input Safety Guard (Crisis Detection & Tele-MANAS)  │
+│ 2. Semantic Cache Lookup (Pre-Inference GPU Bypass)    │
+│ 3. PII & Privacy Filter (Cross-User Data Protection)   │
+│ 4. Output Sanitizer (No Medical Claims / Prescriptions)│
 └───────────────────────────┬────────────────────────────┘
-                            │
+                            │ (On Cache Miss: Port 8001)
                             ▼
 ┌────────────────────────────────────────────────────────┐
 │        Dedicated Inference Server (Port 8001)          │

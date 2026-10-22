@@ -49,21 +49,29 @@ class MentalHealthEmbedder:
         self.corpus_data = data
         contexts = [item["context"] for item in data]
 
-        logger.info(f"[Embedder] Computing embeddings for {len(contexts)} corpus entries...")
-        self.corpus_embeddings = self.model.encode(
-            contexts,
-            normalize_embeddings=True,
-            show_progress_bar=False,   # avoid tqdm output in production logs
-            batch_size=64,
-        )
+        # Pre-computed embeddings on disk to eliminate startup CPU & RAM spike
+        emb_file = path.parent / "corpus_embeddings.npy"
+        crisis_file = path.parent / "crisis_embeddings.npy"
 
-        # Separate crisis embeddings for faster lookup
-        crisis_items = [d for d in data if d.get("category") == "crisis"]
-        if crisis_items:
-            self.crisis_embeddings = self.model.encode(
-                [c["context"] for c in crisis_items],
+        if emb_file.exists():
+            logger.info("[Embedder] Loading pre-computed embeddings from disk (instant, 0 RAM spike)...")
+            self.corpus_embeddings = np.load(str(emb_file))
+            if crisis_file.exists():
+                self.crisis_embeddings = np.load(str(crisis_file))
+        else:
+            logger.info(f"[Embedder] Computing embeddings for {len(contexts)} corpus entries...")
+            self.corpus_embeddings = self.model.encode(
+                contexts,
                 normalize_embeddings=True,
+                show_progress_bar=False,
+                batch_size=32,
             )
+            crisis_items = [d for d in data if d.get("category") == "crisis"]
+            if crisis_items:
+                self.crisis_embeddings = self.model.encode(
+                    [c["context"] for c in crisis_items],
+                    normalize_embeddings=True,
+                )
 
         self._loaded = True
         logger.info(f"[Embedder] Loaded {len(data)} corpus entries ({len(crisis_items)} crisis).")

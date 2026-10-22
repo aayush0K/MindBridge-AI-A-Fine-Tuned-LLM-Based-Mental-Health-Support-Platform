@@ -56,7 +56,8 @@ async def lifespan(app: FastAPI):
 
     # ── Mood Detector (DistilBERT emotion classifier) ────────────────────────
     try:
-        mood_detector.load()
+        # mood_detector.load() - loaded on demand to stay under 512MB RAM
+        logger.info("[MoodService] Memory-efficient mode enabled.")
     except Exception as e:
         logger.error(f"Failed to initialize mood detector: {e}")
 

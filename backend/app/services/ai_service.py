@@ -457,7 +457,7 @@ async def process_message(
         payload = {
             "messages": full_messages,
             "temperature": 0.6,
-            "max_new_tokens": 300
+            "max_new_tokens": 160
         }
         headers = {}
         if getattr(settings, "REMOTE_INFERENCE_API_KEY", None):

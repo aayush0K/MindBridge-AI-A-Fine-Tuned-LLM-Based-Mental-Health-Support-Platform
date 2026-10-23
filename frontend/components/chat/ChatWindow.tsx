@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { Sparkles } from "lucide-react";
 import { MessageBubble } from "./MessageBubble";
 import { TypingIndicator } from "./TypingIndicator";
 import { ChatInput } from "./ChatInput";
@@ -8,13 +9,12 @@ import { QuickReplies } from "./QuickReplies";
 import { CrisisAlert } from "./CrisisAlert";
 import { useChatStore } from "@/store/chatStore";
 import { chatApi } from "@/lib/api";
-import type { ChatMessage } from "@/types/chat.types";
 
 const STARTERS = [
-  "I'm feeling anxious about my exams",
-  "Work is overwhelming me",
-  "I can't sleep at night",
-  "I feel lonely lately",
+  { text: "I'm feeling anxious about my exams or work", tag: "Stress & Anxiety" },
+  { text: "I've been feeling lonely and disconnected lately", tag: "Connection" },
+  { text: "I'm having trouble sleeping with racing thoughts", tag: "Sleep & Calm" },
+  { text: "I just need a safe space to vent and be heard", tag: "Emotional Release" },
 ];
 
 const QUICK_REPLIES = [
@@ -107,33 +107,54 @@ export function ChatWindow() {
       <div className="flex flex-col h-full relative z-10 flex-1">
         {showCrisis && <CrisisAlert onAcknowledge={() => setShowCrisis(false)} />}
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4">
           {messages.length === 0 ? (
-            <div className="max-w-lg mx-auto text-center pt-12">
-              <h2 className="font-display text-2xl text-ink mb-2">How are you feeling today?</h2>
-              <p className="font-sans text-warm mb-6">Choose a prompt or type your own message.</p>
-            <div className="grid gap-2 sm:grid-cols-2">
-              {STARTERS.map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => sendMessage(s)}
-                  className="rounded-2xl border border-ink/10 bg-white p-4 text-left text-sm hover:border-sage hover:bg-sage/5 transition-colors duration-300 ease-mb-ease"
-                >
-                  {s}
-                </button>
-              ))}
+            <div className="max-w-xl mx-auto text-center pt-8 md:pt-14 space-y-5">
+              <div className="inline-flex p-3 rounded-2xl bg-sage/15 text-sage ring-8 ring-sage/5 shadow-xs">
+                <Sparkles className="h-6 w-6" />
+              </div>
+              <div>
+                <h2 className="font-display text-2xl md:text-3xl text-ink font-semibold tracking-tight">
+                  How are you feeling today?
+                </h2>
+                <p className="font-sans text-xs md:text-sm text-ink/60 mt-1.5 max-w-md mx-auto">
+                  I'm here to listen without judgment. Choose a topic below or share what's on your mind.
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 text-left pt-2">
+                {STARTERS.map((s) => (
+                  <button
+                    key={s.text}
+                    type="button"
+                    onClick={() => sendMessage(s.text)}
+                    className="group rounded-2xl border border-ink/8 bg-white/95 p-4 text-left shadow-xs hover:border-sage/40 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99] transition-all"
+                  >
+                    <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-sage bg-sage/10 px-2 py-0.5 rounded-full mb-2">
+                      {s.tag}
+                    </span>
+                    <p className="text-sm text-ink font-medium leading-snug group-hover:text-sage transition-colors">
+                      {s.text}
+                    </p>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        ) : (
-          messages.map((m, i) => <MessageBubble key={i} message={m} />)
-        )}
-        {isTyping && <TypingIndicator />}
-        <div ref={bottomRef} />
-      </div>
+          ) : (
+            <div className="max-w-3xl mx-auto w-full space-y-4">
+              {messages.map((m, i) => (
+                <MessageBubble key={i} message={m} />
+              ))}
+              {isTyping && <TypingIndicator />}
+            </div>
+          )}
+          <div ref={bottomRef} />
+        </div>
 
         {messages.length > 0 && messages[messages.length - 1]?.role === "assistant" && !isTyping && (
-          <QuickReplies suggestions={QUICK_REPLIES} onSelect={sendMessage} />
+          <div className="max-w-3xl mx-auto w-full">
+            <QuickReplies suggestions={QUICK_REPLIES} onSelect={sendMessage} />
+          </div>
         )}
         <ChatInput onSend={sendMessage} disabled={isTyping} />
       </div>

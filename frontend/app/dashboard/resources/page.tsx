@@ -78,13 +78,13 @@ export default function ResourcesPage() {
   const copingTechniques = [
     {
       title: "5-4-3-2-1 Grounding Technique",
-      desc: "When feeling overwhelmed or anxious, notice 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste. This grounds your nervous system in the physical present.",
-      icon: Activity,
+      desc: "Acknowledge 5 things you can see, 4 things you can physically touch, 3 sounds you can hear, 2 scents you can smell, and 1 positive affirmation about yourself.",
+      icon: Wind,
     },
     {
-      title: "4-7-8 Breathing Exercise",
-      desc: "Inhale quietly through your nose for 4 seconds, hold your breath gently for 7 seconds, then exhale completely through your mouth for 8 seconds. Repeat 4 times to reduce acute stress.",
-      icon: Wind,
+      title: "Box Breathing (4-4-4-4)",
+      desc: "Inhale slowly through your nose for 4 seconds, hold gently for 4 seconds, exhale smoothly through your mouth for 4 seconds, and pause for 4 seconds before your next breath.",
+      icon: Activity,
     },
     {
       title: "Academic Pressure Compartmentalization",
@@ -94,112 +94,112 @@ export default function ResourcesPage() {
   ];
 
   return (
-    <div className="h-full flex flex-col bg-slate-50 overflow-y-auto">
+    <div className="h-full flex flex-col bg-parchment overflow-y-auto">
       {/* Header */}
-      <header className="border-b border-slate-200 bg-white px-6 md:px-8 py-4 md:py-5 sticky top-0 z-20">
-        <div className="flex items-center gap-2.5 mb-1.5">
+      <header className="border-b border-ink/8 bg-white/80 backdrop-blur-sm px-4 md:px-8 py-3.5 md:py-4 sticky top-0 z-20 shadow-xs">
+        <div className="flex items-center gap-2 mb-1">
           <Link
             href="/dashboard"
-            className="flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-full transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 text-xs font-medium text-ink/70 hover:text-ink bg-parchment hover:bg-parchment-dim border border-ink/10 px-3 py-1 rounded-full transition-all"
           >
             <ArrowLeft className="h-3 w-3" />
-            Dashboard
+            <span>Dashboard</span>
           </Link>
         </div>
-        <h1 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
-          <LifeBuoy className="h-5 w-5 md:h-6 md:w-6 text-emerald-600" />
-          India Crisis & Mental Health Resources
+        <h1 className="text-lg md:text-2xl font-bold text-ink flex items-center gap-2 font-display">
+          <LifeBuoy className="h-5 w-5 text-emerald-600" />
+          <span>India Crisis & Mental Health Resources</span>
         </h1>
-        <p className="text-xs text-slate-500 mt-0.5">
-          Verified official Government of India helplines, emergency services, and mental wellness support.
+        <p className="text-xs text-ink/50 mt-0.5 hidden sm:block">
+          Official Government of India helplines, emergency services, and mental health first aid.
         </p>
       </header>
 
-      <div className="p-8 max-w-5xl mx-auto w-full space-y-8 flex-1">
+      <div className="p-4 md:p-8 max-w-4xl mx-auto w-full space-y-6 flex-1">
         {/* Urgent Emergency Alert Banner */}
-        <div className="rounded-2xl border-2 border-red-200 bg-red-50/90 p-6 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-start gap-4">
-            <ShieldAlert className="h-7 w-7 text-red-600 shrink-0 mt-0.5" />
+        <div className="rounded-3xl border-2 border-red-200 bg-red-50/90 p-5 md:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="flex items-start gap-3.5">
+            <ShieldAlert className="h-6 w-6 text-red-600 shrink-0 mt-0.5" />
             <div>
-              <h2 className="font-bold text-red-900 text-base">Immediate Emergency Support (India)</h2>
-              <p className="text-xs text-red-800 mt-1 leading-relaxed max-w-2xl">
-                If you or someone else is in immediate danger, call <strong>112</strong> or go to the nearest emergency department.
+              <h2 className="font-bold text-red-900 text-sm md:text-base">Immediate Emergency Support (India)</h2>
+              <p className="text-xs text-red-800 mt-1 leading-relaxed max-w-xl">
+                If you or someone else is in immediate danger, call <strong>112</strong> or visit the nearest emergency facility.
                 <br />
-                Tele-MANAS provides 24×7 mental-health support across India. Call <strong>14416</strong> or <strong>1800-89-14416</strong>.
+                Tele-MANAS provides 24×7 free national psychological support across India. Call <strong>14416</strong> or <strong>1800-89-14416</strong>.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
             <a
               href="tel:112"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-red-700 transition"
+              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-5 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-red-700 active:scale-95 transition"
             >
-              <Phone className="h-4 w-4" />
-              Call 112
+              <Phone className="h-3.5 w-3.5" />
+              <span>Call 112</span>
             </a>
             <a
               href="tel:14416"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700 transition"
+              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-emerald-700 active:scale-95 transition"
             >
-              <Phone className="h-4 w-4" />
-              Call 14416
+              <Phone className="h-3.5 w-3.5" />
+              <span>Call 14416</span>
             </a>
           </div>
         </div>
 
         {/* Verified Indian Helplines Grid */}
         <div>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-              <PhoneCall className="h-5 w-5 text-emerald-600" />
-              Verified Helplines & Emergency Contacts (India)
+          <div className="flex items-center justify-between mb-3.5">
+            <h2 className="text-base md:text-lg font-bold text-ink flex items-center gap-2 font-display">
+              <PhoneCall className="h-4 w-4 text-emerald-600" />
+              <span>Verified Helplines & Emergency Contacts</span>
             </h2>
-            <span className="text-xs text-slate-500 font-medium hidden sm:inline">
-              Official Government & Accredited Sources
+            <span className="text-xs text-ink/50 font-medium hidden sm:inline">
+              Official Accredited Indian Sources
             </span>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-3.5 md:grid-cols-2">
             {indianCrisisResources.map((resource, i) => (
               <div
                 key={i}
-                className={`rounded-2xl border bg-white p-5 shadow-sm flex flex-col justify-between transition hover:shadow-md ${
+                className={`rounded-3xl border bg-white p-5 shadow-xs flex flex-col justify-between transition hover:shadow-md ${
                   resource.isPrimaryEmergency
                     ? "border-red-200 ring-1 ring-red-100"
                     : resource.isPrimaryMentalHealth
                     ? "border-emerald-200 ring-1 ring-emerald-100"
-                    : "border-slate-200"
+                    : "border-ink/8"
                 }`}
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      India
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/50">
+                      India Verified
                     </span>
                     <span
-                      className={`rounded-full px-2.5 py-0.5 text-xs font-medium border ${resource.badgeColor}`}
+                      className={`rounded-full px-2.5 py-0.5 text-[11px] font-medium border ${resource.badgeColor}`}
                     >
                       {resource.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900">{resource.name}</h3>
+                  <h3 className="text-base font-bold text-ink">{resource.name}</h3>
 
-                  <div className="text-xl font-extrabold text-slate-800 tracking-tight">
+                  <div className="text-xl font-extrabold text-ink tracking-tight">
                     {resource.number}
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed pt-1">
+                  <p className="text-xs text-ink/65 leading-relaxed pt-1">
                     {resource.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between gap-3">
+                <div className="pt-3.5 border-t border-ink/5 mt-3.5 flex items-center justify-between gap-3">
                   <a
                     href={resource.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-800 transition truncate max-w-[180px]"
+                    className="inline-flex items-center gap-1 text-[11px] text-ink/50 hover:text-ink transition truncate max-w-[170px]"
                     title={`Source: ${resource.officialSource}`}
                   >
                     <span className="truncate">{resource.officialSource}</span>
@@ -208,10 +208,10 @@ export default function ResourcesPage() {
 
                   <a
                     href={`tel:${resource.tel}`}
-                    className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-bold shadow-sm transition shrink-0 ${resource.btnColor}`}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold shadow-xs hover:shadow transition shrink-0 active:scale-95 ${resource.btnColor}`}
                   >
-                    <Phone className="h-3.5 w-3.5" />
-                    Call {resource.number.split(" ")[0].split("/")[0]}
+                    <Phone className="h-3 w-3" />
+                    <span>Call {resource.number.split(" ")[0].split("/")[0]}</span>
                   </a>
                 </div>
               </div>
@@ -221,20 +221,20 @@ export default function ResourcesPage() {
 
         {/* Evidence-Informed Coping Strategies */}
         <div>
-          <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2 mb-4">
-            <Heart className="h-5 w-5 text-emerald-600" />
-            Evidence-Informed Coping & Grounding Techniques
+          <h2 className="text-base md:text-lg font-bold text-ink flex items-center gap-2 mb-3.5 font-display">
+            <Heart className="h-4 w-4 text-emerald-600" />
+            <span>Evidence-Informed Grounding Techniques</span>
           </h2>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-3.5 md:grid-cols-3">
             {copingTechniques.map((c, i) => {
               const Icon = c.icon;
               return (
-                <div key={i} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
-                  <div className="h-10 w-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
-                    <Icon className="h-5 w-5" />
+                <div key={i} className="rounded-3xl border border-ink/8 bg-white p-5 shadow-xs space-y-2.5">
+                  <div className="h-9 w-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                    <Icon className="h-4 w-4" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900">{c.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{c.desc}</p>
+                  <h3 className="text-sm font-bold text-ink">{c.title}</h3>
+                  <p className="text-xs text-ink/65 leading-relaxed">{c.desc}</p>
                 </div>
               );
             })}
@@ -242,15 +242,15 @@ export default function ResourcesPage() {
         </div>
 
         {/* Clinical & Academic Disclaimer */}
-        <div className="rounded-2xl border border-slate-200 bg-slate-100/80 p-5 space-y-2 text-xs text-slate-600">
-          <div className="flex items-center gap-2 font-bold text-slate-800">
+        <div className="rounded-3xl border border-ink/8 bg-white/70 p-5 space-y-1.5 text-xs text-ink/60">
+          <div className="flex items-center gap-1.5 font-bold text-ink">
             <Info className="h-4 w-4 text-emerald-600" />
-            MindBridge AI Clinical & Academic Disclaimer
+            <span>MindBridge AI Clinical & Academic Disclaimer</span>
           </div>
-          <p className="leading-relaxed">
-            MindBridge AI is an AI-powered conversational platform developed for student emotional wellness support and academic research evaluation.
-            MindBridge is <strong>NOT</strong> an emergency service, diagnostic tool, medical device, or replacement for clinical psychiatric healthcare.
-            In situations involving severe emotional distress, self-harm ideation, or clinical medical emergencies, please connect immediately with a qualified healthcare professional or the verified Government of India emergency lines (<strong>112</strong> / <strong>14416</strong>) listed above.
+          <p className="leading-relaxed text-[11px]">
+            MindBridge AI is an AI-powered conversational support platform developed for student emotional wellness support.
+            MindBridge is <strong>NOT</strong> an emergency service, diagnostic tool, or replacement for clinical psychiatric healthcare.
+            In situations involving severe emotional distress, self-harm ideation, or clinical emergencies, please connect immediately with a qualified healthcare professional or the verified Government of India emergency lines (<strong>112</strong> / <strong>14416</strong>).
           </p>
         </div>
       </div>

@@ -476,10 +476,7 @@ async def process_message(
 
     except Exception as exc:
         logger.error(f"[AI Service] Remote GPU inference error at {settings.INFERENCE_URL}: {exc}")
-        ai_text = (
-            "MindBridge AI model service is temporarily unavailable. "
-            "Please check that your remote GPU inference server is running and try again."
-        )
+        ai_text = _build_contextual_fallback(user_message, predicted_category, examples)
 
     # ── Step 7.5: Output Safety Guard (Sanitize against medical/diagnostic claims) ─
     ai_text = sanitize_model_output(ai_text)

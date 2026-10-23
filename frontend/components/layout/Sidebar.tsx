@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, MessageCircle, Heart, BookOpen, LifeBuoy, Settings, LogOut, Plus } from "lucide-react";
+import { LayoutDashboard, MessageCircle, Heart, BookOpen, LifeBuoy, Settings, LogOut, Plus, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { clearTokens } from "@/lib/api";
 import { useChatStore } from "@/store/chatStore";
@@ -47,9 +47,18 @@ export function Sidebar() {
 
   return (
     <aside className="hidden md:flex w-60 flex-col border-r border-white/5 bg-ink h-full">
-      <div className="p-4 border-b border-white/5">
-        <Link href="/dashboard" className="flex items-center gap-2 font-display text-lg text-parchment">
+      <div className="p-4 border-b border-white/5 flex items-center justify-between">
+        <Link href="/dashboard" className="flex items-center gap-2 font-display text-lg text-parchment hover:text-gold transition-colors">
           MindBridge
+        </Link>
+        {/* Back to landing page */}
+        <Link
+          href="/"
+          title="Back to Landing Page"
+          className="flex items-center gap-1 text-xs text-parchment/50 hover:text-parchment bg-white/5 hover:bg-white/10 px-2 py-1 rounded transition-colors"
+        >
+          <ArrowLeft className="h-3 w-3" />
+          <span>Home</span>
         </Link>
       </div>
       <nav className="flex-1 p-3 space-y-1">

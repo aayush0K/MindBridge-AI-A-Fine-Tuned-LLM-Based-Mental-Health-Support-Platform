@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -40,7 +41,16 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-ink p-4">
+    <div className="min-h-screen flex items-center justify-center bg-ink p-4 relative">
+      {/* Back to Home Button */}
+      <Link
+        href="/"
+        className="absolute top-6 left-6 flex items-center gap-2 text-sm text-parchment/70 hover:text-parchment bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-300"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to Home
+      </Link>
+
       <Card className="w-full max-w-md bg-parchment border-none rounded-2xl shadow-none p-8">
         <CardHeader className="text-center p-0 mb-6">
           <div className="font-display text-2xl text-parchment mb-2 mx-auto">MindBridge</div>
@@ -78,4 +88,3 @@ export default function RegisterPage() {
     </div>
   );
 }
-

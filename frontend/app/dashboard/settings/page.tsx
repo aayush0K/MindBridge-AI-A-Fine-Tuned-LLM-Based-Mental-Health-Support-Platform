@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,7 +31,17 @@ export default function SettingsPage() {
 
   return (
     <div className="h-full overflow-y-auto p-6 max-w-lg bg-parchment mx-auto">
-      <h1 className="font-display text-2xl text-ink mb-6">Settings</h1>
+      <div className="flex items-center gap-3 mb-6">
+        <Link
+          href="/dashboard"
+          className="flex items-center gap-1.5 text-xs font-medium text-ink/70 hover:text-ink bg-ink/5 hover:bg-ink/10 px-3 py-1.5 rounded-full transition-colors"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          Dashboard
+        </Link>
+        <h1 className="font-display text-2xl text-ink">Settings</h1>
+      </div>
+
       <Card>
         <CardHeader>
           <CardTitle>Profile</CardTitle>
@@ -51,10 +63,12 @@ export default function SettingsPage() {
               value={emergencyEmail}
               onChange={(e) => setEmergencyEmail(e.target.value)}
               className="mt-1"
-              placeholder="Optional crisis contact"
             />
           </div>
-          <Button onClick={save} className="bg-sage text-parchment hover:bg-ink rounded-full transition-colors duration-300 ease-mb-ease">{saved ? "Saved!" : "Save changes"}</Button>
+          <Button onClick={save} className="bg-sage text-parchment hover:bg-ink">
+            Save changes
+          </Button>
+          {saved && <span className="text-sm text-sage ml-3">Saved</span>}
         </CardContent>
       </Card>
     </div>

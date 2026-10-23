@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Trash2, Edit3, BookOpen, Search, Sparkles, Check, X } from "lucide-react";
+import Link from "next/link";
+import { Plus, Trash2, Edit3, BookOpen, Search, Sparkles, Check, X, ArrowLeft } from "lucide-react";
 import { journalApi } from "@/lib/api";
 import { formatIndianDateTime } from "@/lib/utils";
 
@@ -118,10 +119,19 @@ export default function JournalPage() {
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-y-auto">
       {/* Header */}
-      <header className="border-b border-slate-200 bg-white px-8 py-5 flex items-center justify-between sticky top-0 z-20">
+      <header className="border-b border-slate-200 bg-white px-6 md:px-8 py-4 md:py-5 flex items-center justify-between sticky top-0 z-20">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-            <BookOpen className="h-6 w-6 text-indigo-600" />
+          <div className="flex items-center gap-2.5 mb-1.5">
+            <Link
+              href="/dashboard"
+              className="flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-full transition-colors"
+            >
+              <ArrowLeft className="h-3 w-3" />
+              Dashboard
+            </Link>
+          </div>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+            <BookOpen className="h-5 w-5 md:h-6 md:w-6 text-indigo-600" />
             Private Journal
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">

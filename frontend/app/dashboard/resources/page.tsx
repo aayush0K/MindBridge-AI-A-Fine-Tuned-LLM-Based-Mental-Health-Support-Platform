@@ -1,6 +1,7 @@
 "use client";
 
-import { LifeBuoy, PhoneCall, ShieldAlert, Heart, Wind, Activity, Info, ExternalLink, Phone } from "lucide-react";
+import Link from "next/link";
+import { LifeBuoy, PhoneCall, ShieldAlert, Heart, Wind, Activity, Info, ExternalLink, Phone, ArrowLeft } from "lucide-react";
 
 export default function ResourcesPage() {
   const indianCrisisResources = [
@@ -95,9 +96,18 @@ export default function ResourcesPage() {
   return (
     <div className="h-full flex flex-col bg-slate-50 overflow-y-auto">
       {/* Header */}
-      <header className="border-b border-slate-200 bg-white px-8 py-5 sticky top-0 z-20">
-        <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-          <LifeBuoy className="h-6 w-6 text-emerald-600" />
+      <header className="border-b border-slate-200 bg-white px-6 md:px-8 py-4 md:py-5 sticky top-0 z-20">
+        <div className="flex items-center gap-2.5 mb-1.5">
+          <Link
+            href="/dashboard"
+            className="flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-full transition-colors"
+          >
+            <ArrowLeft className="h-3 w-3" />
+            Dashboard
+          </Link>
+        </div>
+        <h1 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <LifeBuoy className="h-5 w-5 md:h-6 md:w-6 text-emerald-600" />
           India Crisis & Mental Health Resources
         </h1>
         <p className="text-xs text-slate-500 mt-0.5">

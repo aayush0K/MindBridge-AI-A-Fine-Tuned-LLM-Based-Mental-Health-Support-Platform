@@ -3,17 +3,31 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, Plus, ArrowLeft } from "lucide-react";
+import {
+  Menu,
+  ArrowLeft,
+  LayoutDashboard,
+  MessageCircle,
+  Heart,
+  BookOpen,
+  LifeBuoy,
+} from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { getAccessToken } from "@/lib/api";
-import { useChatStore } from "@/store/chatStore";
+
+const mobileBottomNav = [
+  { href: "/dashboard", label: "Home", icon: LayoutDashboard },
+  { href: "/dashboard/chat", label: "Chat", icon: MessageCircle },
+  { href: "/dashboard/mood", label: "Mood", icon: Heart },
+  { href: "/dashboard/journal", label: "Journal", icon: BookOpen },
+  { href: "/dashboard/resources", label: "Crisis", icon: LifeBuoy },
+];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
   const [isAuthed, setIsAuthed] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const { reset } = useChatStore();
 
   useEffect(() => {
     if (!getAccessToken()) {
@@ -31,12 +45,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     );
   }
 
-  const handleMobileNewChat = () => {
-    reset();
-    router.push("/dashboard/chat");
-  };
-
-  // Determine page title for mobile top bar
   const getPageTitle = () => {
     if (pathname === "/dashboard") return "Dashboard";
     if (pathname.includes("/chat")) return "AI Chat";
@@ -49,7 +57,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="flex h-screen bg-parchment overflow-hidden">
-      {/* Responsive Sidebar */}
+      {/* Desktop and Drawer Sidebar */}
       <Sidebar
         mobileOpen={mobileSidebarOpen}
         onMobileClose={() => setMobileSidebarOpen(false)}
@@ -57,8 +65,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
-        {/* Mobile Top Header (always visible on small screens) */}
-        <header className="md:hidden flex items-center justify-between px-4 py-3 bg-ink border-b border-white/10 text-parchment flex-shrink-0 z-30">
+        {/* Mobile Top Bar */}
+        <header className="md:hidden flex items-center justify-between px-4 py-2.5 bg-ink border-b border-white/10 text-parchment flex-shrink-0 z-30">
           <div className="flex items-center gap-2.5">
             <button
               type="button"
@@ -82,19 +90,35 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </span>
           </div>
 
-          {/* Quick Action: New Chat (Always available on mobile!) */}
-          <button
-            type="button"
-            onClick={handleMobileNewChat}
-            className="flex items-center gap-1.5 text-xs font-medium bg-gold text-gold-dark hover:bg-gold/90 px-3 py-1.5 rounded-full shadow-sm transition-colors"
+          <Link
+            href="/"
+            className="text-xs text-parchment/60 hover:text-parchment bg-white/5 px-2.5 py-1 rounded-full transition-colors"
           >
-            <Plus className="h-3.5 w-3.5" />
-            <span>New Chat</span>
-          </button>
+            Home
+          </Link>
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-hidden">{children}</main>
+        <main className="flex-1 overflow-hidden pb-14 md:pb-0">{children}</main>
+
+        {/* Mobile Bottom Navigation Bar (Guarantees Journal, Mood, Chat, Crisis are 1-tap accessible) */}
+        <nav className="md:hidden fixed bottom-0 inset-x-0 bg-ink border-t border-white/10 flex items-center justify-around py-1.5 z-30">
+          {mobileBottomNav.map(({ href, label, icon: Icon }) => {
+            const active = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`flex flex-col items-center justify-center py-1 px-2 rounded-lg transition-colors ${
+                  active ? "text-gold font-medium" : "text-parchment/50 hover:text-parchment"
+                }`}
+              >
+                <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-parchment/50"}`} />
+                <span className="text-[10px] mt-0.5">{label}</span>
+              </Link>
+            );
+          })}
+        </nav>
       </div>
     </div>
   );

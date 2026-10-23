@@ -152,7 +152,7 @@ export default function MoodPage() {
           <CardTitle>30-Day Score Trend</CardTitle>
         </CardHeader>
         <CardContent>
-          <MoodChart history={history} />
+          <MoodChart data={history} />
         </CardContent>
       </Card>
 
